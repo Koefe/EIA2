@@ -1,0 +1,31 @@
+
+#body {
+    background-color: black;
+}
+
+.Ziehstapel {
+top: 20px;
+position: absolute;
+left: 50px;
+color: lightgray;
+width: 100%;
+height: 300px;
+}
+
+.Spielstapel {
+top: 200px;
+right: 300px;
+position: absolute;
+color: lightgray;
+width: 100%;
+height: 300px;
+}
+
+.Handstapel {
+top: 20px;
+right: 30px;
+position: absolute;
+color: lightgray;
+width: 100%;
+height: 300px;
+}
