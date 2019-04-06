@@ -233,7 +233,7 @@ function placeHandstapel(_k) {
     let prodElement = document.createElement('div');
     prodElement.innerHTML = `<div class="Handstapel">
 <p>${_k.symbol}</p>
-
+<p>${_k.farbe}</p>
 <p>${_k.zahl}</p>
 </div>`;
     document.getElementById("body").appendChild(prodElement);
@@ -242,7 +242,7 @@ function placeZiehstapel(_k) {
     let prodElement = document.createElement('div');
     prodElement.innerHTML = `<div class="Ziehstapel">
     <p>${_k.symbol}</p>
-  
+    <p>${_k.farbe}</p>
     <p>${_k.zahl}</p>
     </div>`;
     document.getElementById("body").appendChild(prodElement);
@@ -251,7 +251,8 @@ function placeZiehstapel(_k) {
 function placeSpielStapel(_k) {
     let prodElement = document.createElement('div');
     prodElement.innerHTML = `<div class="Spielstapel">
-   
+    <p>${_k.symbol}</p>
+    <p>${_k.farbe}</p>
     <p>${_k.zahl}</p>
     </div>`;
     document.getElementById("body").appendChild(prodElement);

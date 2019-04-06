@@ -293,7 +293,7 @@ function placeHandstapel(_k: Spielkarte): void { //verändert
     let prodElement = document.createElement('div');
     prodElement.innerHTML = `<div class="Handstapel">
 <p>${_k.symbol}</p>
-
+<p>${_k.farbe}</p>
 <p>${_k.zahl}</p>
 </div>`;
 
@@ -305,7 +305,7 @@ function placeZiehstapel(_k: Spielkarte): void {         //k : number
     let prodElement = document.createElement('div');
     prodElement.innerHTML = `<div class="Ziehstapel">
     <p>${_k.symbol}</p>
-  
+    <p>${_k.farbe}</p>
     <p>${_k.zahl}</p>
     </div>`;
 
@@ -318,7 +318,8 @@ function placeZiehstapel(_k: Spielkarte): void {         //k : number
 function placeSpielStapel(_k: Spielkarte): void {
     let prodElement = document.createElement('div');
     prodElement.innerHTML = `<div class="Spielstapel">
-   
+    <p>${_k.symbol}</p>
+    <p>${_k.farbe}</p>
     <p>${_k.zahl}</p>
     </div>`;
 
