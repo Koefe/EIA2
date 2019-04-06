@@ -1,161 +1,193 @@
 let karte01 = {
     zahl: "7",
     //rot: true,
+    farbe: "rot",
     symbol: "Karo",
 };
 let karte02 = {
     zahl: "8",
     //rot: true,
+    farbe: "rot",
     symbol: "Karo",
 };
 let karte03 = {
     zahl: "9",
     //rot: true,
+    farbe: "rot",
     symbol: "Karo",
 };
 let karte04 = {
     zahl: "10",
     //rot: true,
+    farbe: "rot",
     symbol: "Karo",
 };
 let karte05 = {
     zahl: "Bube",
     //rot: true,
+    farbe: "rot",
     symbol: "Karo",
 };
 let karte06 = {
     zahl: "Dame",
     //rot: true,
+    farbe: "rot",
     symbol: "Karo",
 };
 let karte07 = {
     zahl: "Koenig",
     //rot: true,
+    farbe: "rot",
     symbol: "Karo",
 };
 let karte08 = {
     zahl: "Ass",
     //rot: true,
+    farbe: "rot",
     symbol: "Karo",
 };
 let karte09 = {
     zahl: "7",
     //rot: true,
+    farbe: "rot",
     symbol: "Herz",
 };
 let karte10 = {
     zahl: "8",
     //rot: true,
+    farbe: "rot",
     symbol: "Herz",
 };
 let karte11 = {
     zahl: "9",
     //rot: true,
+    farbe: "rot",
     symbol: "Herz",
 };
 let karte12 = {
     zahl: "10",
     //rot: true,
+    farbe: "rot",
     symbol: "Herz",
 };
 let karte13 = {
     zahl: "Bube",
     //rot: true,
+    farbe: "rot",
     symbol: "Herz",
 };
 let karte14 = {
     zahl: "Dame",
     //rot: true,
+    farbe: "rot",
     symbol: "Herz",
 };
 let karte15 = {
     zahl: "Koenig",
     //rot: true,
+    farbe: "rot",
     symbol: "Herz",
 };
 let karte16 = {
     zahl: "Ass",
     //rot: true,
+    farbe: "rot",
     symbol: "Herz",
 };
 let karte17 = {
     zahl: "7",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Piek",
 };
 let karte18 = {
     zahl: "8",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Piek",
 };
 let karte19 = {
     zahl: "9",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Piek",
 };
 let karte20 = {
     zahl: "10",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Piek",
 };
 let karte21 = {
     zahl: "Bube",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Piek",
 };
 let karte22 = {
     zahl: "Dame",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Piek",
 };
 let karte23 = {
     zahl: "Koenig",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Piek",
 };
 let karte24 = {
     zahl: "Ass",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Piek",
 };
 let karte25 = {
     zahl: "7",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Kreuz",
 };
 let karte26 = {
     zahl: "8",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Kreuz",
 };
 let karte27 = {
     zahl: "9",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Kreuz",
 };
 let karte28 = {
     zahl: "10",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Kreuz",
 };
 let karte29 = {
     zahl: "Bube",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Kreuz",
 };
 let karte30 = {
     zahl: "Dame",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Kreuz",
 };
 let karte31 = {
     zahl: "Koenig",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Kreuz",
 };
 let karte32 = {
     zahl: "Ass",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Kreuz",
 };
 //Arrays

@@ -2,6 +2,7 @@
 interface Spielkarte {
     zahl: string;
     //rot: boolean;
+    farbe: string;
     symbol: string;
     //zwei_ziehen: boolean; 
     //aussetzten: boolean;
@@ -12,192 +13,224 @@ interface Spielkarte {
 let karte01: Spielkarte = {
     zahl: "7",
     //rot: true,
+    farbe: "rot",
     symbol: "Karo",
 }
 
 let karte02: Spielkarte = {
     zahl: "8",
     //rot: true,
+    farbe: "rot",
     symbol: "Karo",
 }
 
 let karte03: Spielkarte = {
     zahl: "9",
     //rot: true,
+    farbe: "rot",
     symbol: "Karo",
 }
 
 let karte04: Spielkarte = {
     zahl: "10",
     //rot: true,
+    farbe: "rot",
     symbol: "Karo",
 }
 
 let karte05: Spielkarte = {
     zahl: "Bube",
     //rot: true,
+    farbe: "rot",
     symbol: "Karo",
 }
 
 let karte06: Spielkarte = {
     zahl: "Dame",
     //rot: true,
+    farbe: "rot",
     symbol: "Karo",
 }
 
 let karte07: Spielkarte = {
     zahl: "Koenig",
     //rot: true,
+    farbe: "rot",
     symbol: "Karo",
 }
 
 let karte08: Spielkarte = {
     zahl: "Ass",
     //rot: true,
+    farbe: "rot",
     symbol: "Karo",
 }
 
 let karte09: Spielkarte = {
     zahl: "7",
     //rot: true,
+    farbe: "rot",
     symbol: "Herz",
 }
 
 let karte10: Spielkarte = {
     zahl: "8",
     //rot: true,
+    farbe: "rot",
     symbol: "Herz",
 }
 
 let karte11: Spielkarte = {
     zahl: "9",
     //rot: true,
+    farbe: "rot",
     symbol: "Herz",
 }
 
 let karte12: Spielkarte = {
     zahl: "10",
     //rot: true,
+    farbe: "rot",
     symbol: "Herz",
 }
 
 let karte13: Spielkarte = {
     zahl: "Bube",
     //rot: true,
+    farbe: "rot",
     symbol: "Herz",
 }
 
 let karte14: Spielkarte = {
     zahl: "Dame",
     //rot: true,
+    farbe: "rot",
     symbol: "Herz",
 }
 
 let karte15: Spielkarte = {
     zahl: "Koenig",
     //rot: true,
+    farbe: "rot",
     symbol: "Herz",
 }
 
 let karte16: Spielkarte = {
     zahl: "Ass",
     //rot: true,
+    farbe: "rot",
     symbol: "Herz",
 }
 
 let karte17: Spielkarte = {
     zahl: "7",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Piek",
 }
 
 let karte18: Spielkarte = {
     zahl: "8",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Piek",
 }
 
 let karte19: Spielkarte = {
     zahl: "9",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Piek",
 }
 
 let karte20: Spielkarte = {
     zahl: "10",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Piek",
 }
 
 let karte21: Spielkarte = {
     zahl: "Bube",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Piek",
 }
 
 let karte22: Spielkarte = {
     zahl: "Dame",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Piek",
 }
 
 let karte23: Spielkarte = {
     zahl: "Koenig",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Piek",
 }
 
 let karte24: Spielkarte = {
     zahl: "Ass",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Piek",
 }
 
 let karte25: Spielkarte = {
     zahl: "7",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Kreuz",
 }
 
 let karte26: Spielkarte = {
     zahl: "8",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Kreuz",
 }
 
 let karte27: Spielkarte = {
     zahl: "9",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Kreuz",
 }
 
 let karte28: Spielkarte = {
     zahl: "10",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Kreuz",
 }
 
 let karte29: Spielkarte = {
     zahl: "Bube",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Kreuz",
 }
 
 let karte30: Spielkarte = {
     zahl: "Dame",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Kreuz",
 }
 
 let karte31: Spielkarte = {
     zahl: "Koenig",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Kreuz",
 }
 
 let karte32: Spielkarte = {
     zahl: "Ass",
     //rot: false,
+    farbe: "schwarz",
     symbol: "Kreuz",
 }
 
