@@ -1,7 +1,7 @@
 
 interface Spielkarte {
     zahl: string;
-    rot: boolean;
+    //rot: boolean;
     symbol: string;
     //zwei_ziehen: boolean; 
     //aussetzten: boolean;
@@ -11,193 +11,193 @@ interface Spielkarte {
 
 let karte01: Spielkarte = {
     zahl: "7",
-    rot: true,
+    //rot: true,
     symbol: "Karo",
 }
 
 let karte02: Spielkarte = {
     zahl: "8",
-    rot: true,
+    //rot: true,
     symbol: "Karo",
 }
 
 let karte03: Spielkarte = {
     zahl: "9",
-    rot: true,
+    //rot: true,
     symbol: "Karo",
 }
 
 let karte04: Spielkarte = {
     zahl: "10",
-    rot: true,
+    //rot: true,
     symbol: "Karo",
 }
 
 let karte05: Spielkarte = {
     zahl: "Bube",
-    rot: true,
+    //rot: true,
     symbol: "Karo",
 }
 
 let karte06: Spielkarte = {
     zahl: "Dame",
-    rot: true,
+    //rot: true,
     symbol: "Karo",
 }
 
 let karte07: Spielkarte = {
     zahl: "Koenig",
-    rot: true,
+    //rot: true,
     symbol: "Karo",
 }
 
 let karte08: Spielkarte = {
     zahl: "Ass",
-    rot: true,
+    //rot: true,
     symbol: "Karo",
 }
 
 let karte09: Spielkarte = {
     zahl: "7",
-    rot: true,
+    //rot: true,
     symbol: "Herz",
 }
 
 let karte10: Spielkarte = {
     zahl: "8",
-    rot: true,
+    //rot: true,
     symbol: "Herz",
 }
 
 let karte11: Spielkarte = {
     zahl: "9",
-    rot: true,
+    //rot: true,
     symbol: "Herz",
 }
 
 let karte12: Spielkarte = {
     zahl: "10",
-    rot: true,
+    //rot: true,
     symbol: "Herz",
 }
 
 let karte13: Spielkarte = {
     zahl: "Bube",
-    rot: true,
+    //rot: true,
     symbol: "Herz",
 }
 
 let karte14: Spielkarte = {
     zahl: "Dame",
-    rot: true,
+    //rot: true,
     symbol: "Herz",
 }
 
 let karte15: Spielkarte = {
     zahl: "Koenig",
-    rot: true,
+    //rot: true,
     symbol: "Herz",
 }
 
 let karte16: Spielkarte = {
     zahl: "Ass",
-    rot: true,
+    //rot: true,
     symbol: "Herz",
 }
 
 let karte17: Spielkarte = {
     zahl: "7",
-    rot: false,
+    //rot: false,
     symbol: "Piek",
 }
 
 let karte18: Spielkarte = {
     zahl: "8",
-    rot: false,
+    //rot: false,
     symbol: "Piek",
 }
 
 let karte19: Spielkarte = {
     zahl: "9",
-    rot: false,
+    //rot: false,
     symbol: "Piek",
 }
 
 let karte20: Spielkarte = {
     zahl: "10",
-    rot: false,
+    //rot: false,
     symbol: "Piek",
 }
 
 let karte21: Spielkarte = {
     zahl: "Bube",
-    rot: false,
+    //rot: false,
     symbol: "Piek",
 }
 
 let karte22: Spielkarte = {
     zahl: "Dame",
-    rot: false,
+    //rot: false,
     symbol: "Piek",
 }
 
 let karte23: Spielkarte = {
     zahl: "Koenig",
-    rot: false,
+    //rot: false,
     symbol: "Piek",
 }
 
 let karte24: Spielkarte = {
     zahl: "Ass",
-    rot: false,
+    //rot: false,
     symbol: "Piek",
 }
 
 let karte25: Spielkarte = {
     zahl: "7",
-    rot: false,
+    //rot: false,
     symbol: "Kreuz",
 }
 
 let karte26: Spielkarte = {
     zahl: "8",
-    rot: false,
+    //rot: false,
     symbol: "Kreuz",
 }
 
 let karte27: Spielkarte = {
     zahl: "9",
-    rot: false,
+    //rot: false,
     symbol: "Kreuz",
 }
 
 let karte28: Spielkarte = {
     zahl: "10",
-    rot: false,
+    //rot: false,
     symbol: "Kreuz",
 }
 
 let karte29: Spielkarte = {
     zahl: "Bube",
-    rot: false,
+    //rot: false,
     symbol: "Kreuz",
 }
 
 let karte30: Spielkarte = {
     zahl: "Dame",
-    rot: false,
+    //rot: false,
     symbol: "Kreuz",
 }
 
 let karte31: Spielkarte = {
     zahl: "Koenig",
-    rot: false,
+    //rot: false,
     symbol: "Kreuz",
 }
 
 let karte32: Spielkarte = {
     zahl: "Ass",
-    rot: false,
+    //rot: false,
     symbol: "Kreuz",
 }
 
@@ -245,7 +245,7 @@ function KartenInHandstapel(_Anzahl: number): void {
 
 }
 
-function KartenInSpielstapel() :void {
+function KartenInSpielstapel(): void {
     for (let i: number = 0; i < 1; i++) {
         let k: number = Math.floor(Math.random() * Ziehstapel.length)
         Spielstapel.push(Ziehstapel[k]);
@@ -255,12 +255,12 @@ function KartenInSpielstapel() :void {
     }
 }
 
-function placeHandstapel(_k: Spielkarte) :void { //verändert
+function placeHandstapel(_k: Spielkarte): void { //verändert
 
     let prodElement = document.createElement('div');
     prodElement.innerHTML = `<div class="Handstapel">
 <p>${_k.symbol}</p>
-<p class="rot">${_k.rot}</p>
+
 <p>${_k.zahl}</p>
 </div>`;
 
@@ -268,11 +268,11 @@ function placeHandstapel(_k: Spielkarte) :void { //verändert
     document.getElementById("body").appendChild(prodElement);
 }
 
-function placeZiehstapel(_k: Spielkarte) :void {         //k : number
+function placeZiehstapel(_k: Spielkarte): void {         //k : number
     let prodElement = document.createElement('div');
     prodElement.innerHTML = `<div class="Ziehstapel">
     <p>${_k.symbol}</p>
-    <p class="rot">${_k.rot}</p>
+  
     <p>${_k.zahl}</p>
     </div>`;
 
@@ -282,11 +282,10 @@ function placeZiehstapel(_k: Spielkarte) :void {         //k : number
 
 //k is undefined?
 
-function placeSpielStapel(_k: Spielkarte) :void {
+function placeSpielStapel(_k: Spielkarte): void {
     let prodElement = document.createElement('div');
     prodElement.innerHTML = `<div class="Spielstapel">
-    <p>${_k.symbol}</p>
-    <p class="rot">${_k.rot}</p>
+   
     <p>${_k.zahl}</p>
     </div>`;
 

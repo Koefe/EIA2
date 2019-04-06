@@ -1,161 +1,161 @@
 let karte01 = {
     zahl: "7",
-    rot: true,
+    //rot: true,
     symbol: "Karo",
 };
 let karte02 = {
     zahl: "8",
-    rot: true,
+    //rot: true,
     symbol: "Karo",
 };
 let karte03 = {
     zahl: "9",
-    rot: true,
+    //rot: true,
     symbol: "Karo",
 };
 let karte04 = {
     zahl: "10",
-    rot: true,
+    //rot: true,
     symbol: "Karo",
 };
 let karte05 = {
     zahl: "Bube",
-    rot: true,
+    //rot: true,
     symbol: "Karo",
 };
 let karte06 = {
     zahl: "Dame",
-    rot: true,
+    //rot: true,
     symbol: "Karo",
 };
 let karte07 = {
     zahl: "Koenig",
-    rot: true,
+    //rot: true,
     symbol: "Karo",
 };
 let karte08 = {
     zahl: "Ass",
-    rot: true,
+    //rot: true,
     symbol: "Karo",
 };
 let karte09 = {
     zahl: "7",
-    rot: true,
+    //rot: true,
     symbol: "Herz",
 };
 let karte10 = {
     zahl: "8",
-    rot: true,
+    //rot: true,
     symbol: "Herz",
 };
 let karte11 = {
     zahl: "9",
-    rot: true,
+    //rot: true,
     symbol: "Herz",
 };
 let karte12 = {
     zahl: "10",
-    rot: true,
+    //rot: true,
     symbol: "Herz",
 };
 let karte13 = {
     zahl: "Bube",
-    rot: true,
+    //rot: true,
     symbol: "Herz",
 };
 let karte14 = {
     zahl: "Dame",
-    rot: true,
+    //rot: true,
     symbol: "Herz",
 };
 let karte15 = {
     zahl: "Koenig",
-    rot: true,
+    //rot: true,
     symbol: "Herz",
 };
 let karte16 = {
     zahl: "Ass",
-    rot: true,
+    //rot: true,
     symbol: "Herz",
 };
 let karte17 = {
     zahl: "7",
-    rot: false,
+    //rot: false,
     symbol: "Piek",
 };
 let karte18 = {
     zahl: "8",
-    rot: false,
+    //rot: false,
     symbol: "Piek",
 };
 let karte19 = {
     zahl: "9",
-    rot: false,
+    //rot: false,
     symbol: "Piek",
 };
 let karte20 = {
     zahl: "10",
-    rot: false,
+    //rot: false,
     symbol: "Piek",
 };
 let karte21 = {
     zahl: "Bube",
-    rot: false,
+    //rot: false,
     symbol: "Piek",
 };
 let karte22 = {
     zahl: "Dame",
-    rot: false,
+    //rot: false,
     symbol: "Piek",
 };
 let karte23 = {
     zahl: "Koenig",
-    rot: false,
+    //rot: false,
     symbol: "Piek",
 };
 let karte24 = {
     zahl: "Ass",
-    rot: false,
+    //rot: false,
     symbol: "Piek",
 };
 let karte25 = {
     zahl: "7",
-    rot: false,
+    //rot: false,
     symbol: "Kreuz",
 };
 let karte26 = {
     zahl: "8",
-    rot: false,
+    //rot: false,
     symbol: "Kreuz",
 };
 let karte27 = {
     zahl: "9",
-    rot: false,
+    //rot: false,
     symbol: "Kreuz",
 };
 let karte28 = {
     zahl: "10",
-    rot: false,
+    //rot: false,
     symbol: "Kreuz",
 };
 let karte29 = {
     zahl: "Bube",
-    rot: false,
+    //rot: false,
     symbol: "Kreuz",
 };
 let karte30 = {
     zahl: "Dame",
-    rot: false,
+    //rot: false,
     symbol: "Kreuz",
 };
 let karte31 = {
     zahl: "Koenig",
-    rot: false,
+    //rot: false,
     symbol: "Kreuz",
 };
 let karte32 = {
     zahl: "Ass",
-    rot: false,
+    //rot: false,
     symbol: "Kreuz",
 };
 //Arrays
@@ -201,7 +201,7 @@ function placeHandstapel(_k) {
     let prodElement = document.createElement('div');
     prodElement.innerHTML = `<div class="Handstapel">
 <p>${_k.symbol}</p>
-<p class="rot">${_k.rot}</p>
+
 <p>${_k.zahl}</p>
 </div>`;
     document.getElementById("body").appendChild(prodElement);
@@ -210,7 +210,7 @@ function placeZiehstapel(_k) {
     let prodElement = document.createElement('div');
     prodElement.innerHTML = `<div class="Ziehstapel">
     <p>${_k.symbol}</p>
-    <p class="rot">${_k.rot}</p>
+  
     <p>${_k.zahl}</p>
     </div>`;
     document.getElementById("body").appendChild(prodElement);
@@ -219,8 +219,7 @@ function placeZiehstapel(_k) {
 function placeSpielStapel(_k) {
     let prodElement = document.createElement('div');
     prodElement.innerHTML = `<div class="Spielstapel">
-    <p>${_k.symbol}</p>
-    <p class="rot">${_k.rot}</p>
+   
     <p>${_k.zahl}</p>
     </div>`;
     document.getElementById("body").appendChild(prodElement);
