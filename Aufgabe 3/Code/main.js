@@ -1,161 +1,161 @@
 let karte01 = {
     zahl: "7",
-    farbe: "rot",
+    rot: true,
     symbol: "Karo",
 };
 let karte02 = {
     zahl: "8",
-    farbe: "rot",
+    rot: true,
     symbol: "Karo",
 };
 let karte03 = {
     zahl: "9",
-    farbe: "rot",
+    rot: true,
     symbol: "Karo",
 };
 let karte04 = {
     zahl: "10",
-    farbe: "rot",
+    rot: true,
     symbol: "Karo",
 };
 let karte05 = {
     zahl: "Bube",
-    farbe: "rot",
+    rot: true,
     symbol: "Karo",
 };
 let karte06 = {
     zahl: "Dame",
-    farbe: "rot",
+    rot: true,
     symbol: "Karo",
 };
 let karte07 = {
     zahl: "Koenig",
-    farbe: "rot",
+    rot: true,
     symbol: "Karo",
 };
 let karte08 = {
     zahl: "Ass",
-    farbe: "rot",
+    rot: true,
     symbol: "Karo",
 };
 let karte09 = {
     zahl: "7",
-    farbe: "rot",
+    rot: true,
     symbol: "Herz",
 };
 let karte10 = {
     zahl: "8",
-    farbe: "rot",
+    rot: true,
     symbol: "Herz",
 };
 let karte11 = {
     zahl: "9",
-    farbe: "rot",
+    rot: true,
     symbol: "Herz",
 };
 let karte12 = {
     zahl: "10",
-    farbe: "rot",
+    rot: true,
     symbol: "Herz",
 };
 let karte13 = {
     zahl: "Bube",
-    farbe: "rot",
+    rot: true,
     symbol: "Herz",
 };
 let karte14 = {
     zahl: "Dame",
-    farbe: "rot",
+    rot: true,
     symbol: "Herz",
 };
 let karte15 = {
     zahl: "Koenig",
-    farbe: "rot",
+    rot: true,
     symbol: "Herz",
 };
 let karte16 = {
     zahl: "Ass",
-    farbe: "rot",
+    rot: true,
     symbol: "Herz",
 };
 let karte17 = {
     zahl: "7",
-    farbe: "schwarz",
+    rot: false,
     symbol: "Piek",
 };
 let karte18 = {
     zahl: "8",
-    farbe: "schwarz",
+    rot: false,
     symbol: "Piek",
 };
 let karte19 = {
     zahl: "9",
-    farbe: "schwarz",
+    rot: false,
     symbol: "Piek",
 };
 let karte20 = {
     zahl: "10",
-    farbe: "schwarz",
+    rot: false,
     symbol: "Piek",
 };
 let karte21 = {
     zahl: "Bube",
-    farbe: "schwarz",
+    rot: false,
     symbol: "Piek",
 };
 let karte22 = {
     zahl: "Dame",
-    farbe: "schwarz",
+    rot: false,
     symbol: "Piek",
 };
 let karte23 = {
     zahl: "Koenig",
-    farbe: "schwarz",
+    rot: false,
     symbol: "Piek",
 };
 let karte24 = {
     zahl: "Ass",
-    farbe: "schwarz",
+    rot: false,
     symbol: "Piek",
 };
 let karte25 = {
     zahl: "7",
-    farbe: "schwarz",
+    rot: false,
     symbol: "Kreuz",
 };
 let karte26 = {
     zahl: "8",
-    farbe: "schwarz",
+    rot: false,
     symbol: "Kreuz",
 };
 let karte27 = {
     zahl: "9",
-    farbe: "schwarz",
+    rot: false,
     symbol: "Kreuz",
 };
 let karte28 = {
     zahl: "10",
-    farbe: "schwarz",
+    rot: false,
     symbol: "Kreuz",
 };
 let karte29 = {
     zahl: "Bube",
-    farbe: "schwarz",
+    rot: false,
     symbol: "Kreuz",
 };
 let karte30 = {
     zahl: "Dame",
-    farbe: "schwarz",
+    rot: false,
     symbol: "Kreuz",
 };
 let karte31 = {
     zahl: "Koenig",
-    farbe: "schwarz",
+    rot: false,
     symbol: "Kreuz",
 };
 let karte32 = {
     zahl: "Ass",
-    farbe: "schwarz",
+    rot: false,
     symbol: "Kreuz",
 };
 //Arrays
@@ -167,5 +167,62 @@ function AnzahlHandkarten() {
     let base = 10;
     let promptValue = prompt("Anzahl der Karten eingeben");
     let Anzahl = parseInt(promptValue, base);
+    KartenInHandstapel(Anzahl);
+}
+function KartenInHandstapel(_Anzahl) {
+    let k = 0;
+    for (let i = 0; i < _Anzahl; i++) {
+        k = Math.floor(Math.random() * Ziehstapel.length);
+        Handstapel.push(Ziehstapel[k]);
+        let removed = Ziehstapel.splice(k, 1);
+        placeHandstapel(Handstapel[i]); //stimmt hier nur, da es durch den loop läuft und die Karten generiert. Aber eben nur stellen aus ziehstapel und nicht aus Handstapel
+        //console.log(Ziehstapel)
+        //console.log(Handstapel)
+    }
+    //console.log(Handstapel)
+    //let x : number = k  // verändert
+    //placeHandstapel(Handstapel[x]) //versuch
+    KartenInSpielstapel();
+    //placeZiehstapel(Ziehstapel[k]) //wird ausgeführt (also eine Karte ist sichtbar, da dort _k (also die wo im SPielstapel ist) gerendert wird)
+    //placeZiehstapel(Ziehstapel[k])
+    for (let i = 0; i < 32; i++) {
+        placeZiehstapel(Ziehstapel[i]);
+    }
+}
+function KartenInSpielstapel() {
+    for (let i = 0; i < 1; i++) {
+        let k = Math.floor(Math.random() * Ziehstapel.length);
+        Spielstapel.push(Ziehstapel[k]);
+        let removed = Ziehstapel.splice(k, 1);
+        placeSpielStapel(Spielstapel[i]);
+    }
+}
+function placeHandstapel(_k) {
+    let prodElement = document.createElement('div');
+    prodElement.innerHTML = `<div class="Handstapel">
+<p>${_k.symbol}</p>
+<p class="rot">${_k.rot}</p>
+<p>${_k.zahl}</p>
+</div>`;
+    document.getElementById("body").appendChild(prodElement);
+}
+function placeZiehstapel(_k) {
+    let prodElement = document.createElement('div');
+    prodElement.innerHTML = `<div class="Ziehstapel">
+    <p>${_k.symbol}</p>
+    <p class="rot">${_k.rot}</p>
+    <p>${_k.zahl}</p>
+    </div>`;
+    document.getElementById("body").appendChild(prodElement);
+}
+//k is undefined?
+function placeSpielStapel(_k) {
+    let prodElement = document.createElement('div');
+    prodElement.innerHTML = `<div class="Spielstapel">
+    <p>${_k.symbol}</p>
+    <p class="rot">${_k.rot}</p>
+    <p>${_k.zahl}</p>
+    </div>`;
+    document.getElementById("body").appendChild(prodElement);
 }
 //# sourceMappingURL=main.js.map

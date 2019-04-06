@@ -1,31 +1,55 @@
 
 #body {
-    background-color: black;
+color: black;
 }
 
 .Ziehstapel {
-top: 20px;
+color: red;
+background-color: white;
+/*float: right; */
+top: 500px;
+left: 20px;
+height: 200px;
+width: 10%;
+border: solid red;
+display: block;
+text-align: center;
 position: absolute;
-left: 50px;
-color: lightgray;
-width: 100%;
-height: 300px;
 }
 
 .Spielstapel {
-top: 200px;
-right: 300px;
-position: absolute;
-color: lightgray;
-width: 100%;
-height: 300px;
+color: green;
+top: 20px;
+right: 20px;
+height: 200px;
+border: solid green;
+width: 10%;
+margin: 10px 10px 10px 10px;
+float: right;
+text-align: center;
+background-color: white;
 }
 
 .Handstapel {
-top: 20px;
-right: 30px;
-position: absolute;
-color: lightgray;
-width: 100%;
-height: 300px;
+color: blue;
+float: left;
+top: 1000px;
+left: 200px;
+height: 200px;
+width: 10%;
+border: solid blue;
+margin: 10px 10px 10px 10px;
+display: block;
+text-align: center;
+/*background-color: white; */
+}
+
+.rot {
+    background-color: red;
+    color: black;
+}
+
+.black {
+    background-color: black;
+    color: white;
 }
