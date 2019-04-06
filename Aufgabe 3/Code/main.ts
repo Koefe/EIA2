@@ -245,7 +245,7 @@ function KartenInHandstapel(_Anzahl: number): void {
 
 }
 
-function KartenInSpielstapel() {
+function KartenInSpielstapel() :void {
     for (let i: number = 0; i < 1; i++) {
         let k: number = Math.floor(Math.random() * Ziehstapel.length)
         Spielstapel.push(Ziehstapel[k]);
@@ -255,7 +255,7 @@ function KartenInSpielstapel() {
     }
 }
 
-function placeHandstapel(_k: Spielkarte) { //verändert
+function placeHandstapel(_k: Spielkarte) :void { //verändert
 
     let prodElement = document.createElement('div');
     prodElement.innerHTML = `<div class="Handstapel">
@@ -268,7 +268,7 @@ function placeHandstapel(_k: Spielkarte) { //verändert
     document.getElementById("body").appendChild(prodElement);
 }
 
-function placeZiehstapel(_k: Spielkarte) {         //k : number
+function placeZiehstapel(_k: Spielkarte) :void {         //k : number
     let prodElement = document.createElement('div');
     prodElement.innerHTML = `<div class="Ziehstapel">
     <p>${_k.symbol}</p>
@@ -282,7 +282,7 @@ function placeZiehstapel(_k: Spielkarte) {         //k : number
 
 //k is undefined?
 
-function placeSpielStapel(_k: Spielkarte) {
+function placeSpielStapel(_k: Spielkarte) :void {
     let prodElement = document.createElement('div');
     prodElement.innerHTML = `<div class="Spielstapel">
     <p>${_k.symbol}</p>
