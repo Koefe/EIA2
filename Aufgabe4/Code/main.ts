@@ -245,7 +245,8 @@ namespace MauMau {
 
     let Spielstapel: Spielkarte[] = []
 
-    document.addEventListener("DOMContentLoaded", AnzahlHandkarten)
+    document.addEventListener("DOMContentLoaded", AnzahlHandkarten);
+    document.addEventListener("DOMContentLoaded", init);
 
     function AnzahlHandkarten(): void {
         let base = 10;
@@ -293,12 +294,12 @@ namespace MauMau {
 
     function placeHandstapel(_k: Spielkarte): void { //verändert
 
-        let prodElement = document.createElement('div');
+        let prodElement = document.createElement('fieldset');
         prodElement.innerHTML = `<div class="Handstapel">
 <p>${_k.symbol}</p>
 <p>${_k.farbe}</p>
 <p>${_k.zahl}</p>
-</div>`;
+</fieldset>`;
 
 
         document.getElementById("body").appendChild(prodElement);
@@ -330,6 +331,19 @@ namespace MauMau {
         document.getElementById("body").appendChild(prodElement);
     }
 
+    //Neue Aufgabe4
+
+
+
+    function init(): void {
+        for (let i: number = 0; i < Handstapel.length; i++) {
+            let fieldset: HTMLFieldSetElement = document.getElementsByTagName("fieldset")[i];
+            fieldset.addEventListener("click", clickHandler);
+        }
+    }
+    function clickHandler(_event: Event): void {
+        console.log(_event.target)
+
+    }
 
 }
-

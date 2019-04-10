@@ -11,7 +11,7 @@ background-color: white;
 top: 500px;
 left: 20px;
 height: 200px;
-width: 10%;
+width: 125px;
 border: solid red;
 display: block;
 text-align: center;
@@ -24,7 +24,7 @@ top: 20px;
 right: 20px;
 height: 200px;
 border: solid green;
-width: 10%;
+width: 125px;
 margin: 10px 10px 10px 10px;
 float: right;
 text-align: center;
@@ -37,7 +37,7 @@ float: left;
 top: 1000px;
 left: 200px;
 height: 200px;
-width: 10%;
+width: 125px;
 border: solid blue;
 margin: 10px 10px 10px 10px;
 display: block;
@@ -54,4 +54,9 @@ background-color: white;
 .black {
     background-color: black;
     color: white;
+}
+
+fieldset {
+    width: 125px;
+    float: left;
 }

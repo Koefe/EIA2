@@ -197,6 +197,7 @@ var MauMau;
     let Handstapel = [];
     let Spielstapel = [];
     document.addEventListener("DOMContentLoaded", AnzahlHandkarten);
+    document.addEventListener("DOMContentLoaded", init);
     function AnzahlHandkarten() {
         let base = 10;
         let promptValue = prompt("Anzahl der Karten eingeben");
@@ -231,12 +232,12 @@ var MauMau;
         placeSpielStapel(Spielstapel[i]);
     }
     function placeHandstapel(_k) {
-        let prodElement = document.createElement('div');
+        let prodElement = document.createElement('fieldset');
         prodElement.innerHTML = `<div class="Handstapel">
 <p>${_k.symbol}</p>
 <p>${_k.farbe}</p>
 <p>${_k.zahl}</p>
-</div>`;
+</fieldset>`;
         document.getElementById("body").appendChild(prodElement);
     }
     function placeZiehstapel(_k) {
@@ -257,6 +258,16 @@ var MauMau;
     <p>${_k.zahl}</p>
     </div>`;
         document.getElementById("body").appendChild(prodElement);
+    }
+    //Neue Aufgabe4
+    function init() {
+        for (let i = 0; i < Handstapel.length; i++) {
+            let fieldset = document.getElementsByTagName("fieldset")[i];
+            fieldset.addEventListener("click", clickHandler);
+        }
+    }
+    function clickHandler(_event) {
+        console.log(_event.target);
     }
 })(MauMau || (MauMau = {}));
 //# sourceMappingURL=main.js.map
