@@ -199,7 +199,7 @@ var MauMau;
     document.addEventListener("DOMContentLoaded", anzahlHandkarten);
     document.addEventListener("DOMContentLoaded", init);
     document.addEventListener("DOMContentLoaded", definieren);
-    document.addEventListener("DOMContentLoaded", keydown);
+    //document.addEventListener("DOMContentLoaded", keydown)
     function anzahlHandkarten() {
         let base = 10;
         let promptValue = prompt("Anzahl der Karten eingeben");
@@ -322,7 +322,10 @@ var MauMau;
     </fieldset>`;
         document.getElementById("Handkasten").appendChild(prodElement);
     }
-    function keydown() {
-    }
+    document.addEventListener("keydown", function (event) {
+        if (event.keyCode == 32) {
+            vonZiehstapelInHandstapel();
+        }
+    });
 })(MauMau || (MauMau = {}));
 //# sourceMappingURL=main.js.map

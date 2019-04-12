@@ -1,7 +1,6 @@
 
 namespace MauMau {
 
-
     interface Spielkarte {
         zahl: string;
         //rot: boolean;
@@ -248,7 +247,7 @@ namespace MauMau {
     document.addEventListener("DOMContentLoaded", anzahlHandkarten);
     document.addEventListener("DOMContentLoaded", init);
     document.addEventListener("DOMContentLoaded", definieren);
-    document.addEventListener("DOMContentLoaded", keydown)
+    //document.addEventListener("DOMContentLoaded", keydown)
 
     function anzahlHandkarten(): void {
         let base = 10;
@@ -383,18 +382,18 @@ namespace MauMau {
         }
     }
 
-    function vonZiehstapelInHandstapel() {
+    function vonZiehstapelInHandstapel(): void {
         let k: number = Math.floor(Math.random() * ziehstapel.length);
         handstapel.push(ziehstapel[k]);
         ziehstapel.splice(k, 1);
         document.getElementById("Handkasten").innerHTML = "";
-        for(let i: number = 0; i < handstapel.length; i++) {
+        for (let i: number = 0; i < handstapel.length; i++) {
             placeHandstapelneu(handstapel[i], i)
         }
         init()
     }
 
-    function placeHandstapelneu(_k: Spielkarte, _i: number){
+    function placeHandstapelneu(_k: Spielkarte, _i: number): void {
         let prodElement = document.createElement('div');
         prodElement.innerHTML = `<fieldset class="Handstapel" id="${_i}">
     <p>${_k.symbol}</p>
@@ -404,8 +403,13 @@ namespace MauMau {
         document.getElementById("Handkasten").appendChild(prodElement);
     }
 
-function keydown() : void{
 
-}
+    document.addEventListener("keydown", function (event) {
+        if (event.keyCode == 32) {
+            vonZiehstapelInHandstapel();
+        }
+    })
 
+   
+    
 }
