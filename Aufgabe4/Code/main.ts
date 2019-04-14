@@ -507,3 +507,5 @@ function sortiereKarten(_a:Spielkarte, _b:Spielkarte): number {
 
 
 }
+
+
