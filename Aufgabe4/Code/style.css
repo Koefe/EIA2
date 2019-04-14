@@ -20,7 +20,7 @@ position: absolute;
 
 .Spielstapel {
 color: black;
-right: 20px;
+right: 50px;
 height: 200px;
 border: solid lightgray;
 width: 125px;
@@ -60,6 +60,8 @@ fieldset {
     float: left;
 }
 
-.gestylt {
-    margin: 50px 50px 50px 50px;
+#button {
+    position: absolute;
+    left: 800px;
+    top: 240px;
 }

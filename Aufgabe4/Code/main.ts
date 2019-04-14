@@ -6,7 +6,7 @@ namespace MauMau {
         //rot: boolean;
         farbe: string;
         symbol: string;
-        karten_wert_symbol: number;
+        karten_wert_symbol: string;
         //zwei_ziehen: boolean; 
         //aussetzten: boolean;
         //wünschen: boolean;
@@ -18,7 +18,7 @@ namespace MauMau {
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: 1,
+        karten_wert_symbol: "1",
     }
 
     let karte02: Spielkarte = {
@@ -26,7 +26,7 @@ namespace MauMau {
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: 2,
+        karten_wert_symbol: "1",
     }
 
     let karte03: Spielkarte = {
@@ -34,7 +34,7 @@ namespace MauMau {
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: 3,
+        karten_wert_symbol: "1",
     }
 
     let karte04: Spielkarte = {
@@ -42,7 +42,7 @@ namespace MauMau {
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: 4,
+        karten_wert_symbol: "1",
     }
 
     let karte05: Spielkarte = {
@@ -50,7 +50,7 @@ namespace MauMau {
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: 5,
+        karten_wert_symbol: "1",
     }
 
     let karte06: Spielkarte = {
@@ -58,7 +58,7 @@ namespace MauMau {
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: 6,
+        karten_wert_symbol: "1",
     }
 
     let karte07: Spielkarte = {
@@ -66,7 +66,7 @@ namespace MauMau {
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: 7,
+        karten_wert_symbol: "1",
     }
 
     let karte08: Spielkarte = {
@@ -74,7 +74,7 @@ namespace MauMau {
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: 8,
+        karten_wert_symbol: "1",
     }
 
     let karte09: Spielkarte = {
@@ -82,7 +82,7 @@ namespace MauMau {
         //rot: true,
         farbe: "rot",
         symbol: "♥",
-        karten_wert_symbol: 9,
+        karten_wert_symbol: "2",
     }
 
     let karte10: Spielkarte = {
@@ -90,7 +90,7 @@ namespace MauMau {
         //rot: true,
         farbe: "rot",
         symbol: "♥",
-        karten_wert_symbol: 10,
+        karten_wert_symbol: "2",
     }
 
     let karte11: Spielkarte = {
@@ -98,7 +98,7 @@ namespace MauMau {
         //rot: true,
         farbe: "rot",
         symbol: "♥",
-        karten_wert_symbol: 11,
+        karten_wert_symbol: "2",
     }
 
     let karte12: Spielkarte = {
@@ -106,7 +106,7 @@ namespace MauMau {
         //rot: true,
         farbe: "rot",
         symbol: "♥",
-        karten_wert_symbol: 12,
+        karten_wert_symbol: "2",
     }
 
     let karte13: Spielkarte = {
@@ -114,7 +114,7 @@ namespace MauMau {
         //rot: true,
         farbe: "rot",
         symbol: "♥",
-        karten_wert_symbol: 13,
+        karten_wert_symbol: "2",
     }
 
     let karte14: Spielkarte = {
@@ -122,7 +122,7 @@ namespace MauMau {
         //rot: true,
         farbe: "rot",
         symbol: "♥",
-        karten_wert_symbol: 14,
+        karten_wert_symbol: "2",
     }
     
 
@@ -131,7 +131,7 @@ namespace MauMau {
         //rot: true,
         farbe: "rot",
         symbol: "♥",
-        karten_wert_symbol: 15,
+        karten_wert_symbol: "2",
     }
 
     let karte16: Spielkarte = {
@@ -139,7 +139,7 @@ namespace MauMau {
         //rot: true,
         farbe: "rot",
         symbol: "♥",
-        karten_wert_symbol: 16,
+        karten_wert_symbol: "2",
     }
 
     let karte17: Spielkarte = {
@@ -147,7 +147,7 @@ namespace MauMau {
         //rot: false,
         farbe: "schwarz",
         symbol: "♠",
-        karten_wert_symbol: 17,
+        karten_wert_symbol: "3",
     }
 
     let karte18: Spielkarte = {
@@ -155,7 +155,7 @@ namespace MauMau {
         //rot: false,
         farbe: "schwarz",
         symbol: "♠",
-        karten_wert_symbol: 18,
+        karten_wert_symbol: "3",
     }
 
     let karte19: Spielkarte = {
@@ -163,7 +163,7 @@ namespace MauMau {
         //rot: false,
         farbe: "schwarz",
         symbol: "♠",
-        karten_wert_symbol: 19,
+        karten_wert_symbol: "3",
     }
 
     let karte20: Spielkarte = {
@@ -171,7 +171,7 @@ namespace MauMau {
         //rot: false,
         farbe: "schwarz",
         symbol: "♠",
-        karten_wert_symbol: 20,
+        karten_wert_symbol: "3",
     }
 
     let karte21: Spielkarte = {
@@ -179,7 +179,7 @@ namespace MauMau {
         //rot: false,
         farbe: "schwarz",
         symbol: "♠",
-        karten_wert_symbol: 21,
+        karten_wert_symbol: "3",
     }
 
     let karte22: Spielkarte = {
@@ -187,7 +187,7 @@ namespace MauMau {
         //rot: false,
         farbe: "schwarz",
         symbol: "♠",
-        karten_wert_symbol: 22,
+        karten_wert_symbol: "3",
     }
 
     let karte23: Spielkarte = {
@@ -195,7 +195,7 @@ namespace MauMau {
         //rot: false,
         farbe: "schwarz",
         symbol: "♠",
-        karten_wert_symbol: 23,
+        karten_wert_symbol: "3",
     }
 
     let karte24: Spielkarte = {
@@ -203,7 +203,7 @@ namespace MauMau {
         //rot: false,
         farbe: "schwarz",
         symbol: "♠",
-        karten_wert_symbol: 24,
+        karten_wert_symbol: "3",
     }
 
     let karte25: Spielkarte = {
@@ -211,7 +211,7 @@ namespace MauMau {
         //rot: false,
         farbe: "schwarz",
         symbol: "♣",
-        karten_wert_symbol: 25,
+        karten_wert_symbol: "4",
     }
 
     let karte26: Spielkarte = {
@@ -219,7 +219,7 @@ namespace MauMau {
         //rot: false,
         farbe: "schwarz",
         symbol: "♣",
-        karten_wert_symbol: 26,
+        karten_wert_symbol: "4",
     }
 
     let karte27: Spielkarte = {
@@ -227,7 +227,7 @@ namespace MauMau {
         //rot: false,
         farbe: "schwarz",
         symbol: "♣",
-        karten_wert_symbol: 27,
+        karten_wert_symbol: "4",
     }
 
     let karte28: Spielkarte = {
@@ -235,7 +235,7 @@ namespace MauMau {
         //rot: false,
         farbe: "schwarz",
         symbol: "♣",
-        karten_wert_symbol: 28,
+        karten_wert_symbol: "4",
     }
 
     let karte29: Spielkarte = {
@@ -243,7 +243,7 @@ namespace MauMau {
         //rot: false,
         farbe: "schwarz",
         symbol: "♣",
-        karten_wert_symbol: 29,
+        karten_wert_symbol: "4",
     }
 
     let karte30: Spielkarte = {
@@ -251,7 +251,7 @@ namespace MauMau {
         //rot: false,
         farbe: "schwarz",
         symbol: "♣",
-        karten_wert_symbol: 30,
+        karten_wert_symbol: "4",
     }
 
     let karte31: Spielkarte = {
@@ -259,7 +259,7 @@ namespace MauMau {
         //rot: false,
         farbe: "schwarz",
         symbol: "♣",
-        karten_wert_symbol: 31,
+        karten_wert_symbol: "4",
     }
 
     let karte32: Spielkarte = {
@@ -267,7 +267,7 @@ namespace MauMau {
         //rot: false,
         farbe: "schwarz",
         symbol: "♣",
-        karten_wert_symbol: 32,
+        karten_wert_symbol: "4",
     }
 
     //Arrays
@@ -369,6 +369,8 @@ namespace MauMau {
     //Neue Aufgabe4
 
     function init(): void {
+        document.getElementById('button').addEventListener("click", sortCard);
+
         for (let i: number = 0; i < handstapel.length; i++) {
             let handkartenEvent: HTMLFieldSetElement = <HTMLFieldSetElement>document.getElementsByClassName("Handstapel")[i];
             handkartenEvent.addEventListener("click", handstapelInSpielstapel);
@@ -460,26 +462,47 @@ namespace MauMau {
 
 //handstapel.sort(whatever())
 
-document.addEventListener("DOMContentLoaded", buttonErstellen);
+//document.addEventListener("DOMContentLoaded", buttonErstellen);
 
-function buttonErstellen(): void {
-    let prodElement = document.createElement('div');
-    prodElement.innerHTML = `<button id="button">Sortieren</button> </div>`;
-    document.getElementById("button").appendChild(prodElement);
+//function buttonErstellen(): void {
+//    let prodElement = document.createElement('div');
+//    prodElement.innerHTML = `<button id="button">Sortieren</button> </div>`;
+//    document.getElementById("button").appendChild(prodElement);
+//}
+
+
+//function whatever() : void {
+//handstapel = [];
+//handstapel.sort();
+//console.log(handstapel);
+//}
+
+//function buttonGedruckt(_event: MouseEvent) {
+//	console.log(_event)
+//}
+
+//document.getElementById('button').addEventListener("click", sortCard);
+
+function sortCard():void{
+	handstapel.sort(sortiereKarten)
+	console.log(handstapel)
+
+	document.getElementById("Handkasten").innerHTML = '';
+	for (let i: number = 0; i < handstapel.length; i++) {
+		placeHandstapelneu(handstapel[i], i)
+	}
+	//init();
 }
 
-
-function whatever() : void {
-handstapel = [];
-handstapel.sort();
-console.log(handstapel);
+function sortiereKarten(_a:Spielkarte, _b:Spielkarte): number {
+	if (_a.karten_wert_symbol < _b.karten_wert_symbol) {
+		return -1;
+	}
+	if (_a.karten_wert_symbol > _b.karten_wert_symbol) {
+		return 1;
+	}
+	return 0;
 }
-
-function buttonGedruckt(_event: MouseEvent) {
-	console.log(_event)
-}
-
-
 
 
 

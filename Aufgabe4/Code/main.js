@@ -5,224 +5,224 @@ var MauMau;
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: 1,
+        karten_wert_symbol: "1",
     };
     let karte02 = {
         zahl: "8",
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: 2,
+        karten_wert_symbol: "1",
     };
     let karte03 = {
         zahl: "9",
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: 3,
+        karten_wert_symbol: "1",
     };
     let karte04 = {
         zahl: "10",
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: 4,
+        karten_wert_symbol: "1",
     };
     let karte05 = {
         zahl: "Bube",
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: 5,
+        karten_wert_symbol: "1",
     };
     let karte06 = {
         zahl: "Dame",
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: 6,
+        karten_wert_symbol: "1",
     };
     let karte07 = {
         zahl: "Koenig",
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: 7,
+        karten_wert_symbol: "1",
     };
     let karte08 = {
         zahl: "Ass",
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: 8,
+        karten_wert_symbol: "1",
     };
     let karte09 = {
         zahl: "7",
         //rot: true,
         farbe: "rot",
         symbol: "♥",
-        karten_wert_symbol: 9,
+        karten_wert_symbol: "2",
     };
     let karte10 = {
         zahl: "8",
         //rot: true,
         farbe: "rot",
         symbol: "♥",
-        karten_wert_symbol: 10,
+        karten_wert_symbol: "2",
     };
     let karte11 = {
         zahl: "9",
         //rot: true,
         farbe: "rot",
         symbol: "♥",
-        karten_wert_symbol: 11,
+        karten_wert_symbol: "2",
     };
     let karte12 = {
         zahl: "10",
         //rot: true,
         farbe: "rot",
         symbol: "♥",
-        karten_wert_symbol: 12,
+        karten_wert_symbol: "2",
     };
     let karte13 = {
         zahl: "Bube",
         //rot: true,
         farbe: "rot",
         symbol: "♥",
-        karten_wert_symbol: 13,
+        karten_wert_symbol: "2",
     };
     let karte14 = {
         zahl: "Dame",
         //rot: true,
         farbe: "rot",
         symbol: "♥",
-        karten_wert_symbol: 14,
+        karten_wert_symbol: "2",
     };
     let karte15 = {
         zahl: "Koenig",
         //rot: true,
         farbe: "rot",
         symbol: "♥",
-        karten_wert_symbol: 15,
+        karten_wert_symbol: "2",
     };
     let karte16 = {
         zahl: "Ass",
         //rot: true,
         farbe: "rot",
         symbol: "♥",
-        karten_wert_symbol: 16,
+        karten_wert_symbol: "2",
     };
     let karte17 = {
         zahl: "7",
         //rot: false,
         farbe: "schwarz",
         symbol: "♠",
-        karten_wert_symbol: 17,
+        karten_wert_symbol: "3",
     };
     let karte18 = {
         zahl: "8",
         //rot: false,
         farbe: "schwarz",
         symbol: "♠",
-        karten_wert_symbol: 18,
+        karten_wert_symbol: "3",
     };
     let karte19 = {
         zahl: "9",
         //rot: false,
         farbe: "schwarz",
         symbol: "♠",
-        karten_wert_symbol: 19,
+        karten_wert_symbol: "3",
     };
     let karte20 = {
         zahl: "10",
         //rot: false,
         farbe: "schwarz",
         symbol: "♠",
-        karten_wert_symbol: 20,
+        karten_wert_symbol: "3",
     };
     let karte21 = {
         zahl: "Bube",
         //rot: false,
         farbe: "schwarz",
         symbol: "♠",
-        karten_wert_symbol: 21,
+        karten_wert_symbol: "3",
     };
     let karte22 = {
         zahl: "Dame",
         //rot: false,
         farbe: "schwarz",
         symbol: "♠",
-        karten_wert_symbol: 22,
+        karten_wert_symbol: "3",
     };
     let karte23 = {
         zahl: "Koenig",
         //rot: false,
         farbe: "schwarz",
         symbol: "♠",
-        karten_wert_symbol: 23,
+        karten_wert_symbol: "3",
     };
     let karte24 = {
         zahl: "Ass",
         //rot: false,
         farbe: "schwarz",
         symbol: "♠",
-        karten_wert_symbol: 24,
+        karten_wert_symbol: "3",
     };
     let karte25 = {
         zahl: "7",
         //rot: false,
         farbe: "schwarz",
         symbol: "♣",
-        karten_wert_symbol: 25,
+        karten_wert_symbol: "4",
     };
     let karte26 = {
         zahl: "8",
         //rot: false,
         farbe: "schwarz",
         symbol: "♣",
-        karten_wert_symbol: 26,
+        karten_wert_symbol: "4",
     };
     let karte27 = {
         zahl: "9",
         //rot: false,
         farbe: "schwarz",
         symbol: "♣",
-        karten_wert_symbol: 27,
+        karten_wert_symbol: "4",
     };
     let karte28 = {
         zahl: "10",
         //rot: false,
         farbe: "schwarz",
         symbol: "♣",
-        karten_wert_symbol: 28,
+        karten_wert_symbol: "4",
     };
     let karte29 = {
         zahl: "Bube",
         //rot: false,
         farbe: "schwarz",
         symbol: "♣",
-        karten_wert_symbol: 29,
+        karten_wert_symbol: "4",
     };
     let karte30 = {
         zahl: "Dame",
         //rot: false,
         farbe: "schwarz",
         symbol: "♣",
-        karten_wert_symbol: 30,
+        karten_wert_symbol: "4",
     };
     let karte31 = {
         zahl: "Koenig",
         //rot: false,
         farbe: "schwarz",
         symbol: "♣",
-        karten_wert_symbol: 31,
+        karten_wert_symbol: "4",
     };
     let karte32 = {
         zahl: "Ass",
         //rot: false,
         farbe: "schwarz",
         symbol: "♣",
-        karten_wert_symbol: 32,
+        karten_wert_symbol: "4",
     };
     //Arrays
     let ziehstapel = [karte01, karte02, karte03, karte04, karte05, karte06, karte07, karte08, karte09, karte10, karte11, karte12, karte13, karte14, karte15, karte16, karte17, karte18, karte19, karte20, karte21, karte22, karte23, karte24, karte25, karte26, karte27, karte28, karte29, karte30, karte31, karte32];
@@ -295,6 +295,7 @@ var MauMau;
     }
     //Neue Aufgabe4
     function init() {
+        document.getElementById('button').addEventListener("click", sortCard);
         for (let i = 0; i < handstapel.length; i++) {
             let handkartenEvent = document.getElementsByClassName("Handstapel")[i];
             handkartenEvent.addEventListener("click", handstapelInSpielstapel);
@@ -369,19 +370,38 @@ var MauMau;
     //        console.log("Hallo");
     //    }
     //handstapel.sort(whatever())
-    document.addEventListener("DOMContentLoaded", buttonErstellen);
-    function buttonErstellen() {
-        let prodElement = document.createElement('div');
-        prodElement.innerHTML = `<button id="button">Sortieren</button> </div>`;
-        document.getElementById("button").appendChild(prodElement);
-    }
-    function whatever() {
-        handstapel = [];
-        handstapel.sort();
+    //document.addEventListener("DOMContentLoaded", buttonErstellen);
+    //function buttonErstellen(): void {
+    //    let prodElement = document.createElement('div');
+    //    prodElement.innerHTML = `<button id="button">Sortieren</button> </div>`;
+    //    document.getElementById("button").appendChild(prodElement);
+    //}
+    //function whatever() : void {
+    //handstapel = [];
+    //handstapel.sort();
+    //console.log(handstapel);
+    //}
+    //function buttonGedruckt(_event: MouseEvent) {
+    //	console.log(_event)
+    //}
+    //document.getElementById('button').addEventListener("click", sortCard);
+    function sortCard() {
+        handstapel.sort(sortiereKarten);
         console.log(handstapel);
+        document.getElementById("Handkasten").innerHTML = '';
+        for (let i = 0; i < handstapel.length; i++) {
+            placeHandstapelneu(handstapel[i], i);
+        }
+        //init();
     }
-    function buttonGedruckt(_event) {
-        console.log(_event);
+    function sortiereKarten(_a, _b) {
+        if (_a.karten_wert_symbol < _b.karten_wert_symbol) {
+            return -1;
+        }
+        if (_a.karten_wert_symbol > _b.karten_wert_symbol) {
+            return 1;
+        }
+        return 0;
     }
 })(MauMau || (MauMau = {}));
 //# sourceMappingURL=main.js.map
