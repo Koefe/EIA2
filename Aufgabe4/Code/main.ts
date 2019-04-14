@@ -6,6 +6,7 @@ namespace MauMau {
         //rot: boolean;
         farbe: string;
         symbol: string;
+        karten_wert_symbol: number;
         //zwei_ziehen: boolean; 
         //aussetzten: boolean;
         //wünschen: boolean;
@@ -16,224 +17,257 @@ namespace MauMau {
         zahl: "7",
         //rot: true,
         farbe: "rot",
-        symbol: "Karo",
+        symbol: "♦",
+        karten_wert_symbol: 1,
     }
 
     let karte02: Spielkarte = {
         zahl: "8",
         //rot: true,
         farbe: "rot",
-        symbol: "Karo",
+        symbol: "♦",
+        karten_wert_symbol: 2,
     }
 
     let karte03: Spielkarte = {
         zahl: "9",
         //rot: true,
         farbe: "rot",
-        symbol: "Karo",
+        symbol: "♦",
+        karten_wert_symbol: 3,
     }
 
     let karte04: Spielkarte = {
         zahl: "10",
         //rot: true,
         farbe: "rot",
-        symbol: "Karo",
+        symbol: "♦",
+        karten_wert_symbol: 4,
     }
 
     let karte05: Spielkarte = {
         zahl: "Bube",
         //rot: true,
         farbe: "rot",
-        symbol: "Karo",
+        symbol: "♦",
+        karten_wert_symbol: 5,
     }
 
     let karte06: Spielkarte = {
         zahl: "Dame",
         //rot: true,
         farbe: "rot",
-        symbol: "Karo",
+        symbol: "♦",
+        karten_wert_symbol: 6,
     }
 
     let karte07: Spielkarte = {
         zahl: "Koenig",
         //rot: true,
         farbe: "rot",
-        symbol: "Karo",
+        symbol: "♦",
+        karten_wert_symbol: 7,
     }
 
     let karte08: Spielkarte = {
         zahl: "Ass",
         //rot: true,
         farbe: "rot",
-        symbol: "Karo",
+        symbol: "♦",
+        karten_wert_symbol: 8,
     }
 
     let karte09: Spielkarte = {
         zahl: "7",
         //rot: true,
         farbe: "rot",
-        symbol: "Herz",
+        symbol: "♥",
+        karten_wert_symbol: 9,
     }
 
     let karte10: Spielkarte = {
         zahl: "8",
         //rot: true,
         farbe: "rot",
-        symbol: "Herz",
+        symbol: "♥",
+        karten_wert_symbol: 10,
     }
 
     let karte11: Spielkarte = {
         zahl: "9",
         //rot: true,
         farbe: "rot",
-        symbol: "Herz",
+        symbol: "♥",
+        karten_wert_symbol: 11,
     }
 
     let karte12: Spielkarte = {
         zahl: "10",
         //rot: true,
         farbe: "rot",
-        symbol: "Herz",
+        symbol: "♥",
+        karten_wert_symbol: 12,
     }
 
     let karte13: Spielkarte = {
         zahl: "Bube",
         //rot: true,
         farbe: "rot",
-        symbol: "Herz",
+        symbol: "♥",
+        karten_wert_symbol: 13,
     }
 
     let karte14: Spielkarte = {
         zahl: "Dame",
         //rot: true,
         farbe: "rot",
-        symbol: "Herz",
+        symbol: "♥",
+        karten_wert_symbol: 14,
     }
+    
 
     let karte15: Spielkarte = {
         zahl: "Koenig",
         //rot: true,
         farbe: "rot",
-        symbol: "Herz",
+        symbol: "♥",
+        karten_wert_symbol: 15,
     }
 
     let karte16: Spielkarte = {
         zahl: "Ass",
         //rot: true,
         farbe: "rot",
-        symbol: "Herz",
+        symbol: "♥",
+        karten_wert_symbol: 16,
     }
 
     let karte17: Spielkarte = {
         zahl: "7",
         //rot: false,
         farbe: "schwarz",
-        symbol: "Piek",
+        symbol: "♠",
+        karten_wert_symbol: 17,
     }
 
     let karte18: Spielkarte = {
         zahl: "8",
         //rot: false,
         farbe: "schwarz",
-        symbol: "Piek",
+        symbol: "♠",
+        karten_wert_symbol: 18,
     }
 
     let karte19: Spielkarte = {
         zahl: "9",
         //rot: false,
         farbe: "schwarz",
-        symbol: "Piek",
+        symbol: "♠",
+        karten_wert_symbol: 19,
     }
 
     let karte20: Spielkarte = {
         zahl: "10",
         //rot: false,
         farbe: "schwarz",
-        symbol: "Piek",
+        symbol: "♠",
+        karten_wert_symbol: 20,
     }
 
     let karte21: Spielkarte = {
         zahl: "Bube",
         //rot: false,
         farbe: "schwarz",
-        symbol: "Piek",
+        symbol: "♠",
+        karten_wert_symbol: 21,
     }
 
     let karte22: Spielkarte = {
         zahl: "Dame",
         //rot: false,
         farbe: "schwarz",
-        symbol: "Piek",
+        symbol: "♠",
+        karten_wert_symbol: 22,
     }
 
     let karte23: Spielkarte = {
         zahl: "Koenig",
         //rot: false,
         farbe: "schwarz",
-        symbol: "Piek",
+        symbol: "♠",
+        karten_wert_symbol: 23,
     }
 
     let karte24: Spielkarte = {
         zahl: "Ass",
         //rot: false,
         farbe: "schwarz",
-        symbol: "Piek",
+        symbol: "♠",
+        karten_wert_symbol: 24,
     }
 
     let karte25: Spielkarte = {
         zahl: "7",
         //rot: false,
         farbe: "schwarz",
-        symbol: "Kreuz",
+        symbol: "♣",
+        karten_wert_symbol: 25,
     }
 
     let karte26: Spielkarte = {
         zahl: "8",
         //rot: false,
         farbe: "schwarz",
-        symbol: "Kreuz",
+        symbol: "♣",
+        karten_wert_symbol: 26,
     }
 
     let karte27: Spielkarte = {
         zahl: "9",
         //rot: false,
         farbe: "schwarz",
-        symbol: "Kreuz",
+        symbol: "♣",
+        karten_wert_symbol: 27,
     }
 
     let karte28: Spielkarte = {
         zahl: "10",
         //rot: false,
         farbe: "schwarz",
-        symbol: "Kreuz",
+        symbol: "♣",
+        karten_wert_symbol: 28,
     }
 
     let karte29: Spielkarte = {
         zahl: "Bube",
         //rot: false,
         farbe: "schwarz",
-        symbol: "Kreuz",
+        symbol: "♣",
+        karten_wert_symbol: 29,
     }
 
     let karte30: Spielkarte = {
         zahl: "Dame",
         //rot: false,
         farbe: "schwarz",
-        symbol: "Kreuz",
+        symbol: "♣",
+        karten_wert_symbol: 30,
     }
 
     let karte31: Spielkarte = {
         zahl: "Koenig",
         //rot: false,
         farbe: "schwarz",
-        symbol: "Kreuz",
+        symbol: "♣",
+        karten_wert_symbol: 31,
     }
 
     let karte32: Spielkarte = {
         zahl: "Ass",
         //rot: false,
         farbe: "schwarz",
-        symbol: "Kreuz",
+        symbol: "♣",
+        karten_wert_symbol: 32,
     }
 
     //Arrays
@@ -377,8 +411,8 @@ namespace MauMau {
 
     function definieren(): void {
         for (let i: number = 0; i <= ziehstapel.length; i++) {
-            let handkartenEvent: HTMLFieldSetElement = <HTMLFieldSetElement>document.getElementsByClassName("Ziehstapel")[i];
-            handkartenEvent.addEventListener("click", vonZiehstapelInHandstapel);
+            let ziehKarte: HTMLFieldSetElement = <HTMLFieldSetElement>document.getElementsByClassName("Ziehstapel")[i];
+            ziehKarte.addEventListener("click", vonZiehstapelInHandstapel);
         }
     }
 
@@ -390,7 +424,8 @@ namespace MauMau {
         for (let i: number = 0; i < handstapel.length; i++) {
             placeHandstapelneu(handstapel[i], i)
         }
-        init()
+        init();
+        
     }
 
     function placeHandstapelneu(_k: Spielkarte, _i: number): void {
@@ -410,6 +445,42 @@ namespace MauMau {
         }
     })
 
-   
-    
+   //Button zum Sortieren - Hab keine Ahnung wie das funktioniert :(
+
+//    document.addEventListener("DOMContentLoaded", buttondrucken)
+
+//    function buttondrucken() : void {
+//        let button: HTMLButtonElement = <HTMLButtonElement>document.getElementsByClassName("button")[1];
+//           button.addEventListener("click", buttonWurdeGedruckt);
+    //}
+
+//    function buttonWurdeGedruckt(event: MouseEvent) : void {
+//        console.log("Hallo");
+//    }
+
+//handstapel.sort(whatever())
+
+document.addEventListener("DOMContentLoaded", buttonErstellen);
+
+function buttonErstellen(): void {
+    let prodElement = document.createElement('div');
+    prodElement.innerHTML = `<button id="button">Sortieren</button> </div>`;
+    document.getElementById("button").appendChild(prodElement);
+}
+
+
+function whatever() : void {
+handstapel = [];
+handstapel.sort();
+console.log(handstapel);
+}
+
+function buttonGedruckt(_event: MouseEvent) {
+	console.log(_event)
+}
+
+
+
+
+
 }
