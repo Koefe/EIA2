@@ -385,14 +385,14 @@ var MauMau;
     //	console.log(_event)
     //}
     //document.getElementById('button').addEventListener("click", sortCard);
-    function sortCard() {
+    function sortCard(_event) {
         handstapel.sort(sortiereKarten);
         console.log(handstapel);
         document.getElementById("Handkasten").innerHTML = '';
         for (let i = 0; i < handstapel.length; i++) {
             placeHandstapelneu(handstapel[i], i);
         }
-        //init();
+        init();
     }
     function sortiereKarten(_a, _b) {
         if (_a.karten_wert_symbol < _b.karten_wert_symbol) {

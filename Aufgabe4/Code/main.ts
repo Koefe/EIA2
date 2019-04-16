@@ -441,7 +441,7 @@ namespace MauMau {
     }
 
 
-    document.addEventListener("keydown", function (event) {
+    document.addEventListener("keydown", function (event) : void {
         if (event.keyCode == 32) {
             vonZiehstapelInHandstapel();
         }
@@ -483,7 +483,7 @@ namespace MauMau {
 
 //document.getElementById('button').addEventListener("click", sortCard);
 
-function sortCard():void{
+function sortCard(_event : Event):void{
 	handstapel.sort(sortiereKarten)
 	console.log(handstapel)
 
@@ -491,7 +491,7 @@ function sortCard():void{
 	for (let i: number = 0; i < handstapel.length; i++) {
 		placeHandstapelneu(handstapel[i], i)
 	}
-	//init();
+    init();
 }
 
 function sortiereKarten(_a:Spielkarte, _b:Spielkarte): number {
@@ -501,7 +501,8 @@ function sortiereKarten(_a:Spielkarte, _b:Spielkarte): number {
 	if (_a.karten_wert_symbol > _b.karten_wert_symbol) {
 		return 1;
 	}
-	return 0;
+    return 0;
+   
 }
 
 
