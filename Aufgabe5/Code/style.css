@@ -1,0 +1,29 @@
+@media only screen and (max-width: 400px){
+
+main {
+    margin: 1em;
+    
+    }
+
+header {
+    background-color: lightgray;
+
+}
+
+.Preis {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    margin: 10px;
+}
+
+footer {
+
+}
+
+#bestellen {
+    left: 0;
+}
+}
+
+
