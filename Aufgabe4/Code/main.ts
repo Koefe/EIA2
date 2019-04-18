@@ -10,7 +10,7 @@ namespace MauMau {
         //zwei_ziehen: boolean; 
         //aussetzten: boolean;
         //wünschen: boolean;
-        //allesleger: boolean;
+    //allesleger: boolean;
     }
 
     let karte01: Spielkarte = {
@@ -18,56 +18,56 @@ namespace MauMau {
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: "1",
-    }
+        karten_wert_symbol: "1"
+    };
 
     let karte02: Spielkarte = {
         zahl: "8",
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: "1",
-    }
+        karten_wert_symbol: "1"
+    };
 
     let karte03: Spielkarte = {
         zahl: "9",
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: "1",
-    }
+        karten_wert_symbol: "1"
+    };
 
     let karte04: Spielkarte = {
         zahl: "10",
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: "1",
-    }
+        karten_wert_symbol: "1"
+    };
 
     let karte05: Spielkarte = {
         zahl: "Bube",
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: "1",
-    }
+        karten_wert_symbol: "1"
+    };
 
     let karte06: Spielkarte = {
         zahl: "Dame",
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: "1",
-    }
+        karten_wert_symbol: "1"
+    };
 
     let karte07: Spielkarte = {
         zahl: "Koenig",
         //rot: true,
         farbe: "rot",
         symbol: "♦",
-        karten_wert_symbol: "1",
-    }
+        karten_wert_symbol: "1"
+    };
 
     let karte08: Spielkarte = {
         zahl: "Ass",
@@ -284,9 +284,9 @@ namespace MauMau {
     //document.addEventListener("DOMContentLoaded", keydown)
 
     function anzahlHandkarten(): void {
-        let base = 10;
+        let base: number = 10;
         let promptValue: string = prompt("Anzahl der Karten eingeben");
-        let anzahl = parseInt(promptValue, base);
+        let anzahl: number = parseInt(promptValue, base);
         kartenInHandstapel(anzahl);
     }
 
@@ -295,7 +295,7 @@ namespace MauMau {
         for (let i: number = 0; i < _anzahl; i++) {
             k = Math.floor(Math.random() * ziehstapel.length);
             handstapel.push(ziehstapel[k]);
-            let removed = ziehstapel.splice(k, 1);
+            let removed: Spielkarte[] = ziehstapel.splice(k, 1);
 
             placeHandstapel(handstapel[i], i);  //stimmt hier nur, da es durch den loop läuft und die Karten generiert. Aber eben nur stellen aus ziehstapel und nicht aus Handstapel
             //console.log(Ziehstapel)
@@ -321,7 +321,7 @@ namespace MauMau {
         let i: number = 0;
         let k: number = Math.floor(Math.random() * ziehstapel.length);
         spielstapel.push(ziehstapel[k]);
-        let removed = ziehstapel.splice(k, 1);
+        let removed: Spielkarte[] = ziehstapel.splice(k, 1);
 
         placeSpielStapel(spielstapel[i]);
 
@@ -329,7 +329,7 @@ namespace MauMau {
 
     function placeHandstapel(_k: Spielkarte, _i: number): void { //verändert
 
-        let prodElement = document.createElement('div');
+        let prodElement: HTMLDivElement = document.createElement("div");
         prodElement.innerHTML = `<fieldset class="Handstapel" id="${_i}">
     <p>${_k.symbol}</p>
     <p>${_k.farbe}</p>
@@ -341,7 +341,7 @@ namespace MauMau {
     }
 
     function placeZiehstapel(_k: Spielkarte, _i: number): void {         //k : number
-        let prodElement = document.createElement('div');
+        let prodElement: HTMLDivElement = document.createElement("div");
         prodElement.innerHTML = `<fieldset class="Ziehstapel" id="${_i}">
     <p>${_k.symbol}</p>
     <p>${_k.farbe}</p>
@@ -355,7 +355,7 @@ namespace MauMau {
     //k is undefined?
 
     function placeSpielStapel(_k: Spielkarte): void {
-        let prodElement = document.createElement('div');
+        let prodElement: HTMLDivElement = document.createElement("div");
         prodElement.innerHTML = `<fieldset class="Spielstapel">
     <p>${_k.symbol}</p>
     <p>${_k.farbe}</p>
@@ -369,7 +369,7 @@ namespace MauMau {
     //Neue Aufgabe4
 
     function init(): void {
-        document.getElementById('button').addEventListener("click", sortCard);
+        document.getElementById("button").addEventListener("click", sortCard);
 
         for (let i: number = 0; i < handstapel.length; i++) {
             let handkartenEvent: HTMLFieldSetElement = <HTMLFieldSetElement>document.getElementsByClassName("Handstapel")[i];
@@ -400,7 +400,7 @@ namespace MauMau {
     }
 
     function placeHandstapelAktualisiert(_k: Spielkarte, _i: number): void {
-        let prodElement = document.createElement('div');
+        let prodElement = document.createElement("div");
         prodElement.innerHTML = `<fieldset class="Handstapel" id="${_i}">
     <p>${_k.symbol}</p>
     <p>${_k.farbe}</p>
@@ -431,7 +431,7 @@ namespace MauMau {
     }
 
     function placeHandstapelneu(_k: Spielkarte, _i: number): void {
-        let prodElement = document.createElement('div');
+        let prodElement: HTMLDivElement = document.createElement("div");
         prodElement.innerHTML = `<fieldset class="Handstapel" id="${_i}">
     <p>${_k.symbol}</p>
     <p>${_k.farbe}</p>
@@ -441,11 +441,11 @@ namespace MauMau {
     }
 
 
-    document.addEventListener("keydown", function (event) : void {
+    document.addEventListener("keydown", function (event: KeyboardEvent): void {
         if (event.keyCode == 32) {
             vonZiehstapelInHandstapel();
         }
-    })
+    });
 
    //Button zum Sortieren - Hab keine Ahnung wie das funktioniert :(
 
@@ -483,13 +483,13 @@ namespace MauMau {
 
 //document.getElementById('button').addEventListener("click", sortCard);
 
-function sortCard(_event : Event):void{
-	handstapel.sort(sortiereKarten)
-	console.log(handstapel)
+function sortCard(_event: Event): void{
+	handstapel.sort(sortiereKarten);
+	console.log(handstapel);
 
 	document.getElementById("Handkasten").innerHTML = '';
 	for (let i: number = 0; i < handstapel.length; i++) {
-		placeHandstapelneu(handstapel[i], i)
+		placeHandstapelneu(handstapel[i], i);
 	}
     init();
 }

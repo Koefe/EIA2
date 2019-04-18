@@ -22,38 +22,38 @@
         <fieldset id="Eiskonfigurieren">
             <legend>Eis konfigurieren</legend>
             <h2>Eissorten</h2>
-            <input type="checkbox" name="Checkbox1" value="check1" id="check1" />
-            <label for="check1">Vanille</label>
-            <input type="checkbox" name="Checkbox2" value="check2" id="check2" />
-            <label for="check2">Schokolade</label>
-            <input type="checkbox" name="Checkbox3" value="check3" id="check3" />
-            <label for="check3">Erdbeere</label>
+            <input type="number" name="Vanille" step="1" min="0" max="3" value="0.80"/>
+            <label for="Vanille">Vanille</label>
+            <input type="number" name="Schokolade" step="1" min="0" max="3" value="0.80"/>
+            <label for="Schokolade">Schokolade</label>
+            <input type="number" name="Erdbeere" step="1" min="0" max="3" value="0.80"/>
+            <label for="Erdbeere">Erdbeere</label>
             <h2>Sahne</h2>
-            <input type="radio" name="Radiogroup" value="lakto" id="lakto" />
+            <input type="radio" name="Radiogroup" value="0.50" id="lakto" />
             <label for="lakto">Laktosefrei</label>
-            <input type="radio" name="Radiogroup" value="ohne" id="ohne" />
+            <input type="radio" name="Radiogroup" value="0" id="ohne" />
             <label for="ohne">ohne</label>
-            <input type="radio" name="Radiogroup" value="sahne" id="sahne" />
+            <input type="radio" name="Radiogroup" value="0.30" id="sahne" />
             <label for="sahne">Sahne</label>
             <h2>Behälter</h2>
-            <input type="radio" name="Radiogroup1" value="radio1" id="radio1" />
+            <input type="radio" name="Radiogroup1" value="0.60" id="radio1" />
             <label for="radio1">Waffel</label>
-            <input type="radio" name="Radiogroup1" value="radio2" id="radio1" />
+            <input type="radio" name="Radiogroup1" value="0.40" id="radio1" />
             <label for="radio1">Becher</label>
             <h2>Extras</h2>
-            <input type="checkbox" name="Checkbox1" value="check1" id="check1" />
+            <input type="checkbox" name="Checkbox1" value="0.50" id="check1" />
             <label for="check1">Streusel</label>
-            <input type="checkbox" name="Checkbox2" value="check2" id="check2" />
+            <input type="checkbox" name="Checkbox2" value="0.80" id="check2" />
             <label for="check2">Chocolatechips</label>
-            <input type="checkbox" name="Checkbox3" value="check3" id="check3" />
+            <input type="checkbox" name="Checkbox3" value="1.20" id="check3" />
             <label for="check3">Cookie-Dough</label>
-            <input type="checkbox" name="Checkbox4" value="check4" id="check4" />
+            <input type="checkbox" name="Checkbox4" value="1.50" id="check4" />
             <label for="check4">Blueberries</label>
             <h2>Sauces</h2>
             <p>Schokolade</p>
-            <input type="range" name="Slider" min="0" max="1" step="0.1" value="0" />
+            <input type="range" name="Slider" min="0" max="1" step="0.1" value="0.80" />
             <p>Karamell</p>
-            <input type="range" name="Slider2" min="0" max="1" step="0.1" value="0" />
+            <input type="range" name="Slider2" min="0" max="1" step="0.1" value="0.90" />
         </fieldset>
 
         <fieldset id="Adressdaten">
