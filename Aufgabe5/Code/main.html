@@ -22,11 +22,11 @@
         <fieldset id="Eiskonfigurieren">
             <legend>Eis konfigurieren</legend>
             <h2>Eissorten</h2>
-            <input type="number" name="Vanille" step="1" min="0" max="3" value="0.80"/>
+            <input type="number" name="Vanille" step="1" min="0" max="3" value="1" class="Kugel Vanille"/>
             <label for="Vanille">Vanille</label>
-            <input type="number" name="Schokolade" step="1" min="0" max="3" value="0.80"/>
+            <input type="number" name="Schokolade" step="1" min="0" max="3" value="1" class="Kugel Schokolade"/>
             <label for="Schokolade">Schokolade</label>
-            <input type="number" name="Erdbeere" step="1" min="0" max="3" value="0.80"/>
+            <input type="number" name="Erdbeere" step="1" min="0" max="3" value="1" class="Kugel Erdbeere"/>
             <label for="Erdbeere">Erdbeere</label>
             <h2>Sahne</h2>
             <input type="radio" name="Radiogroup" value="0.50" id="lakto" />
@@ -41,7 +41,7 @@
             <input type="radio" name="Radiogroup1" value="0.40" id="radio1" />
             <label for="radio1">Becher</label>
             <h2>Extras</h2>
-            <input type="checkbox" name="Checkbox1" value="0.50" id="check1" />
+            <input type="checkbox" name="Checkbox1" value="0.50" id="check1" price="0.50" />
             <label for="check1">Streusel</label>
             <input type="checkbox" name="Checkbox2" value="0.80" id="check2" />
             <label for="check2">Chocolatechips</label>
@@ -84,9 +84,10 @@
 
     </main>
 
-    <footer>
+    <footer id="footer">
         <button id="bestellen">Bestellen</button>
         <p>Ihre Bestellung:</p>
+        <li id="Liste"></li>
 
     </footer>
 </body>

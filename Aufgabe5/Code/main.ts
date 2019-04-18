@@ -15,21 +15,42 @@ namespace Eisdealer {
 
     function handleChange(_event: Event): void {
         console.log(_event);
-        let eissorte: HTMLInputElement = <HTMLInputElement>_event.target;
-        let berechnen: number = parseFloat(eissorte.value);
-        berechnePreis(berechnen);
-        
-
+        //let eissorte: HTMLInputElement = <HTMLInputElement>_event.target;
+        //let berechnen: number = parseFloat(eissorte.value);
+        berechnePreis(_event);
     }
 
-    let preis: number = 0;
+    let anfangsSumme: number = 0;
 
-    function berechnePreis(_berechnen: number): void {
+    function berechnePreis(_event: Event): void {
+        anfangsSumme = 0;
         let input: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
-        for (let i: number; i < input.length; i++) {
+        for (let i: number = 0; i < input.length; i++) {
             if (input[i].checked == true) {
-                //preis + input[i]
+                let preis: number = Number(input[i].getAttribute("value"));
+                anfangsSumme += preis;
+
+                
+                let bestellungsListe: HTMLLIElement = document.createElement("li");
+                console.log(bestellungsListe)
+                bestellungsListe.innerHTML = `<li id="Liste">
+                <p>${input[i].className}</p>
+                </li>`;
+                console.log(bestellungsListe);
+                document.getElementById("Liste").appendChild(bestellungsListe);
+
+                //if()
             }
         }
+        console.log(anfangsSumme);
+
+
+
     }
+
+
+
+
+
+
 }
