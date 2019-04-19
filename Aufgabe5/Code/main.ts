@@ -60,6 +60,18 @@ namespace Eisdealer {
                 
             }
 
+            if (input[i].name == "Counter") {
+                let preis: number = Number(input[i].value);
+                anfangsSumme += preis;
+
+                let bestellungsListe: HTMLLIElement = document.createElement("li");
+                console.log(bestellungsListe);
+                bestellungsListe.innerHTML = `<p>${input[i].value}  ${input[i].className}</p>`;
+                console.log(bestellungsListe);
+                document.getElementById("Liste").appendChild(bestellungsListe);
+
+            }
+
         }
 
 
