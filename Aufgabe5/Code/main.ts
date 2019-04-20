@@ -1,6 +1,7 @@
 namespace Eisdealer {
 
     window.addEventListener("load", init);
+    document.addEventListener("DOMContentLoaded", button);
 
     function init(_event: Event): void {
         console.log("Init");
@@ -90,16 +91,21 @@ namespace Eisdealer {
 
     //validation von Angaben - kontrolle
     function angabenRichtig(_event: Event): void {
-        let val: number = 0;
-        let input: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
-        for (let i: number = 0; i < input.length; i++) {
-            if (input[i].name == "Text") {
-                if (input[i].value == "") {
-
+        //let val: number = 0;
+        let inputTxt: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
+        let leereTextfelder: string[] = []; //alle leeren Textfelder in Array pushen
+        for (let i: number = 0; i < inputTxt.length; i++) {
+            if (inputTxt[i].name == "Text") {
+                if (inputTxt[i].value == "") {
+                    let textFeld: string = inputTxt[i].name;
+                    leereTextfelder.push(textFeld);
                 }
             }
-
         }
+        if (leereTextfelder.length == 0) {
+            alert("Bestellung korrekt ausgefüllt");
+        }
+        else { alert(`bitte alles ausfüllen`); }
     }
 
 

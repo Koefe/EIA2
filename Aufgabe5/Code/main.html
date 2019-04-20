@@ -79,23 +79,23 @@
         <fieldset id="Adressdaten">
             <legend>Lieferdaten</legend>
             <p>Lieferoptionen</p>
-            <input type="radio" name="Radiogroup3" value="abholung" id="abholung" />
+            <input type="radio" name="Radiogroup3" value="" id="abholung" />
             <label for="abholung">Abholung</label>
-            <input type="radio" name="Radiogroup3" value="lieferung" id="lieferung" />
+            <input type="radio" name="Radiogroup3" value="" id="lieferung" />
             <label for="lieferung">Lieferung</label>
             <p>Adressdaten</p>
             <p>Name</p>
-            <input type="text" name="Text" placeholder="Name" required />
+            <input type="text" name="Text" value="" placeholder="Name" required/>
             <p>Nachname</p>
-            <input type="text" name="Text" placeholder="Nachname" required />
+            <input type="text" name="Text" value="" placeholder="Nachname" required/>
             <p>Adresse</p>
-            <input type="text" name="Text" placeholder="Adresse" required />
+            <input type="text" name="Text" value="" placeholder="Adresse" required/>
             <p>Hausnummer</p>
-            <input type="text" name="Text" placeholder="Hausnummer" required />
+            <input type="text" name="Text" value="" placeholder="Hausnummer" required/>
             <p>Postleitzahl</p>
-            <input type="text" name="Text" placeholder="Postleitzahl" required />
+            <input type="text" name="Text" value="" placeholder="Postleitzahl" required/>
             <p>Email-Adresse</p>
-            <input type="email" name="Text" placeholder="place @ between" />
+            <input type="email" name="Text" value="" placeholder="place @ between"/>
 
 
 
@@ -105,14 +105,13 @@
     </main>
 
     <footer id="footer">
-        <filedset id="bestellvorgang">
-            <legend>Bestellliste</legend>
-            <p id="Preis">€</p>
+        <div id="bestellvorgang">
+            <p id="Preis">0</p> <p class="currency">€</p>
             <button id="bestellen">Bestellen</button>
             <p>Ihre Bestellung:</p>
             <ul id="Liste">
             </ul>
-        </fieldset>
+        </div>
     </footer>
 
 </body>

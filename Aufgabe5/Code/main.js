@@ -1,6 +1,7 @@
 var Eisdealer;
 (function (Eisdealer) {
     window.addEventListener("load", init);
+    document.addEventListener("DOMContentLoaded", button);
     function init(_event) {
         console.log("Init");
         let fieldsets = document.getElementsByTagName("fieldset");
@@ -72,13 +73,22 @@ var Eisdealer;
     }
     //validation von Angaben - kontrolle
     function angabenRichtig(_event) {
-        let val = 0;
-        let input = document.getElementsByTagName("input");
-        for (let i = 0; i < input.length; i++) {
-            if (input[i].name == "Text") {
-                if (input[i].value == "") {
+        //let val: number = 0;
+        let inputTxt = document.getElementsByTagName("input");
+        let leereTextfelder = []; //alle leeren Textfelder in Array pushen
+        for (let i = 0; i < inputTxt.length; i++) {
+            if (inputTxt[i].name == "Text") {
+                if (inputTxt[i].value == "") {
+                    let textFeld = inputTxt[i].name;
+                    leereTextfelder.push(textFeld);
                 }
             }
+        }
+        if (leereTextfelder.length == 0) {
+            alert("Bestellung korrekt ausgefüllt");
+        }
+        else {
+            alert(`bitte alles ausfüllen`);
         }
     }
 })(Eisdealer || (Eisdealer = {}));
