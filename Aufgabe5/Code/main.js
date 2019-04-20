@@ -22,38 +22,62 @@ var Eisdealer;
         document.getElementById("Liste").innerHTML = "";
         let input = document.getElementsByTagName("input");
         for (let i = 0; i < input.length; i++) {
+            //counter berechnung
+            if (input[i].type == "number" && Number(input[i].value) > 0) { //schreibt die Sachen die auf 0 stehen nicht auf die Liste 
+                let anzahlKugel = Number(input[i].value);
+                let preis = Number(input[i].id);
+                anfangsSumme += anzahlKugel * preis;
+                //erstellt die Liste mit den angecklickten Sachen
+                let bestellungsListe = document.createElement("li");
+                //console.log(bestellungsListe);
+                bestellungsListe.innerHTML = `<p>${input[i].value}  ${input[i].className}</p>`;
+                //console.log(bestellungsListe);
+                document.getElementById("Liste").appendChild(bestellungsListe);
+                continue; //damit es wieder nach oben springt und nicht gleich in die nächste if geht
+            }
+            //bestellungsliste erstellen
             if (input[i].checked == true) {
                 let preis = Number(input[i].value);
                 anfangsSumme += preis;
                 let bestellungsListe = document.createElement("li");
-                console.log(bestellungsListe);
+                //console.log(bestellungsListe);
                 bestellungsListe.innerHTML = `<p>${input[i].className}</p>`;
-                console.log(bestellungsListe);
+                //console.log(bestellungsListe);
                 document.getElementById("Liste").appendChild(bestellungsListe);
                 //Schreibt Preis hin
                 //let preisAnzeige: HTMLElement = document.createElement("p");
                 //preisAnzeige.innerHTML = `<p class="Preis">${anfangsSumme}</p>`;
                 //document.getElementById("Preis").appendChild(preisAnzeige);     
             }
+            //slider erstellen
             if (input[i].name == "Slider") {
-                let preis1 = Number(input[i].value);
-                anfangsSumme += preis1;
+                let stellungSlider = Number(input[i].value);
+                let preis1 = Number(input[i].id);
+                anfangsSumme += preis1 * stellungSlider;
                 console.log(anfangsSumme);
                 //console.log(input[i].value);
-                if (preis1 > 0) {
+                if (stellungSlider > 0) {
                     let bestellungsListe = document.createElement("li");
                     bestellungsListe.innerHTML = `<p>${input[i].value} ml ${input[i].className}</p>`;
                     document.getElementById("Liste").appendChild(bestellungsListe);
                 }
             }
-            if (input[i].name == "Counter") {
-                let preis = Number(input[i].value);
-                anfangsSumme += preis;
-                let bestellungsListe = document.createElement("li");
-                console.log(bestellungsListe);
-                bestellungsListe.innerHTML = `<p>${input[i].value}  ${input[i].className}</p>`;
-                console.log(bestellungsListe);
-                document.getElementById("Liste").appendChild(bestellungsListe);
+        }
+        document.getElementById("Preis").innerHTML = anfangsSumme.toFixed(2).toString();
+    }
+    //validation von Angaben - button
+    function button() {
+        let button = document.getElementById("bestellen");
+        button.addEventListener("click", angabenRichtig);
+    }
+    //validation von Angaben - kontrolle
+    function angabenRichtig(_event) {
+        let val = 0;
+        let input = document.getElementsByTagName("input");
+        for (let i = 0; i < input.length; i++) {
+            if (input[i].name == "Text") {
+                if (input[i].value == "") {
+                }
             }
         }
     }

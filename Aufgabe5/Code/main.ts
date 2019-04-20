@@ -12,7 +12,6 @@ namespace Eisdealer {
         }
     }
 
-
     function handleChange(_event: Event): void {
         console.log(_event);
         //let eissorte: HTMLInputElement = <HTMLInputElement>_event.target;
@@ -29,14 +28,31 @@ namespace Eisdealer {
 
         let input: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
         for (let i: number = 0; i < input.length; i++) {
+
+            //counter berechnung
+            if (input[i].type == "number" && Number(input[i].value) > 0) { //schreibt die Sachen die auf 0 stehen nicht auf die Liste 
+                let anzahlKugel: number = Number(input[i].value);
+                let preis: number = Number(input[i].id);
+                anfangsSumme += anzahlKugel * preis;
+
+                //erstellt die Liste mit den angecklickten Sachen
+                let bestellungsListe: HTMLLIElement = document.createElement("li");
+                //console.log(bestellungsListe);
+                bestellungsListe.innerHTML = `<p>${input[i].value}  ${input[i].className}</p>`;
+                //console.log(bestellungsListe);
+                document.getElementById("Liste").appendChild(bestellungsListe);
+                continue; //damit es wieder nach oben springt und nicht gleich in die nächste if geht
+            }
+
+            //bestellungsliste erstellen
             if (input[i].checked == true) {
                 let preis: number = Number(input[i].value);
                 anfangsSumme += preis;
 
                 let bestellungsListe: HTMLLIElement = document.createElement("li");
-                console.log(bestellungsListe);
+                //console.log(bestellungsListe);
                 bestellungsListe.innerHTML = `<p>${input[i].className}</p>`;
-                console.log(bestellungsListe);
+                //console.log(bestellungsListe);
                 document.getElementById("Liste").appendChild(bestellungsListe);
 
                 //Schreibt Preis hin
@@ -45,42 +61,46 @@ namespace Eisdealer {
                 //document.getElementById("Preis").appendChild(preisAnzeige);     
             }
 
+            //slider erstellen
             if (input[i].name == "Slider") {
-                let preis1: number = Number(input[i].value);
-                anfangsSumme += preis1;
+                let stellungSlider: number = Number(input[i].value);
+                let preis1: number = Number(input[i].id);
+                anfangsSumme += preis1 * stellungSlider;
                 console.log(anfangsSumme);
                 //console.log(input[i].value);
 
-                if (preis1 > 0) {
+                if (stellungSlider > 0) {
                     let bestellungsListe: HTMLLIElement = document.createElement("li");
                     bestellungsListe.innerHTML = `<p>${input[i].value} ml ${input[i].className}</p>`;
                     document.getElementById("Liste").appendChild(bestellungsListe);
                 }
 
-                
-            }
-
-            if (input[i].name == "Counter") {
-                let preis: number = Number(input[i].value);
-                anfangsSumme += preis;
-
-                let bestellungsListe: HTMLLIElement = document.createElement("li");
-                console.log(bestellungsListe);
-                bestellungsListe.innerHTML = `<p>${input[i].value}  ${input[i].className}</p>`;
-                console.log(bestellungsListe);
-                document.getElementById("Liste").appendChild(bestellungsListe);
-
             }
 
         }
-
-
+        document.getElementById("Preis").innerHTML = anfangsSumme.toFixed(2).toString();
 
     }
 
+    //validation von Angaben - button
+    function button(): void {
+        let button: HTMLButtonElement = <HTMLButtonElement>document.getElementById("bestellen");
+        button.addEventListener("click", angabenRichtig);
+    }
 
+    //validation von Angaben - kontrolle
+    function angabenRichtig(_event: Event): void {
+        let val: number = 0;
+        let input: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
+        for (let i: number = 0; i < input.length; i++) {
+            if (input[i].name == "Text") {
+                if (input[i].value == "") {
 
+                }
+            }
 
+        }
+    }
 
 
 }
