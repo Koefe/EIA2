@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="main.js"></script>
+
+    <title>Eisdealer</title>
+</head>
+
+<body>
+    <header>
+        <h1>Eisdealer</h1>
+    </header>
+
+    <main>
+        <fieldset id="Eiskonfigurieren">
+            <legend>Eis konfigurieren</legend>
+            
+            <h2>Eissorten</h2>
+            <input type="number" name="Counter" step="1" min="0" max="3" value="0" class="Kugel Vanille" id="0.70"/>
+            <label for="Vanille">Vanille</label>
+            <br>
+            <input type="number" name="Counter" step="1" min="0" max="3" value="0" class="Kugel Schokolade" id="0.70" />
+            <label for="Schokolade">Schokolade</label>
+            <br>
+            <input type="number" name="Counter" step="1" min="0" max="3" value="0" class="Kugel Erdbeere" id="0.70"/>
+            <label for="Erdbeere">Erdbeere</label>
+            <br>
+            <input type="number" name="Counter" step="1" min="0" max="3" value="0" class="Kugel Zitrone" id="0.70"/>
+            <label for="Zitrone">Zitrone</label>
+            <br>
+            <input type="number" name="Counter" step="1" min="0" max="3" value="0" class="Kugel Mango" id="0.70"/>
+            <label for="Mango">Mango</label>
+            <br>
+            <input type="number" name="Counter" step="1" min="0" max="3" value="0" class="Kugel Himbeere" id="0.70"/>
+            <label for="Himbeere">Himbeere</label>
+            
+            <h2>Sahne</h2>
+            <input type="radio" name="Radiogroup" value="0.50" id="lakto" class="Laktosefreie Shane" />
+            <label for="lakto">Laktosefrei</label>
+            <input type="radio" name="Radiogroup" value="0" id="ohne" class="Ohne Sahne" />
+            <label for="ohne">ohne</label>
+            <input type="radio" name="Radiogroup" value="0.30" id="sahne" class="Sahne" />
+            <label for="sahne">Sahne</label>
+           
+            <h2>Behälter</h2>
+            <input type="radio" name="Radiogroup1" value="0.60" id="radio1" class="Waffel" />
+            <label for="radio1">Waffel</label>
+            <input type="radio" name="Radiogroup1" value="0.40" id="radio1" class="Becher" />
+            <label for="radio1">Becher</label>
+            
+            <h2>Extras</h2>
+            <input type="checkbox" name="Checkbox1" value="0.50" id="check1" class="Streusel" />
+            <label for="check1">Streusel</label>
+            <br>
+            <input type="checkbox" name="Checkbox2" value="0.80" id="check2" class="Chocolatechips" />
+            <label for="check2">Chocolatechips</label>
+            <br>
+            <input type="checkbox" name="Checkbox3" value="1.20" id="check3" class="Cookie-Dough" />
+            <label for="check3">Cookie-Dough</label>
+            <br>
+            <input type="checkbox" name="Checkbox4" value="1.50" id="check4" class="Blueberries" />
+            <label for="check4">Blueberries</label>
+
+            <h2>Sauces</h2>
+            <p>Schokolade</p>
+            <p class="sliderWert">0ml</p>
+            <input type="range" name="Slider" min="0" max="50" step="5" value="0" class="Schokososse" id="0.05" />
+            <p class="sliderWert">50ml</p>
+            <p>Karamell</p>
+            <p class="sliderWert">0ml</p>
+            <input type="range" name="Slider" min="0" max="50" step="5" value="0" class="Karamellsosse" id="0.05" />
+            <p class="sliderWert">50ml</p>
+        </fieldset>
+
+        <fieldset id="Adressdaten">
+            <legend>Lieferdaten</legend>
+            <p>Lieferoptionen</p>
+            <input type="radio" name="Radiogroup3" value="" id="abholung" />
+            <label for="abholung">Abholung</label>
+            <input type="radio" name="Radiogroup3" value="" id="lieferung" />
+            <label for="lieferung">Lieferung</label>
+            <p>Adressdaten</p>
+            <p>Name</p>
+            <input type="text" name="Text" value="" placeholder="Name" required/>
+            <p>Nachname</p>
+            <input type="text" name="Text" value="" placeholder="Nachname" required/>
+            <p>Adresse</p>
+            <input type="text" name="Text" value="" placeholder="Adresse" required/>
+            <p>Hausnummer</p>
+            <input type="text" name="Text" value="" placeholder="Hausnummer" required/>
+            <p>Postleitzahl</p>
+            <input type="text" name="Text" value="" placeholder="Postleitzahl" required/>
+            <p>Email-Adresse</p>
+            <input type="email" name="Text" value="" placeholder="place @ between"/>
+
+
+
+
+        </fieldset>
+
+    </main>
+
+    <footer id="footer">
+        <div id="bestellvorgang">
+            <p id="Preis">0</p> <p class="currency">€</p>
+            <button id="bestellen">Bestellen</button>
+            <p>Ihre Bestellung:</p>
+            <ul id="Liste">
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+</html>
