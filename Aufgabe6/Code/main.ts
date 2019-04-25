@@ -8,7 +8,7 @@ namespace Eisdealer {
         console.log("Init");
         displayHomoVar(data);
         console.log(data);
-        displayHeteroPredef(data["Counter"][1]);
+        //displayHeteroPredef(data["Counter"][1]);
 
 
 
@@ -121,15 +121,16 @@ namespace Eisdealer {
         for (let eisArray in _homoVar) {
             let valueHetero: HeteroEisInterface[] = _homoVar[eisArray];
 
-            console.group(eisArray);
-            console.dir(valueHetero);
-            console.groupEnd();
+            let div: HTMLDivElement = document.createElement("div");
+            div.innerHTML = `<h2>${eisArray}</h2>`;
+            document.getElementById("Eiskonfigurieren").appendChild(div);
 
             for (let i: number = 0; i < valueHetero.length; i++) {
                 displayHeteroPredef(valueHetero[i]);
             }
 
         }
+
     }
 
     function displayHeteroPredef(_heteroPredef: HeteroEisInterface): void {
@@ -146,7 +147,7 @@ namespace Eisdealer {
         counter.setAttribute("value", _heteroPredef.value.toString());
         counter.setAttribute("alt", _heteroPredef.alt.toString());
         counter.setAttribute("class", _heteroPredef.class);
-        
+
         counter.setAttribute("min", _heteroPredef.min);
         counter.setAttribute("max", _heteroPredef.max);
         counter.setAttribute("step", _heteroPredef.step);

@@ -6,7 +6,7 @@ var Eisdealer;
         console.log("Init");
         displayHomoVar(Eisdealer.data);
         console.log(Eisdealer.data);
-        displayHeteroPredef(Eisdealer.data["Counter"][1]);
+        //displayHeteroPredef(data["Counter"][1]);
         let fieldsets = document.getElementsByTagName("fieldset");
         for (let i = 0; i < fieldsets.length; i++) {
             let fieldset = fieldsets[i];
@@ -98,9 +98,9 @@ var Eisdealer;
     function displayHomoVar(_homoVar) {
         for (let eisArray in _homoVar) {
             let valueHetero = _homoVar[eisArray];
-            console.group(eisArray);
-            console.dir(valueHetero);
-            console.groupEnd();
+            let div = document.createElement("div");
+            div.innerHTML = `<h2>${eisArray}</h2>`;
+            document.getElementById("Eiskonfigurieren").appendChild(div);
             for (let i = 0; i < valueHetero.length; i++) {
                 displayHeteroPredef(valueHetero[i]);
             }
