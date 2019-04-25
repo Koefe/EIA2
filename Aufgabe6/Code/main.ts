@@ -40,7 +40,7 @@ namespace Eisdealer {
             //counter berechnung
             if (input[i].type == "number" && Number(input[i].value) > 0) { //schreibt die Sachen die auf 0 stehen nicht auf die Liste 
                 let anzahlKugel: number = Number(input[i].value);
-                let preis: number = Number(input[i].id);
+                let preis: number = Number(input[i].alt);
                 anfangsSumme += anzahlKugel * preis;
 
                 //erstellt die Liste mit den angecklickten Sachen
@@ -54,7 +54,7 @@ namespace Eisdealer {
 
             //bestellungsliste erstellen
             if (input[i].checked == true) {
-                let preis: number = Number(input[i].value);
+                let preis: number = Number(input[i].alt);
                 anfangsSumme += preis;
 
                 let bestellungsListe: HTMLLIElement = document.createElement("li");
@@ -72,7 +72,7 @@ namespace Eisdealer {
             //slider erstellen
             if (input[i].name == "Slider") {
                 let stellungSlider: number = Number(input[i].value);
-                let preis1: number = Number(input[i].id);
+                let preis1: number = Number(input[i].alt);
                 anfangsSumme += preis1 * stellungSlider;
                 console.log(anfangsSumme);
                 //console.log(input[i].value);
@@ -144,8 +144,12 @@ namespace Eisdealer {
         counter.setAttribute("type", _heteroPredef.type);
         counter.setAttribute("name", _heteroPredef.name);
         counter.setAttribute("value", _heteroPredef.value.toString());
-        counter.setAttribute("id", _heteroPredef.id.toString());
+        counter.setAttribute("alt", _heteroPredef.alt.toString());
         counter.setAttribute("class", _heteroPredef.class);
+        
+        counter.setAttribute("min", _heteroPredef.min);
+        counter.setAttribute("max", _heteroPredef.max);
+        counter.setAttribute("step", _heteroPredef.step);
 
         document.getElementById("Eiskonfigurieren").appendChild(counter);
         document.getElementById("Eiskonfigurieren").appendChild(label);
