@@ -3,8 +3,15 @@ namespace Eisdealer {
     window.addEventListener("load", init);
     document.addEventListener("DOMContentLoaded", button);
 
+
     function init(_event: Event): void {
         console.log("Init");
+        displayHomoVar(data);
+        console.log(data);
+        displayHeteroPredef(data["Counter"][1]);
+
+
+
         let fieldsets: HTMLCollectionOf<HTMLFieldSetElement> = document.getElementsByTagName("fieldset");
 
         for (let i: number = 0; i < fieldsets.length; i++) {
@@ -107,6 +114,46 @@ namespace Eisdealer {
         }
         else { alert(`bitte alles ausfüllen`); }
     }
+
+    //Aufgabe 6
+
+    function displayHomoVar(_homoVar: HomogenousArray): void {
+        for (let eisArray in _homoVar) {
+            let valueHetero: HeteroEisInterface[] = _homoVar[eisArray];
+
+            console.group(eisArray);
+            console.dir(valueHetero);
+            console.groupEnd();
+
+            for (let i: number = 0; i < valueHetero.length; i++) {
+                displayHeteroPredef(valueHetero[i]);
+            }
+
+        }
+    }
+
+    function displayHeteroPredef(_heteroPredef: HeteroEisInterface): void {
+        let counter: HTMLInputElement = document.createElement("input");
+        //let legend: HTMLLegendElement = document.createElement("legend");
+
+        let label: HTMLLabelElement = document.createElement("label");
+
+        label.setAttribute("for", _heteroPredef.class);
+        label.innerText = _heteroPredef.class;
+
+        counter.setAttribute("type", _heteroPredef.type);
+        counter.setAttribute("name", _heteroPredef.name);
+        counter.setAttribute("value", _heteroPredef.value.toString());
+        counter.setAttribute("id", _heteroPredef.id.toString());
+        counter.setAttribute("class", _heteroPredef.class);
+
+        document.getElementById("Eiskonfigurieren").appendChild(counter);
+        document.getElementById("Eiskonfigurieren").appendChild(label);
+
+
+
+    }
+
 
 
 }
