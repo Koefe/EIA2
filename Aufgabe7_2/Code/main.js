@@ -111,7 +111,7 @@ var Eisdealer;
         //let legend: HTMLLegendElement = document.createElement("legend");
         let label = document.createElement("label");
         label.setAttribute("for", _heteroPredef.class);
-        label.innerText = _heteroPredef.class;
+        label.innerText = _heteroPredef.name;
         counter.setAttribute("type", _heteroPredef.type);
         counter.setAttribute("name", _heteroPredef.name);
         counter.setAttribute("value", _heteroPredef.value.toString());
@@ -123,7 +123,7 @@ var Eisdealer;
         document.getElementById("Eiskonfigurieren").appendChild(counter);
         document.getElementById("Eiskonfigurieren").appendChild(label);
         if (_heteroPredef.type == "radio") {
-            counter.setAttribute("value", _heteroPredef.class);
+            counter.setAttribute("name", _heteroPredef.class);
         }
     }
 })(Eisdealer || (Eisdealer = {}));
