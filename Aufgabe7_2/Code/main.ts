@@ -132,6 +132,7 @@ namespace Eisdealer {
         }
 
     }
+    
 
     function displayHeteroPredef(_heteroPredef: HeteroEisInterface): void {
         let counter: HTMLInputElement = document.createElement("input");
@@ -155,7 +156,9 @@ namespace Eisdealer {
         document.getElementById("Eiskonfigurieren").appendChild(counter);
         document.getElementById("Eiskonfigurieren").appendChild(label);
 
-
+        if (_heteroPredef.type == "radio") {
+            counter.setAttribute("name", _heteroPredef.class);
+        }
 
     }
 
