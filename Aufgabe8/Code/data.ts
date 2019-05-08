@@ -36,8 +36,8 @@ export let data: HomogenousArray
 ],
 
 "Behälter": [
-    { min: "0", max: "3", step: "1", alt: 0.60, name: "Behalter", value: 0, type: "radio", class: "Waffel"},
-    { min: "0", max: "3", step: "1", alt: 0.40, name: "Behalter", value: 0, type: "radio", class: "Becher"}
+    { min: "0", max: "3", step: "1", alt: 0.60, name: "Behalter", value: 0, type: "radio", class: "Becher"},
+    { min: "0", max: "3", step: "1", alt: 0.40, name: "Behalter", value: 0, type: "radio", class: "Waffel"}
     
 ],
 

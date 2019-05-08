@@ -18,8 +18,4 @@ namespace SendData {
         var xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
     }
 
-
-
-    
-
 }
