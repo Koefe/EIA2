@@ -123,7 +123,7 @@ var Eisdealer;
         document.getElementById("Eiskonfigurieren").appendChild(counter);
         document.getElementById("Eiskonfigurieren").appendChild(label);
         if (_heteroPredef.type == "radio") {
-            counter.setAttribute("name", _heteroPredef.class);
+            counter.setAttribute("value", _heteroPredef.class);
         }
     }
 })(Eisdealer || (Eisdealer = {}));
