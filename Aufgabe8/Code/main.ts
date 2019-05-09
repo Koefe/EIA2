@@ -141,7 +141,7 @@ namespace Eisdealer {
         let label: HTMLLabelElement = document.createElement("label");
 
         label.setAttribute("for", _heteroPredef.class);
-        label.innerText = _heteroPredef.name;
+        label.innerText = _heteroPredef.class;
 
         counter.setAttribute("type", _heteroPredef.type);
         counter.setAttribute("name", _heteroPredef.name);

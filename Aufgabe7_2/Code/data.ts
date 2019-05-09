@@ -30,14 +30,14 @@ export let data: HomogenousArray
 ],
 
 "Sahne": [
-    { min: "0", max: "3", step: "1", alt: 0.50, name: "Laktosefreie Sahne", value: 0, type: "radio", class: "Sahne"},
-    { min: "0", max: "3", step: "1", alt: 0, name: "ohne Sahne", value: 0, type: "radio", class: "Sahne"},
+    { min: "0", max: "3", step: "1", alt: 0.50, name: "Sahne", value: 0, type: "radio", class: "Laktosefreie Sahne"},
+    { min: "0", max: "3", step: "1", alt: 0, name: "Sahne", value: 0, type: "radio", class: "ohne Sahne"},
     { min: "0", max: "3", step: "1", alt: 0.30, name: "Sahne", value: 0, type: "radio", class: "Sahne"}
 ],
 
 "Behälter": [
-    { min: "0", max: "3", step: "1", alt: 0.60, name: "Becher", value: 0, type: "radio", class: "Behalter"},
-    { min: "0", max: "3", step: "1", alt: 0.40, name: "Waffel", value: 0, type: "radio", class: "Behalter"}
+    { min: "0", max: "3", step: "1", alt: 0.60, name: "Behalter", value: 0, type: "radio", class: "Waffel"},
+    { min: "0", max: "3", step: "1", alt: 0.40, name: "Behalter", value: 0, type: "radio", class: "Becher"}
     
 ],
 
