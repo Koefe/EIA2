@@ -70,20 +70,20 @@ namespace Eisdealer {
             }
 
             //slider erstellen
-            if (input[i].name == "Slider") {
-                let stellungSlider: number = Number(input[i].value);
-                let preis1: number = Number(input[i].alt);
-                anfangsSumme += preis1 * stellungSlider;
-                console.log(anfangsSumme);
+            //if (input[i].name == "Slider") {
+                //let stellungSlider: number = Number(input[i].value);
+                //let preis1: number = Number(input[i].alt);
+                //anfangsSumme += preis1 * stellungSlider;
+                //console.log(anfangsSumme);
                 //console.log(input[i].value);
 
-                if (stellungSlider > 0) {
-                    let bestellungsListe: HTMLLIElement = document.createElement("li");
-                    bestellungsListe.innerHTML = `<p>${input[i].value} ml ${input[i].className}</p>`;
-                    document.getElementById("Liste").appendChild(bestellungsListe);
-                }
+                //if (stellungSlider > 0) {
+                    //let bestellungsListe: HTMLLIElement = document.createElement("li");
+                    //bestellungsListe.innerHTML = `<p>${input[i].value} ml ${input[i].className}</p>`;
+                    //document.getElementById("Liste").appendChild(bestellungsListe);
+                //}
 
-            }
+            //}
 
         }
         document.getElementById("Preis").innerHTML = anfangsSumme.toFixed(2).toString();
