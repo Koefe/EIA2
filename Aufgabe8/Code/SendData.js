@@ -28,12 +28,12 @@ var SendData;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             //console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             document.getElementById("zusammenfassung").innerHTML = xhr.response;
-            let order = document.createElement("p");
-            let heading = document.createElement("h2");
-            heading.innerHTML = "Ihre Bestellzusammenfassung:";
-            document.getElementById("zusammenfassung").appendChild(heading);
-            order.innerHTML = `${xhr.response}`;
-            document.getElementById("zusammenfassung").appendChild(order);
+            //let order: HTMLElement = document.createElement("p");
+            //let heading: HTMLElement = document.createElement("h2");
+            //heading.innerHTML = "Ihre Bestellzusammenfassung:";
+            //document.getElementById("zusammenfassung").appendChild(heading);
+            //order.innerHTML = `${xhr.response}`;
+            //document.getElementById("zusammenfassung").appendChild(order);
         }
     }
 })(SendData || (SendData = {}));
