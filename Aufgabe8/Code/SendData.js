@@ -3,24 +3,26 @@ var SendData;
     window.addEventListener("load", init);
     //let address: string = "http://localhost:8100/?";
     let address = "https://koellefe.herokuapp.com?";
-    let input = document.getElementsByTagName("input");
     function init(_event) {
         let button = document.getElementById("asynchron_bestellen");
         button.addEventListener("click", handleClickOnButton);
     }
     function handleClickOnButton(_event) {
-        //let getString: string = "?";
+        let input = document.getElementsByTagName("input");
+        let getString = "?";
         for (let i = 0; i < input.length; i++) {
             //address += input[i].className + "=" + input[i].value + "&";
-            if (input[i].checked == true) {
-                address += input[i].className;
-            }
-            else if (input[i].value > "0") {
-                address += input[i].className += input[i].value;
+            //if (input[i].checked == true) {
+            //    getString += input[i].className;
+            //}
+            //else if (input[i].value > "0") {
+            //   getString += input[i].className += input[i].value + "&"; 
+            if (input[i].value != "" && input[i].value != "0") {
+                getString += input[i].name + "=" + input[i].value + "&";
             }
         }
         let xhr = new XMLHttpRequest();
-        xhr.open("GET", address, true);
+        xhr.open("GET", address + getString, true);
         xhr.addEventListener("readystatechange", handleStateChange); //wartet darauf das server antwortet
         xhr.send();
     }

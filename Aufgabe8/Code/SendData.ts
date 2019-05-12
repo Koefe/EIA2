@@ -2,29 +2,33 @@ namespace SendData {
     window.addEventListener("load", init);
     //let address: string = "http://localhost:8100/?";
     let address: string = "https://koellefe.herokuapp.com?";
-    let input: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
+
 
     function init(_event: Event): void {
-        let button: HTMLElement = document.getElementById("asynchron_bestellen");
+        let button: HTMLButtonElement = <HTMLButtonElement> document.getElementById("asynchron_bestellen");
         button.addEventListener("click", handleClickOnButton);
     }
 
     function handleClickOnButton(_event: Event): void {
-
-        //let getString: string = "?";
+        let input: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
+        let getString: string = "?";
 
         for (let i: number = 0; i < input.length; i++) {
             //address += input[i].className + "=" + input[i].value + "&";
-            if (input[i].checked == true) {
-                address += input[i].className;
+            //if (input[i].checked == true) {
+            //    getString += input[i].className;
+            //}
+            //else if (input[i].value > "0") {
+            //   getString += input[i].className += input[i].value + "&"; 
+
+            if (input[i].value != "" && input[i].value != "0"){
+                getString += input[i].name + "=" + input[i].value +"&";
             }
-            else if (input[i].value > "0") {
-                address += input[i].className += input[i].value; 
-            }
+            
         }
 
         let xhr: XMLHttpRequest = new XMLHttpRequest();
-        xhr.open("GET", address, true);
+        xhr.open("GET", address + getString, true);
         xhr.addEventListener("readystatechange", handleStateChange); //wartet darauf das server antwortet
         xhr.send();
     }
