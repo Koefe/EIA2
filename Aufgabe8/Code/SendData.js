@@ -2,7 +2,7 @@ var SendData;
 (function (SendData) {
     window.addEventListener("load", init);
     //let address: string = "http://localhost:8100/?";
-    let address = "https://koellefe.herokuapp.com?";
+    let address = "https://koellefe.herokuapp.com/?";
     function init(_event) {
         let button = document.getElementById("asynchron_bestellen");
         button.addEventListener("click", handleClickOnButton);
@@ -20,6 +20,9 @@ var SendData;
             if (input[i].value != "" && input[i].value != "0") {
                 getString += input[i].name + "=" + input[i].value + "&";
             }
+            //if (input[i].type == "radio" && input[i].checked == true) {
+            //    getString += input[i].className;
+            //}
         }
         let xhr = new XMLHttpRequest();
         xhr.open("GET", address + getString, true);

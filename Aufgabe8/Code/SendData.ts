@@ -1,7 +1,7 @@
 namespace SendData {
     window.addEventListener("load", init);
     //let address: string = "http://localhost:8100/?";
-    let address: string = "https://koellefe.herokuapp.com?";
+    let address: string = "https://koellefe.herokuapp.com/?";
 
 
     function init(_event: Event): void {
@@ -21,9 +21,13 @@ namespace SendData {
             //else if (input[i].value > "0") {
             //   getString += input[i].className += input[i].value + "&"; 
 
-            if (input[i].value != "" && input[i].value != "0"){
-                getString += input[i].name + "=" + input[i].value +"&";
+            if (input[i].value != "" && input[i].value != "0") {
+                getString += input[i].name + "=" + input[i].value + "&";
             }
+
+            //if (input[i].type == "radio" && input[i].checked == true) {
+            //    getString += input[i].className;
+            //}
             
         }
 

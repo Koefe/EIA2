@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="main.js"></script>
     <script src="data.js"></script>
-    <script src="Server.js"></script>
+    <!--<script src="Server.js"></script>-->
     <script src="SendData.js"></script>
 
     <title>Eisdealer</title>
@@ -19,11 +19,7 @@
     </header>
     
      <form >
-   <!--<form>-->
-
         <main id="main">
-
-
 
             <fieldset id="Eiskonfigurieren">
                 <legend>Eis konfigurieren</legend>
@@ -110,9 +106,6 @@
                 <p>Email-Adresse</p>
                 <input type="email" name="e-mail" value="" placeholder="place @ between" />
 
-
-
-
             </fieldset>
 
         </main>
@@ -122,7 +115,7 @@
                 <p id="Preis">0</p>
                 <p class="currency">€</p>
                 <button id="bestellen" >Bestellen</button>
-                <button id="asynchron_bestellen" >asynchron bestellen</button> 
+                <button type="button" id="asynchron_bestellen" >asynchron bestellen</button> 
                 <p>Ihre Bestellung:</p>
                 <ul id="Liste">
                 </ul>
