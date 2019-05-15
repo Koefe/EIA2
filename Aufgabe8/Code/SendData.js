@@ -21,10 +21,10 @@ var SendData;
                 getString += input[i].name + "=" + input[i].value + "&";
             }
             if (input[i].type == "radio" && input[i].checked) {
-                getString += input[i].className + "&";
+                getString += input[i].name + "=" + input[i].value + "&";
             }
             if (input[i].type == "checkbox" && input[i].checked) {
-                getString += input[i].className + "&";
+                getString += input[i].name + "&";
             }
         }
         let xhr = new XMLHttpRequest();
