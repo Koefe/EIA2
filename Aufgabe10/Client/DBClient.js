@@ -7,8 +7,16 @@ var DBClient;
         console.log("Init");
         let insertButton = document.getElementById("insert");
         let refreshButton = document.getElementById("refresh");
+        let filterbutton = document.getElementById("filterbutton");
         insertButton.addEventListener("click", insert);
         refreshButton.addEventListener("click", refresh);
+        filterbutton.addEventListener("click", filter);
+    }
+    function filter(_event) {
+        let inputs = document.getElementById("filterinput");
+        let query = "command=filterbutton";
+        query += "&matrikel=" + inputs.value;
+        sendRequest(query, handleFindResponse);
     }
     function insert(_event) {
         let inputs = document.getElementsByTagName("input");

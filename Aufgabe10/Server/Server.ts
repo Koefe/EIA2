@@ -44,6 +44,10 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
         case "refresh":
             Database.findAll(findCallback);
             break;
+        case "filterbutton":
+            let definedMatrikel: number = parseInt(query["matrikel"]);
+            Database.findMatrikel(definedMatrikel, findCallback); 
+            break;
         default:
             respond(_response, "unknown command: " + command);
             break;

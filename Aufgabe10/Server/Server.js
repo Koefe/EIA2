@@ -36,6 +36,10 @@ function handleRequest(_request, _response) {
         case "refresh":
             Database.findAll(findCallback);
             break;
+        case "filterbutton":
+            let definedMatrikel = parseInt(query["matrikel"]);
+            Database.findMatrikel(definedMatrikel, findCallback);
+            break;
         default:
             respond(_response, "unknown command: " + command);
             break;

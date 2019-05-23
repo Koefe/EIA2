@@ -41,7 +41,7 @@ function handleInsert(_e) {
 // try to fetch all documents from database, then activate callback
 function findAll(_callback) {
     // cursor points to the retreived set of documents in memory
-    var cursor = students.find();
+    let cursor = students.find();
     // try to convert to array, then activate callback "prepareAnswer"
     cursor.toArray(prepareAnswer);
     // toArray-handler receives two standard parameters, an error object and the array
@@ -55,4 +55,15 @@ function findAll(_callback) {
     }
 }
 exports.findAll = findAll;
+function findMatrikel(_definedMatrikel, _callback) {
+    let cursor = students.find({ "matrikelnummer": _definedMatrikel });
+    cursor.toArray(prepareAnswer);
+    function prepareAnswer(_e) {
+        if (_e)
+            _callback("Error" + _e);
+        else
+            _callback(JSON.stringify(cursor));
+    }
+}
+exports.findMatrikel = findMatrikel;
 //# sourceMappingURL=Database.js.map

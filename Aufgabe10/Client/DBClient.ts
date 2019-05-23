@@ -7,8 +7,18 @@ namespace DBClient {
         console.log("Init");
         let insertButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("insert");
         let refreshButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("refresh");
+        let filterbutton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("filterbutton");
         insertButton.addEventListener("click", insert);
         refreshButton.addEventListener("click", refresh);
+        filterbutton.addEventListener("click", filter);
+    }
+
+    function filter(_event: Event): void {
+        let inputs: HTMLInputElement = <HTMLInputElement>document.getElementById("filterinput");
+        let query: string = "command=filterbutton";
+
+        query += "&matrikel=" + inputs.value;
+        sendRequest(query, handleFindResponse);
     }
 
     function insert(_event: Event): void {
