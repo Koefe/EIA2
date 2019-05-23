@@ -8,15 +8,15 @@ import * as Mongo from "mongodb";
 console.log("Database starting");
 
 let databaseURL: string = "mongodb://localhost:27017";
-let databaseName: string = "Test";
+let databaseName: string = "Kurs";
 let db: Mongo.Db;
 let students: Mongo.Collection;
 
 // running on heroku?
 if (process.env.NODE_ENV == "production") {
     // databaseURL = "mongodb+srv://username:password@hostname:port/database";
-    databaseURL = "mongodb+srv://testuser:testpassword@eia2-57vpd.mongodb.net/eia2";
-    databaseName = "eia2";
+    databaseURL = "mongodb+srv://Aden:mLabEIA2pw@eia2cluster-eqine.mongodb.net/EIA2Cluster";
+    databaseName = "Kurs";
 }
 
 // try to connect to database, then activate callback "handleConnect" 
