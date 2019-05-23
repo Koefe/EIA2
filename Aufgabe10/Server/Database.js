@@ -56,13 +56,13 @@ function findAll(_callback) {
 }
 exports.findAll = findAll;
 function findMatrikel(_definedMatrikel, _callback) {
-    let cursor = students.find({ "matrikelnummer": _definedMatrikel });
-    cursor.toArray(prepareAnswer);
-    function prepareAnswer(_e) {
+    let student = students.find({ "matrikel": _definedMatrikel });
+    student.toArray(prepareAnswer);
+    function prepareAnswer(_e, studentArray) {
         if (_e)
             _callback("Error" + _e);
         else
-            _callback(JSON.stringify(cursor));
+            _callback(JSON.stringify(studentArray));
     }
 }
 exports.findMatrikel = findMatrikel;

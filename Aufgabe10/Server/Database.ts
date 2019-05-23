@@ -50,7 +50,6 @@ export function findAll(_callback: Function): void {
     // try to convert to array, then activate callback "prepareAnswer"
     cursor.toArray(prepareAnswer);
 
-
     // toArray-handler receives two standard parameters, an error object and the array
     // implemented as inner function, so _callback is in scope
     function prepareAnswer(_e: Mongo.MongoError, studentArray: StudentData[]): void {
@@ -63,17 +62,15 @@ export function findAll(_callback: Function): void {
 }
 
 export function findMatrikel(_definedMatrikel: number, _callback: Function): void {
-    let cursor: Mongo.Cursor = students.find({"matrikelnummer": _definedMatrikel});
-    cursor.toArray(prepareAnswer);
+    let student: Mongo.Cursor = students.find({"matrikel": _definedMatrikel});
+    student.toArray(prepareAnswer);
 
 
-
-    function prepareAnswer(_e: Mongo.MongoError): void {
+    function prepareAnswer(_e: Mongo.MongoError, studentArray: StudentData[]): void {
         if (_e)
             _callback("Error" + _e);
         else
-            _callback(JSON.stringify(cursor));
+            _callback(JSON.stringify(studentArray));
     }
-
 
 }
