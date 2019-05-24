@@ -62,7 +62,7 @@ export function findAll(_callback: Function): void {
 }
 
 export function findMatrikel(_definedMatrikel: number, _callback: Function): void {
-    let student: Mongo.Cursor = students.find({"matrikel": _definedMatrikel});
+    let student: Mongo.Cursor = students.find({"mat": _definedMatrikel});
     student.toArray(prepareAnswer);
 
 
