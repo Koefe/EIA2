@@ -17,7 +17,7 @@ namespace DBClient {
         let inputs: HTMLInputElement = <HTMLInputElement>document.getElementById("filterinput");
         let query: string = "command=filterbutton";
 
-        query += "&mat=" + inputs.value;
+        query += "&matrikel=" + inputs.value;
         sendRequest(query, handleFindResponse);
     }
 

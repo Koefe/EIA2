@@ -45,7 +45,7 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
             Database.findAll(findCallback);
             break;
         case "filterbutton":
-            let definedMatrikel: number = parseInt(query["mat"]);
+            let definedMatrikel: number = parseInt(query["matrikel"]);
             Database.findMatrikel(definedMatrikel, findCallback);
             break;
         default:
