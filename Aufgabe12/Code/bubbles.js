@@ -17,6 +17,13 @@ var aquarium;
         move() {
             this.x += this.dx;
             this.y += this.dy;
+            if (this.x > aquarium.canvas.width || this.x < 0 || this.y > aquarium.canvas.height || this.y < 0) {
+                //fish.newMove(x, y);
+                //update();
+                console.log("Bubble Raus");
+                this.x = Math.random() * aquarium.canvas.width; //canvas.width / 2;
+                this.y = 300; //canvas.height; // 2;
+            }
         }
     }
     aquarium.Bubbles = Bubbles;

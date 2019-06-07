@@ -22,14 +22,14 @@ namespace aquarium {
 
             let bluefishfloss: Path2D = new Path2D();
 
-            bluefishfloss.arc(this.x, this.y + 8, 5, 0, Math.PI);
+            bluefishfloss.arc(this.x + 25, this.y - 4, 5, 0, Math.PI);
 
             crc.fillStyle = "SteelBlue";
             crc.fill(bluefishfloss);
 
             let bluefishfloss1: Path2D = new Path2D();
 
-            bluefishfloss1.arc(this.x - 5, this.y - 3, 10, 0, Math.PI);
+            bluefishfloss1.arc(this.x + 20, this.y + 3, 10, 0, Math.PI);
 
             crc.fillStyle = "SteelBlue";
             crc.fill(bluefishfloss1);
@@ -39,14 +39,14 @@ namespace aquarium {
 
             let bluefisheye: Path2D = new Path2D();
 
-            bluefisheye.arc(this.x + 15, this.y, 4, 0, 360);
+            bluefisheye.arc(this.x + 2, this.y, 4, 0, 360);
 
             crc.fillStyle = "white";
             crc.fill(bluefisheye);
 
             let bluefisheyepupil: Path2D = new Path2D();
 
-            bluefisheyepupil.arc(this.x + 15, this.y, 2, 0, 360);
+            bluefisheyepupil.arc(this.x + 2, this.y, 2, 0, 360);
 
             crc.fillStyle = "black";
             crc.fill(bluefisheyepupil);
@@ -59,6 +59,13 @@ namespace aquarium {
         move(): void {
             this.x += this.dx;
             this.y += this.dy;
+            if (this.x > canvas.width || this.x < 0 || this.y > canvas.height || this.y < 0) {
+                //fish.newMove(x, y);
+                //update();
+                console.log("Blau Raus");
+                this.x = 600 ; //canvas.width / 2;
+                this.y = canvas.height / 3;
+            }
         }
     }
 }

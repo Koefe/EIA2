@@ -83,8 +83,8 @@ namespace aquarium {
             if (this.x > canvas.width || this.x < 0 || this.y > canvas.height || this.y < 0) {
                 //fish.newMove(x, y);
                 //update();
-                console.log("Raus");
-                this.x = canvas.width / 2;
+                console.log("Orange Raus");
+                this.x = 0 ; //canvas.width / 2;
                 this.y = canvas.height / 2;
             }
     }

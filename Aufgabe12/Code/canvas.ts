@@ -33,8 +33,8 @@ namespace aquarium {
         for (let i: number = 0; i < 10; i++) {
             let x: number = Math.random() * canvas.width;
             let y: number = Math.random() * canvas.height;
-            let dx: number = Math.random() * 10 - 5;
-            let dy: number = Math.random() * 10 - 5;
+            let dx: number =  10 - 5;
+            let dy: number = Math.random() * 9 - 5;
             let fische: Fish;
 
             fische = new Fish();
@@ -52,7 +52,7 @@ namespace aquarium {
         for (let i: number = 0; i < 10; i++) {
             let x: number = Math.random() * canvas.width;
             let y: number = Math.random() * canvas.height;
-            let dx: number = Math.random() * 10 - 6;
+            let dx: number = -10 ;
             let dy: number = Math.random() * 10 - 2;
             let bluefish: BlueFish;
 

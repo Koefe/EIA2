@@ -26,6 +26,13 @@ namespace aquarium {
         move(): void {
             this.x += this.dx;
             this.y += this.dy;
+            if (this.x > canvas.width || this.x < 0 || this.y > canvas.height || this.y < 0) {
+                //fish.newMove(x, y);
+                //update();
+                console.log("Bubble Raus");
+                this.x =  Math.random() * canvas.width; //canvas.width / 2;
+                this.y =  300; //canvas.height; // 2;
+            }
         }
     }
 }

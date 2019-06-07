@@ -52,8 +52,8 @@ var aquarium;
             if (this.x > aquarium.canvas.width || this.x < 0 || this.y > aquarium.canvas.height || this.y < 0) {
                 //fish.newMove(x, y);
                 //update();
-                console.log("Raus");
-                this.x = aquarium.canvas.width / 2;
+                console.log("Orange Raus");
+                this.x = 0; //canvas.width / 2;
                 this.y = aquarium.canvas.height / 2;
             }
         }

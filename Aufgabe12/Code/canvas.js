@@ -22,8 +22,8 @@ var aquarium;
         for (let i = 0; i < 10; i++) {
             let x = Math.random() * aquarium.canvas.width;
             let y = Math.random() * aquarium.canvas.height;
-            let dx = Math.random() * 10 - 5;
-            let dy = Math.random() * 10 - 5;
+            let dx = 10 - 5;
+            let dy = Math.random() * 9 - 5;
             let fische;
             fische = new aquarium.Fish();
             fische.x = x;
@@ -37,7 +37,7 @@ var aquarium;
         for (let i = 0; i < 10; i++) {
             let x = Math.random() * aquarium.canvas.width;
             let y = Math.random() * aquarium.canvas.height;
-            let dx = Math.random() * 10 - 6;
+            let dx = -10;
             let dy = Math.random() * 10 - 2;
             let bluefish;
             bluefish = new aquarium.BlueFish();
