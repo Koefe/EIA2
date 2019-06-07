@@ -13,7 +13,7 @@ var aquarium;
         aquarium.crc = aquarium.canvas.getContext("2d");
         background(x, y);
         for (let i = 0; i < 10; i++) {
-            let x = Math.random() * aquarium.canvas.width;
+            let x = Math.random() * aquarium.canvas.width - 150;
             //let y: number = Math.random() * canvas.height;
             plant(x, y);
         }
@@ -38,7 +38,7 @@ var aquarium;
             let x = Math.random() * aquarium.canvas.width;
             let y = Math.random() * aquarium.canvas.height;
             let dx = -10;
-            let dy = Math.random() * 10 - 2;
+            let dy = Math.random() * 10 - 7;
             let bluefish;
             bluefish = new aquarium.BlueFish();
             bluefish.x = x;
@@ -48,7 +48,7 @@ var aquarium;
             blueFishArray.push(bluefish);
             console.log(bluefish);
         }
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 20; i++) {
             let x = Math.random() * aquarium.canvas.width;
             let y = Math.random() * aquarium.canvas.height;
             let dx = Math.random() * 2 - 4;

@@ -40,7 +40,7 @@ var aquarium;
                 //update();
                 console.log("Blau Raus");
                 this.x = 600; //canvas.width / 2;
-                this.y = aquarium.canvas.height / 3;
+                this.y = aquarium.canvas.height / 2;
             }
         }
     }

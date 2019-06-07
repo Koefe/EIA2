@@ -10,7 +10,7 @@ namespace aquarium {
 
         draw(): void {
             let bubble: Path2D = new Path2D();
-            bubble.arc(this.x + 10, this.y, 20, 0, 360);
+            bubble.arc(this.x + 10, this.y, 10, 0, 360);
             //crc.fillStyle = "lightblue";
             //crc.fill(bubble);
 

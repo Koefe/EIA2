@@ -64,7 +64,7 @@ namespace aquarium {
                 //update();
                 console.log("Blau Raus");
                 this.x = 600 ; //canvas.width / 2;
-                this.y = canvas.height / 3;
+                this.y = canvas.height / 2;
             }
         }
     }
