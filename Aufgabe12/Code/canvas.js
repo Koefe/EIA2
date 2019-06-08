@@ -75,11 +75,11 @@ var aquarium;
             let y = Math.random() * aquarium.canvas.height;
             drawbluefish(x, y);
         }
-        for (let i = 0; i < 20; i++) {
-            let x = Math.random() * aquarium.canvas.width;
-            let y = Math.random() * aquarium.canvas.height;
-            drawbubbles(x, y);
-        }
+        //for (let i: number = 0; i < 20; i++) {
+        //    let x: number = Math.random() * canvas.width;
+        //    let y: number = Math.random() * canvas.height;
+        //    drawbubbles(x, y);
+        //}
     }
     function update() {
         window.setTimeout(update, 1000 / fps);

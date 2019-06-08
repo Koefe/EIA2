@@ -5,7 +5,7 @@ namespace aquarium {
 
     let fishArray: Fish[] = [];
     let blueFishArray: BlueFish[] = [];
-    let bubbleArray: BlueFish[] = [];
+    let bubbleArray: Bubbles[] = [];
 
     let fps: number = 30;
     let imageData: ImageData;
@@ -103,11 +103,11 @@ namespace aquarium {
             drawbluefish(x, y);
         }
 
-        for (let i: number = 0; i < 20; i++) {
-            let x: number = Math.random() * canvas.width;
-            let y: number = Math.random() * canvas.height;
-            drawbubbles(x, y);
-        }
+        //for (let i: number = 0; i < 20; i++) {
+        //    let x: number = Math.random() * canvas.width;
+        //    let y: number = Math.random() * canvas.height;
+        //    drawbubbles(x, y);
+        //}
 
     }
 

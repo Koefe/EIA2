@@ -5,7 +5,7 @@ namespace aquarium {
         y: number;
         dx: number;
         dy: number;
-        color: string;
+        
 
         draw(): void {
             let fishbody: Path2D = new Path2D();
