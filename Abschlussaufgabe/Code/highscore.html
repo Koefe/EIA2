@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="Server.js"></script>
+    <script src="DBClient.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Database.js"></script>
+    <script src="PlayerData.js"></script>
+
+    <title>Highscore-Liste</title>
+</head>
+<body>
+        <fieldset id="input">
+                <legend> Type student data here </legend>
+                <input type="text" name="name" placeholder="name" id="name" />
+                
+                
+                
+                <button type="button" id="insert">Insert to database</button>
+            </fieldset>
+            <fieldset id="output">
+                <legend> All student data </legend>
+                <button type="button" id="refresh">Refresh</button>
+                
+      
+                <textarea rows="20" cols="90"> </textarea>
+            </fieldset>
+            <div id="highscoreList"></div>
+    
+</body>
+</html>
