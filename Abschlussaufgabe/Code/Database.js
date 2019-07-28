@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Mongo = require("mongodb");
-//import { Player } from "./PlayerData";
 console.log("Database starting");
 let databaseURL = "mongodb://localhost:27017";
 let databaseName = "Highscore";

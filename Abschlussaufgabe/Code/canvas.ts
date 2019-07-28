@@ -5,11 +5,7 @@ namespace aquarium {
     document.addEventListener("DOMContentLoaded", init);
     //document.addEventListener("mousedown", food);
     document.addEventListener("keydown", control);
-    //document.addEventListener("DOMContentLoaded", name);
-
-    //let serverAdress: string = "http://localhost:8100";
-
-    //document.addEventListener("DOMContentLoaded", hitbox);
+ 
 
     export let crc: CanvasRenderingContext2D;
 
@@ -78,12 +74,6 @@ namespace aquarium {
 
     }
 
-    //function name(): void {
-        //let base: number = 10;
-        //let nickname: string = prompt("nickname");
-        //insert(nickname);
-        //find();
-    //}
 
 
     function update(): void {
@@ -154,16 +144,6 @@ namespace aquarium {
 
     }
 
-    //function food(_event: MouseEvent): void {
-        //let newx: number = _event.clientX;
-        //let newy: number = _event.clientY;
-
-        //if (newx <= canvas.width && newy <= canvas.height) {
-            //let food: Food = new Food(newx, newy);
-            //fishArray.push(food);
-        //}
-    //}
-
     function control(_event: KeyboardEvent): void {
 
         //window.setTimeout(update, 1000 / fps);
@@ -185,15 +165,15 @@ namespace aquarium {
     function collision(): void {
         for (let i: number = 0; i < fishArray.length; i++) {
             if (fishArray[i].x > mainfishArray[0].x - 10 && fishArray[i].x < mainfishArray[0].x + 10 && fishArray[i].y > mainfishArray[0].y - 10 && fishArray[i].y < mainfishArray[0].y + 10) {
-                //(mainfishArray[0].x + 10 <= fishArray[i].x + 10 && mainfishArray[0].y + 5 <= fishArray[i].y - 10 || fishArray[i].x <= mainfishArray[0].x + 10 && mainfishArray[0].y + fishArray[i].y + 10 ) {
-                //let deleteIndex: number = 1;
-                //fishArray[i].splice(deleteIndex, 1);
+            
 
                 if (mainfishArray[0].size < fishArray[i].size) {
      
                     let playerName: string = prompt("name eingeben");
                     insert(playerName);
                     find();
+
+                    window.location.href = "start.html";
                     
 
                 }
@@ -207,7 +187,7 @@ namespace aquarium {
                     fishArray.push(bluefish);
 
                     pointArray.push(fishArray[i]);
-                    counter();
+                    counter(50);
                     scaleFish();
 
                 }
@@ -218,10 +198,10 @@ namespace aquarium {
 
     }
 
-    export let score: number = pointArray.length;
-    function counter(): void {
-
-        document.getElementById("counter").innerHTML = pointArray.length.toString();
+    export let score: number = 0;
+    function counter(_score: number): void {
+        score += _score;
+        document.getElementById("counter").innerHTML = score.toString();
     }
 
     function scaleFish(): void {

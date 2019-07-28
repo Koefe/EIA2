@@ -1,6 +1,6 @@
 
 import * as Mongo from "mongodb";
-//import { Player } from "./PlayerData";
+
 console.log("Database starting");
 
 let databaseURL: string = "mongodb://localhost:27017";

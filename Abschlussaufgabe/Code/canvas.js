@@ -48,12 +48,6 @@ var aquarium;
         }
         update();
     }
-    //function name(): void {
-    //let base: number = 10;
-    //let nickname: string = prompt("nickname");
-    //insert(nickname);
-    //find();
-    //}
     function update() {
         window.setTimeout(update, 1000 / fps);
         aquarium.crc.clearRect(0, 0, aquarium.canvas.width, aquarium.canvas.height);
@@ -101,14 +95,6 @@ var aquarium;
         aquarium.crc.fillStyle = "DarkSlateGrey ";
         aquarium.crc.fill(stone2);
     }
-    //function food(_event: MouseEvent): void {
-    //let newx: number = _event.clientX;
-    //let newy: number = _event.clientY;
-    //if (newx <= canvas.width && newy <= canvas.height) {
-    //let food: Food = new Food(newx, newy);
-    //fishArray.push(food);
-    //}
-    //}
     function control(_event) {
         //window.setTimeout(update, 1000 / fps);
         if (_event.keyCode == 68) {
@@ -127,13 +113,11 @@ var aquarium;
     function collision() {
         for (let i = 0; i < aquarium.fishArray.length; i++) {
             if (aquarium.fishArray[i].x > mainfishArray[0].x - 10 && aquarium.fishArray[i].x < mainfishArray[0].x + 10 && aquarium.fishArray[i].y > mainfishArray[0].y - 10 && aquarium.fishArray[i].y < mainfishArray[0].y + 10) {
-                //(mainfishArray[0].x + 10 <= fishArray[i].x + 10 && mainfishArray[0].y + 5 <= fishArray[i].y - 10 || fishArray[i].x <= mainfishArray[0].x + 10 && mainfishArray[0].y + fishArray[i].y + 10 ) {
-                //let deleteIndex: number = 1;
-                //fishArray[i].splice(deleteIndex, 1);
                 if (mainfishArray[0].size < aquarium.fishArray[i].size) {
                     let playerName = prompt("name eingeben");
                     aquarium.insert(playerName);
                     aquarium.find();
+                    window.location.href = "start.html";
                 }
                 else {
                     aquarium.fishArray.splice(i, 1);
@@ -142,15 +126,16 @@ var aquarium;
                     let bluefish = new aquarium.BlueFish();
                     aquarium.fishArray.push(bluefish);
                     pointArray.push(aquarium.fishArray[i]);
-                    counter();
+                    counter(50);
                     scaleFish();
                 }
             }
         }
     }
-    aquarium.score = pointArray.length;
-    function counter() {
-        document.getElementById("counter").innerHTML = pointArray.length.toString();
+    aquarium.score = 0;
+    function counter(_score) {
+        aquarium.score += _score;
+        document.getElementById("counter").innerHTML = aquarium.score.toString();
     }
     function scaleFish() {
         mainfishArray[0].a += 0.2;

@@ -31,7 +31,7 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
         case "insert":
             let highscore: Player = {
                 name: query["name"],
-                score: parseInt(query["score"])
+                score: query["score"]
             };
             Database.insert(highscore);
             respond(_response, "storing data");

@@ -4,5 +4,5 @@ interface AssocStringString {
 
 interface Player {
     name: string;
-    score: number;
+    score: string;
 }

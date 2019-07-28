@@ -23,7 +23,7 @@ function handleRequest(_request, _response) {
         case "insert":
             let highscore = {
                 name: query["name"],
-                score: parseInt(query["score"])
+                score: query["score"]
             };
             Database.insert(highscore);
             respond(_response, "storing data");
