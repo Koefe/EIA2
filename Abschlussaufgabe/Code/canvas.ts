@@ -5,7 +5,7 @@ namespace aquarium {
     document.addEventListener("DOMContentLoaded", init);
     //document.addEventListener("mousedown", food);
     document.addEventListener("keydown", control);
-    document.addEventListener("DOMContentLoaded", name);
+    //document.addEventListener("DOMContentLoaded", name);
 
     //let serverAdress: string = "http://localhost:8100";
 
@@ -98,6 +98,7 @@ namespace aquarium {
 
         collision();
     }
+
 
 
     function background(_x: number, _y: number): void {

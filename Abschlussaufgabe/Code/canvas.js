@@ -4,7 +4,6 @@ var aquarium;
     document.addEventListener("DOMContentLoaded", init);
     //document.addEventListener("mousedown", food);
     document.addEventListener("keydown", control);
-    document.addEventListener("DOMContentLoaded", name);
     aquarium.fishArray = [];
     let mainfishArray = [];
     let pointArray = [];
