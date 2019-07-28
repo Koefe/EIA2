@@ -11,7 +11,7 @@ let highscore: Mongo.Collection;
 //running on heroku?
 if (process.env.NODE_ENV == "production") {
     //databaseURL = "mongodb+srv://username:password@hostname:port/database";
-    databaseURL = "mongodb+srv://Aden:mLabEIA2pw@eia2cluster-eqine.mongodb.net/test"; //--username Aden
+    databaseURL = "mongodb+srv://Aden:mLabEIA2pw@eia2cluster-eqine.mongodb.net/EIA2Cluster"; //--username Aden
     databaseName = "Highscore";
 }
 

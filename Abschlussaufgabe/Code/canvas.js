@@ -117,7 +117,7 @@ var aquarium;
                     let playerName = prompt("name eingeben");
                     aquarium.insert(playerName);
                     aquarium.find();
-                    window.location.href = "start.html";
+                    //window.location.href = "start.html";
                 }
                 else {
                     aquarium.fishArray.splice(i, 1);

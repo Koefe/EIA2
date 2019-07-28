@@ -173,7 +173,7 @@ namespace aquarium {
                     insert(playerName);
                     find();
 
-                    window.location.href = "start.html";
+                    //window.location.href = "start.html";
                     
 
                 }
