@@ -10,8 +10,8 @@ var Zeichenfläche;
     Zeichenfläche.moverArray = [];
     Zeichenfläche.deleteArray = [];
     ////////
-    let newClientX = 1;
-    let newClientY = 1;
+    // let newClientX: number = 1;
+    // let newClientY: number = 1;
     ////////
     let pushedObject;
     let fps = 30;
@@ -169,7 +169,7 @@ var Zeichenfläche;
         document.getElementById("animations").appendChild(buttonDelete);
         buttonDelete.addEventListener("click", deleteObjects);
         let buttonMove = document.createElement("button");
-        buttonDelete.setAttribute("id", "mover");
+        buttonMove.setAttribute("id", "mover");
         buttonMove.innerHTML = "move";
         document.getElementById("animations").appendChild(buttonMove);
         buttonMove.addEventListener("click", moverObjects);
@@ -186,19 +186,19 @@ var Zeichenfläche;
         console.log(_x, _y);
         window.setTimeout(getNewPosition, 1000);
         if (draggedObject == true) {
-            console.log("Regina");
-            newClientX = _x;
-            newClientY = _y;
-            drawCircleAtNewLocation();
+            console.log("R");
+            // newClientX = _x;
+            // newClientY = _y;
+            drawCircleAtNewLocation(_x, _y);
             //document.getElementById("animations").innerHTML = "";
         }
     }
-    function drawCircleAtNewLocation() {
-        Zeichenfläche.changedArray[0].x = newClientX;
-        Zeichenfläche.changedArray[0].y = newClientY;
+    function drawCircleAtNewLocation(_newClientX, _newClientY) {
+        Zeichenfläche.changedArray[0].x = _newClientX;
+        Zeichenfläche.changedArray[0].y = _newClientY;
         console.log(Zeichenfläche.changedArray[0].x);
         console.log(Zeichenfläche.changedArray[0].y);
-        console.log("Jana");
+        console.log("J");
         draggedObject = false;
     }
     function deleteObjects() {
@@ -223,16 +223,8 @@ var Zeichenfläche;
         //changedArray.splice(0, 1);
     }
     function dragObjects() {
-        // hier div auf kreis erstellen und damit Kreis draggen ->
-        // dragArray.push(changedArray[0]);
-        // changedArray.splice(0, 1);
-        // circleArray.splice(pushedObject, 1);
-        //for (let i: number = 0; i < changedArray.length; i++) {
-        //dragArray.push(changedArray[i]);
         draggedObject = true;
         console.log(draggedObject);
-        //}
-        //changedArray.splice(0, 1);
     }
     function colorObjects() {
         Zeichenfläche.colorArray.push(Zeichenfläche.changedArray[0]);

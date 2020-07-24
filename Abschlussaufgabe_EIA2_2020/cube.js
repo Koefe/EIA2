@@ -78,20 +78,6 @@ var Zeichenfläche;
                 console.log("hello");
             }
             ///
-            // let scale: HTMLInputElement = <HTMLInputElement>document.getElementById("scale");
-            // if (scale.checked == true) {
-            //     for (let i: number = 0; i < circleArray.length; i++) {
-            //         this.a + 1;
-            //         if (this.a > 5) {
-            //             this.a - 1;
-            //         }
-            //         if (this.a < 1) {
-            //             this.a + 1;
-            //         }
-            //         this.draw();
-            //     }
-            //     console.log(this.a);
-            // hier ne animation wo sich der kreis hochskaliert und dann wieder runterskaliert
         }
     }
     Zeichenfläche.Circle = Circle;

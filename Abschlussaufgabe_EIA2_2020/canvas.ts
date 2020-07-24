@@ -14,8 +14,8 @@ namespace Zeichenfläche {
     export let moverArray: Circle[] = [];
     export let deleteArray: Circle[] = [];
     ////////
-    let newClientX: number = 1;
-    let newClientY: number = 1;
+    // let newClientX: number = 1;
+    // let newClientY: number = 1;
     ////////
 
     let pushedObject: number;
@@ -196,7 +196,7 @@ namespace Zeichenfläche {
 
         let mouseX: number = _e.clientX;
         let mouseY: number = _e.clientY;
-        
+
         getNewPosition(mouseX, mouseY);
         let edit: HTMLInputElement = <HTMLInputElement>document.getElementById("edit");
 
@@ -247,7 +247,7 @@ namespace Zeichenfläche {
         buttonDelete.addEventListener("click", deleteObjects);
 
         let buttonMove: HTMLButtonElement = <HTMLButtonElement>document.createElement("button");
-        buttonDelete.setAttribute("id", "mover");
+        buttonMove.setAttribute("id", "mover");
         buttonMove.innerHTML = "move";
         document.getElementById("animations").appendChild(buttonMove);
         buttonMove.addEventListener("click", moverObjects);
@@ -268,22 +268,22 @@ namespace Zeichenfläche {
         console.log(_x, _y);
         window.setTimeout(getNewPosition, 1000);
         if (draggedObject == true) {
-            console.log("Regina");
-            newClientX = _x;
-            newClientY = _y;
-            drawCircleAtNewLocation();
+            console.log("R");
+            // newClientX = _x;
+            // newClientY = _y;
+            drawCircleAtNewLocation(_x, _y);
             //document.getElementById("animations").innerHTML = "";
         }
 
     }
 
-    function drawCircleAtNewLocation(): void {
+    function drawCircleAtNewLocation(_newClientX: number, _newClientY: number): void {
 
-        changedArray[0].x = newClientX;
-        changedArray[0].y = newClientY;
+        changedArray[0].x = _newClientX;
+        changedArray[0].y = _newClientY;
         console.log( changedArray[0].x);
         console.log( changedArray[0].y);
-        console.log("Jana");
+        console.log("J");
 
         draggedObject = false;
 
@@ -319,24 +319,9 @@ namespace Zeichenfläche {
     }
 
     function dragObjects(): void {
-        // hier div auf kreis erstellen und damit Kreis draggen ->
-        // dragArray.push(changedArray[0]);
-        // changedArray.splice(0, 1);
-        // circleArray.splice(pushedObject, 1);
-
-        //for (let i: number = 0; i < changedArray.length; i++) {
-        //dragArray.push(changedArray[i]);
-  
 
             draggedObject = true;
-
             console.log(draggedObject);
-    
-
-
-
-        //}
-        //changedArray.splice(0, 1);
 
     }
 
