@@ -100,7 +100,7 @@ var Zeichenfläche;
     function drawRect() {
         let rect = new Zeichenfläche.Rect();
         Zeichenfläche.circleArray.push(rect);
-        console.log(rect);
+        //console.log(rect);
     }
     //////////
     function circleDrawUpdate() {
@@ -143,9 +143,11 @@ var Zeichenfläche;
                 let currentY = Zeichenfläche.circleArray[i].y;
                 if (clientX < currentX + 30 && clientX > currentX - 10 && clientY < currentY + 20 && clientY > currentY - 20) {
                     /// -> hier noch die anderen Array reinhauen
-                    Zeichenfläche.changedArray.push(Zeichenfläche.circleArray[i]);
-                    pushedObject = i;
+                    // changedArray.push(circleArray[i]);
+                    // pushedObject = i;
                     if (testboolean == false) {
+                        Zeichenfläche.changedArray.push(Zeichenfläche.circleArray[i]);
+                        pushedObject = i;
                         createAnimationButtons();
                         console.log("buutons wurden erstellt");
                     }
@@ -187,15 +189,13 @@ var Zeichenfläche;
     }
     function drawCircleAtNewLocation(_newClientX, _newClientY) {
         testboolean = true;
-        Zeichenfläche.dragArray[0].x = _newClientX;
-        Zeichenfläche.dragArray[0].y = _newClientY;
+        Zeichenfläche.changedArray[0].x = _newClientX;
+        Zeichenfläche.changedArray[0].y = _newClientY;
         draggedObject = false;
         //sind noch im flaschen Array, man kann sie nachdem man sie bewegt hat nicht mehr aufheben.
-        Zeichenfläche.circleArray.push(Zeichenfläche.dragArray[0]);
-        Zeichenfläche.dragArray.splice(0, 1);
-        // window.setTimeout(drawCircleAtNewLocation, 10000);
-        // document.getElementById("animations").innerHTML = "";
-        //testboolean = true;
+        Zeichenfläche.circleArray.push(Zeichenfläche.changedArray[0]);
+        //dragArray.splice(0, 1);
+        Zeichenfläche.changedArray.splice(0, 1);
         window.setTimeout(select, 10000);
         document.getElementById("animations").innerHTML = "";
     }
@@ -221,11 +221,10 @@ var Zeichenfläche;
         //changedArray.splice(0, 1);
     }
     function dragObjects() {
-        Zeichenfläche.dragArray.push(Zeichenfläche.changedArray[0]);
-        Zeichenfläche.changedArray.splice(0, 1);
         Zeichenfläche.circleArray.splice(pushedObject, 1);
+        //dragArray.push(changedArray[0]);
+        //changedArray.splice(0, 1);
         draggedObject = true;
-        console.log(draggedObject);
         document.getElementById("animations").innerHTML = "";
     }
     function colorObjects() {

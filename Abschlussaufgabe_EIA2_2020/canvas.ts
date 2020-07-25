@@ -139,14 +139,13 @@ namespace Zeichenfläche {
     function drawCircle(): void {
         let circle: Circle = new Circle();
         circleArray.push(circle);
-
         //console.log(circle);
     }
 
     function drawRect(): void {
         let rect: Rect = new Rect();
         circleArray.push(rect);
-        console.log(rect);
+        //console.log(rect);
     }
     //////////
 
@@ -159,25 +158,21 @@ namespace Zeichenfläche {
 
         for (let i: number = 0; i < changedArray.length; i++) {
             changedArray[i].update();
-
             /////////
         }
 
         for (let i: number = 0; i < dragArray.length; i++) {
             dragArray[i].update();
-
             /////////
         }
 
         for (let i: number = 0; i < colorArray.length; i++) {
             colorArray[i].update();
-
             /////////
         }
 
         for (let i: number = 0; i < moverArray.length; i++) {
             moverArray[i].update();
-
             /////////
         }
 
@@ -208,18 +203,21 @@ namespace Zeichenfläche {
 
 
                 if (clientX < currentX + 30 && clientX > currentX - 10 && clientY < currentY + 20 && clientY > currentY - 20) {
-                    
-                        /// -> hier noch die anderen Array reinhauen
+
+                    /// -> hier noch die anderen Array reinhauen
+                    // changedArray.push(circleArray[i]);
+                    // pushedObject = i;
+
+                    if (testboolean == false) {
+
                         changedArray.push(circleArray[i]);
                         pushedObject = i;
-                        
-                        if (testboolean == false) {
+
                         createAnimationButtons();
                         console.log("buutons wurden erstellt");
-                        }
+                    }
 
-                        testboolean = false;
-                    
+                    testboolean = false;
                 }
             }
         }
@@ -254,6 +252,7 @@ namespace Zeichenfläche {
     function getNewPosition(_x: number, _y: number): void {
         console.log("ahhhhhhhhhhhhhhh");
         console.log(_x, _y);
+
         window.setTimeout(getNewPosition, 10000);
         if (draggedObject == true) {
             console.log("R");
@@ -266,25 +265,23 @@ namespace Zeichenfläche {
     }
 
     function drawCircleAtNewLocation(_newClientX: number, _newClientY: number): void {
+
         testboolean = true;
-        dragArray[0].x = _newClientX;
-        dragArray[0].y = _newClientY;
+
+        changedArray[0].x = _newClientX;
+        changedArray[0].y = _newClientY;
 
         draggedObject = false;
         //sind noch im flaschen Array, man kann sie nachdem man sie bewegt hat nicht mehr aufheben.
-        circleArray.push(dragArray[0]);
-        dragArray.splice(0, 1);
-        
-        // window.setTimeout(drawCircleAtNewLocation, 10000);
-        // document.getElementById("animations").innerHTML = "";
-
-        //testboolean = true;
+        circleArray.push(changedArray[0]);
+        //dragArray.splice(0, 1);
+        changedArray.splice(0, 1);
 
         window.setTimeout(select, 10000);
 
         document.getElementById("animations").innerHTML = "";
 
-
+        
     }
 
     function deleteObjects(): void {
@@ -318,12 +315,11 @@ namespace Zeichenfläche {
 
     function dragObjects(): void {
 
-        dragArray.push(changedArray[0]);
-        changedArray.splice(0, 1);
         circleArray.splice(pushedObject, 1);
+        //dragArray.push(changedArray[0]);
+        //changedArray.splice(0, 1);
 
         draggedObject = true;
-        console.log(draggedObject);
 
         document.getElementById("animations").innerHTML = "";
 
