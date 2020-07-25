@@ -14,7 +14,6 @@ namespace Zeichenfläche {
             this.rainbow = false;
         }
 
-
         draw(): void {
 
             let xcircle: Path2D = new Path2D();
@@ -41,7 +40,6 @@ namespace Zeichenfläche {
 
             }
 
-            //let color: HTMLInputElement = <HTMLInputElement>document.getElementById("color");
             let purple: HTMLInputElement = <HTMLInputElement>document.getElementById("purple");
             let pink: HTMLInputElement = <HTMLInputElement>document.getElementById("pink");
             let blue: HTMLInputElement = <HTMLInputElement>document.getElementById("blue");
@@ -96,10 +94,6 @@ namespace Zeichenfläche {
                 this.move(); //// move aufrufen und dort einstellen das bei check rotate farbe übernommen wird. this.move();
             }
 
-
-
-            //if (edit.checked && changedArray)
-
         }
 
         move(): void {
@@ -110,13 +104,10 @@ namespace Zeichenfläche {
                 this.x = 0;
                 console.log("hello");
             }
-            ///
-
+           
         }
 
     }
 
-    //setInterval(this.move, 100);
-    //}
 }
-//}
+

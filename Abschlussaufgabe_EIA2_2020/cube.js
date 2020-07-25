@@ -28,7 +28,6 @@ var Zeichenfläche;
                 Zeichenfläche.crc.fillStyle = gr;
                 Zeichenfläche.crc.fill(xcircle);
             }
-            //let color: HTMLInputElement = <HTMLInputElement>document.getElementById("color");
             let purple = document.getElementById("purple");
             let pink = document.getElementById("pink");
             let blue = document.getElementById("blue");
@@ -68,7 +67,6 @@ var Zeichenfläche;
                 Zeichenfläche.crc.stroke(xcircle);
                 this.move(); //// move aufrufen und dort einstellen das bei check rotate farbe übernommen wird. this.move();
             }
-            //if (edit.checked && changedArray)
         }
         move() {
             this.x += this.dx;
@@ -77,12 +75,8 @@ var Zeichenfläche;
                 this.x = 0;
                 console.log("hello");
             }
-            ///
         }
     }
     Zeichenfläche.Circle = Circle;
-    //setInterval(this.move, 100);
-    //}
 })(Zeichenfläche || (Zeichenfläche = {}));
-//}
 //# sourceMappingURL=cube.js.map

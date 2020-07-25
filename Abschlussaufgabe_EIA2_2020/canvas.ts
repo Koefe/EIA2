@@ -24,6 +24,7 @@ namespace Zeichenfläche {
     let backgroundColor: string = "white";
 
     let draggedObject: boolean = false;
+    let testboolean: boolean = false;
 
     export let canvas: HTMLCanvasElement;
 
@@ -62,6 +63,8 @@ namespace Zeichenfläche {
         let createCircle: HTMLButtonElement = <HTMLButtonElement>document.getElementById("circle");
         createCircle.addEventListener("click", drawCircle);
         ///////
+        let createRect: HTMLButtonElement = <HTMLButtonElement>document.getElementById("rect");
+        createRect.addEventListener("click", drawRect);
 
         let edit: HTMLInputElement = <HTMLInputElement>document.getElementById("edit");
         edit.addEventListener("change", select);
@@ -139,6 +142,12 @@ namespace Zeichenfläche {
 
         //console.log(circle);
     }
+
+    function drawRect(): void {
+        let rect: Rect = new Rect();
+        circleArray.push(rect);
+        console.log(rect);
+    }
     //////////
 
     function circleDrawUpdate(): void {
@@ -173,31 +182,13 @@ namespace Zeichenfläche {
         }
 
     }
-    // function scale(): void {
-
-    //     for (let i: number = 0; i < circleArray.length; i++) {
-    //         //let scaleCircle: HTMLInputElement = <HTMLInputElement>document.getElementById("scale");
-    //         this.a + 1;
-    //         if (this.a > 5) {
-    //             this.a - 1;
-    //         }
-    //         if (this.a < 1) {
-    //             this.a + 1;
-    //         }
-    //         console.log("hello" + this.a);
-
-    //     }
-
-    // }
-
 
     //// - funktioniert noch nicht ganz richtig
     function select(_e: MouseEvent): void {
 
-        let mouseX: number = _e.clientX;
-        let mouseY: number = _e.clientY;
+        console.log(_e.clientX, _e.clientY);
 
-        getNewPosition(mouseX, mouseY);
+        getNewPosition(_e.clientX, _e.clientY);
         let edit: HTMLInputElement = <HTMLInputElement>document.getElementById("edit");
 
         if (edit.checked == true) {
@@ -215,27 +206,23 @@ namespace Zeichenfläche {
                 let currentX: number = circleArray[i].x;
                 let currentY: number = circleArray[i].y;
 
+
                 if (clientX < currentX + 30 && clientX > currentX - 10 && clientY < currentY + 20 && clientY > currentY - 20) {
+                    
+                        /// -> hier noch die anderen Array reinhauen
+                        changedArray.push(circleArray[i]);
+                        pushedObject = i;
+                        
+                        if (testboolean == false) {
+                        createAnimationButtons();
+                        console.log("buutons wurden erstellt");
+                        }
 
-                    /// -> hier noch die anderen Array reinhauen
-
-                    changedArray.push(circleArray[i]);
-                    //circleArray.splice(i);
-                    pushedObject = i;
-                    //console.log(circleArray);
-
-                    createAnimationButtons();
-                    console.log("buutons wurden erstellt");
-                    //circleArray.splice(0, 1);
-
-                    //console.log("new circle has been drawn");
-                    //neue funktion aufrufen?
-
+                        testboolean = false;
+                    
                 }
-
             }
         }
-
     }
 
     function createAnimationButtons(): void {
@@ -265,27 +252,37 @@ namespace Zeichenfläche {
     }
 
     function getNewPosition(_x: number, _y: number): void {
+        console.log("ahhhhhhhhhhhhhhh");
         console.log(_x, _y);
-        window.setTimeout(getNewPosition, 1000);
+        window.setTimeout(getNewPosition, 10000);
         if (draggedObject == true) {
             console.log("R");
             // newClientX = _x;
             // newClientY = _y;
             drawCircleAtNewLocation(_x, _y);
-            //document.getElementById("animations").innerHTML = "";
+
         }
 
     }
 
     function drawCircleAtNewLocation(_newClientX: number, _newClientY: number): void {
-
-        changedArray[0].x = _newClientX;
-        changedArray[0].y = _newClientY;
-        console.log( changedArray[0].x);
-        console.log( changedArray[0].y);
-        console.log("J");
+        testboolean = true;
+        dragArray[0].x = _newClientX;
+        dragArray[0].y = _newClientY;
 
         draggedObject = false;
+        //sind noch im flaschen Array, man kann sie nachdem man sie bewegt hat nicht mehr aufheben.
+        circleArray.push(dragArray[0]);
+        dragArray.splice(0, 1);
+        
+        // window.setTimeout(drawCircleAtNewLocation, 10000);
+        // document.getElementById("animations").innerHTML = "";
+
+        //testboolean = true;
+
+        window.setTimeout(select, 10000);
+
+        document.getElementById("animations").innerHTML = "";
 
 
     }
@@ -294,7 +291,8 @@ namespace Zeichenfläche {
         deleteArray.push(changedArray[0]);
         changedArray.splice(0, 1);
         circleArray.splice(pushedObject, 1);
-        // muss das hier durch ne for schleife laufen
+
+        // muss hier durch ne for schleife laufen
         for (let i: number = 0; i < deleteArray.length; i++) {
             deleteArray.splice(i, 1);
 
@@ -320,8 +318,14 @@ namespace Zeichenfläche {
 
     function dragObjects(): void {
 
-            draggedObject = true;
-            console.log(draggedObject);
+        dragArray.push(changedArray[0]);
+        changedArray.splice(0, 1);
+        circleArray.splice(pushedObject, 1);
+
+        draggedObject = true;
+        console.log(draggedObject);
+
+        document.getElementById("animations").innerHTML = "";
 
     }
 
@@ -336,9 +340,7 @@ namespace Zeichenfläche {
             document.getElementById("animations").innerHTML = "";
 
         }
-        //changedArray.splice(0, 1);
 
-        //console.log(colorArray.length);
     }
 
 }

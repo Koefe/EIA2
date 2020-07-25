@@ -18,6 +18,7 @@ var Zeichenfläche;
     let imageData;
     let backgroundColor = "white";
     let draggedObject = false;
+    let testboolean = false;
     //export let pushedButton: boolean = false;
     function init() {
         Zeichenfläche.canvas = document.getElementsByTagName("canvas")[0];
@@ -41,6 +42,8 @@ var Zeichenfläche;
         let createCircle = document.getElementById("circle");
         createCircle.addEventListener("click", drawCircle);
         ///////
+        let createRect = document.getElementById("rect");
+        createRect.addEventListener("click", drawRect);
         let edit = document.getElementById("edit");
         edit.addEventListener("change", select);
         update();
@@ -94,6 +97,11 @@ var Zeichenfläche;
         Zeichenfläche.circleArray.push(circle);
         //console.log(circle);
     }
+    function drawRect() {
+        let rect = new Zeichenfläche.Rect();
+        Zeichenfläche.circleArray.push(rect);
+        console.log(rect);
+    }
     //////////
     function circleDrawUpdate() {
         ///////// - Formen einfügen 01
@@ -118,24 +126,10 @@ var Zeichenfläche;
             /////////
         }
     }
-    // function scale(): void {
-    //     for (let i: number = 0; i < circleArray.length; i++) {
-    //         //let scaleCircle: HTMLInputElement = <HTMLInputElement>document.getElementById("scale");
-    //         this.a + 1;
-    //         if (this.a > 5) {
-    //             this.a - 1;
-    //         }
-    //         if (this.a < 1) {
-    //             this.a + 1;
-    //         }
-    //         console.log("hello" + this.a);
-    //     }
-    // }
     //// - funktioniert noch nicht ganz richtig
     function select(_e) {
-        let mouseX = _e.clientX;
-        let mouseY = _e.clientY;
-        getNewPosition(mouseX, mouseY);
+        console.log(_e.clientX, _e.clientY);
+        getNewPosition(_e.clientX, _e.clientY);
         let edit = document.getElementById("edit");
         if (edit.checked == true) {
             let clientX = _e.clientX;
@@ -150,14 +144,12 @@ var Zeichenfläche;
                 if (clientX < currentX + 30 && clientX > currentX - 10 && clientY < currentY + 20 && clientY > currentY - 20) {
                     /// -> hier noch die anderen Array reinhauen
                     Zeichenfläche.changedArray.push(Zeichenfläche.circleArray[i]);
-                    //circleArray.splice(i);
                     pushedObject = i;
-                    //console.log(circleArray);
-                    createAnimationButtons();
-                    console.log("buutons wurden erstellt");
-                    //circleArray.splice(0, 1);
-                    //console.log("new circle has been drawn");
-                    //neue funktion aufrufen?
+                    if (testboolean == false) {
+                        createAnimationButtons();
+                        console.log("buutons wurden erstellt");
+                    }
+                    testboolean = false;
                 }
             }
         }
@@ -183,29 +175,35 @@ var Zeichenfläche;
         buttonColor.addEventListener("click", colorObjects);
     }
     function getNewPosition(_x, _y) {
+        console.log("ahhhhhhhhhhhhhhh");
         console.log(_x, _y);
-        window.setTimeout(getNewPosition, 1000);
+        window.setTimeout(getNewPosition, 10000);
         if (draggedObject == true) {
             console.log("R");
             // newClientX = _x;
             // newClientY = _y;
             drawCircleAtNewLocation(_x, _y);
-            //document.getElementById("animations").innerHTML = "";
         }
     }
     function drawCircleAtNewLocation(_newClientX, _newClientY) {
-        Zeichenfläche.changedArray[0].x = _newClientX;
-        Zeichenfläche.changedArray[0].y = _newClientY;
-        console.log(Zeichenfläche.changedArray[0].x);
-        console.log(Zeichenfläche.changedArray[0].y);
-        console.log("J");
+        testboolean = true;
+        Zeichenfläche.dragArray[0].x = _newClientX;
+        Zeichenfläche.dragArray[0].y = _newClientY;
         draggedObject = false;
+        //sind noch im flaschen Array, man kann sie nachdem man sie bewegt hat nicht mehr aufheben.
+        Zeichenfläche.circleArray.push(Zeichenfläche.dragArray[0]);
+        Zeichenfläche.dragArray.splice(0, 1);
+        // window.setTimeout(drawCircleAtNewLocation, 10000);
+        // document.getElementById("animations").innerHTML = "";
+        //testboolean = true;
+        window.setTimeout(select, 10000);
+        document.getElementById("animations").innerHTML = "";
     }
     function deleteObjects() {
         Zeichenfläche.deleteArray.push(Zeichenfläche.changedArray[0]);
         Zeichenfläche.changedArray.splice(0, 1);
         Zeichenfläche.circleArray.splice(pushedObject, 1);
-        // muss das hier durch ne for schleife laufen
+        // muss hier durch ne for schleife laufen
         for (let i = 0; i < Zeichenfläche.deleteArray.length; i++) {
             Zeichenfläche.deleteArray.splice(i, 1);
         }
@@ -223,8 +221,12 @@ var Zeichenfläche;
         //changedArray.splice(0, 1);
     }
     function dragObjects() {
+        Zeichenfläche.dragArray.push(Zeichenfläche.changedArray[0]);
+        Zeichenfläche.changedArray.splice(0, 1);
+        Zeichenfläche.circleArray.splice(pushedObject, 1);
         draggedObject = true;
         console.log(draggedObject);
+        document.getElementById("animations").innerHTML = "";
     }
     function colorObjects() {
         Zeichenfläche.colorArray.push(Zeichenfläche.changedArray[0]);
@@ -234,8 +236,6 @@ var Zeichenfläche;
             Zeichenfläche.colorArray[i].rainbow = true;
             document.getElementById("animations").innerHTML = "";
         }
-        //changedArray.splice(0, 1);
-        //console.log(colorArray.length);
     }
 })(Zeichenfläche || (Zeichenfläche = {}));
 //# sourceMappingURL=canvas.js.map
