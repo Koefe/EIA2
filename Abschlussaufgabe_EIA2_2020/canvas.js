@@ -5,7 +5,7 @@ var Zeichenfläche;
     //////// - Formen einfügen Versuch 01
     Zeichenfläche.circleArray = [];
     Zeichenfläche.changedArray = [];
-    Zeichenfläche.dragArray = [];
+    Zeichenfläche.selectedColorArray = [];
     Zeichenfläche.colorArray = [];
     Zeichenfläche.moverArray = [];
     Zeichenfläche.deleteArray = [];
@@ -113,8 +113,8 @@ var Zeichenfläche;
             Zeichenfläche.changedArray[i].update();
             /////////
         }
-        for (let i = 0; i < Zeichenfläche.dragArray.length; i++) {
-            Zeichenfläche.dragArray[i].update();
+        for (let i = 0; i < Zeichenfläche.selectedColorArray.length; i++) {
+            Zeichenfläche.selectedColorArray[i].update();
             /////////
         }
         for (let i = 0; i < Zeichenfläche.colorArray.length; i++) {
@@ -128,7 +128,7 @@ var Zeichenfläche;
     }
     //// - funktioniert noch nicht ganz richtig
     function select(_e) {
-        console.log(_e.clientX, _e.clientY);
+        //console.log(_e.clientX, _e.clientY);
         getNewPosition(_e.clientX, _e.clientY);
         let edit = document.getElementById("edit");
         if (edit.checked == true) {
@@ -175,6 +175,7 @@ var Zeichenfläche;
         buttonColor.innerHTML = "colorchange";
         document.getElementById("animations").appendChild(buttonColor);
         buttonColor.addEventListener("click", colorObjects);
+        //////////////////////////////////////// COLOR CHANGE SINGLE ////////////////////////////////////////
     }
     function getNewPosition(_x, _y) {
         console.log("ahhhhhhhhhhhhhhh");
@@ -217,6 +218,8 @@ var Zeichenfläche;
         for (let i = 0; i < Zeichenfläche.moverArray.length; i++) {
             Zeichenfläche.moverArray[i].dx = 1;
             document.getElementById("animations").innerHTML = "";
+            Zeichenfläche.circleArray.push(Zeichenfläche.moverArray[i]);
+            Zeichenfläche.moverArray.splice(0, 1);
         }
         //changedArray.splice(0, 1);
     }
@@ -234,6 +237,8 @@ var Zeichenfläche;
         for (let i = 0; i < Zeichenfläche.colorArray.length; i++) {
             Zeichenfläche.colorArray[i].rainbow = true;
             document.getElementById("animations").innerHTML = "";
+            Zeichenfläche.circleArray.push(Zeichenfläche.colorArray[i]);
+            Zeichenfläche.colorArray.splice(0, 1);
         }
     }
 })(Zeichenfläche || (Zeichenfläche = {}));

@@ -9,7 +9,7 @@ namespace Zeichenfläche {
     //////// - Formen einfügen Versuch 01
     export let circleArray: Circle[] = [];
     export let changedArray: Circle[] = [];
-    export let dragArray: Circle[] = [];
+    export let selectedColorArray: Circle[] = [];
     export let colorArray: Circle[] = [];
     export let moverArray: Circle[] = [];
     export let deleteArray: Circle[] = [];
@@ -161,8 +161,8 @@ namespace Zeichenfläche {
             /////////
         }
 
-        for (let i: number = 0; i < dragArray.length; i++) {
-            dragArray[i].update();
+        for (let i: number = 0; i < selectedColorArray.length; i++) {
+            selectedColorArray[i].update();
             /////////
         }
 
@@ -181,7 +181,7 @@ namespace Zeichenfläche {
     //// - funktioniert noch nicht ganz richtig
     function select(_e: MouseEvent): void {
 
-        console.log(_e.clientX, _e.clientY);
+        //console.log(_e.clientX, _e.clientY);
 
         getNewPosition(_e.clientX, _e.clientY);
         let edit: HTMLInputElement = <HTMLInputElement>document.getElementById("edit");
@@ -218,6 +218,8 @@ namespace Zeichenfläche {
                     }
 
                     testboolean = false;
+
+
                 }
             }
         }
@@ -246,6 +248,8 @@ namespace Zeichenfläche {
         buttonColor.innerHTML = "colorchange";
         document.getElementById("animations").appendChild(buttonColor);
         buttonColor.addEventListener("click", colorObjects);
+
+        //////////////////////////////////////// COLOR CHANGE SINGLE ////////////////////////////////////////
 
     }
 
@@ -308,6 +312,8 @@ namespace Zeichenfläche {
 
             document.getElementById("animations").innerHTML = "";
 
+            circleArray.push(moverArray[i]);
+            moverArray.splice(0, 1);
         }
         //changedArray.splice(0, 1);
 
@@ -334,8 +340,11 @@ namespace Zeichenfläche {
             colorArray[i].rainbow = true;
 
             document.getElementById("animations").innerHTML = "";
+            circleArray.push(colorArray[i]);
+            colorArray.splice(0, 1);
 
         }
+        
 
     }
 
