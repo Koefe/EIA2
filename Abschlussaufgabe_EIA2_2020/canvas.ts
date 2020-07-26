@@ -115,8 +115,8 @@ namespace Zeichenfläche {
         let canvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById("myCanvas");
         crc = canvas.getContext("2d");
 
-        canvas.height = 300;
-        canvas.width = 300;
+        canvas.height = 400;
+        canvas.width = 400;
     }
 
     function resizeCanvas_03(): void {
@@ -131,8 +131,8 @@ namespace Zeichenfläche {
         let canvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById("myCanvas");
         crc = canvas.getContext("2d");
 
-        canvas.height = 1000;
-        canvas.width = 1000;
+        canvas.height = 800;
+        canvas.width = 800;
     }
 
     /////////// - Formen einfügen Versuch 01
@@ -181,15 +181,21 @@ namespace Zeichenfläche {
     //// - funktioniert noch nicht ganz richtig
     function select(_e: MouseEvent): void {
 
+        if (_e == undefined) {
+            console.log("no parameters");
+            
+        }
         //console.log(_e.clientX, _e.clientY);
+        let clientX: number = _e.clientX;
+        let clientY: number = _e.clientY;
 
-        getNewPosition(_e.clientX, _e.clientY);
+        getNewPosition(clientX, clientY);
         let edit: HTMLInputElement = <HTMLInputElement>document.getElementById("edit");
 
         if (edit.checked == true) {
 
-            let clientX: number = _e.clientX;
-            let clientY: number = _e.clientY;
+            // let clientX: number = _e.clientX;
+            // let clientY: number = _e.clientY;
 
             if (clientX > canvas.width || clientY > canvas.height) {
                 console.log("außen");
@@ -345,7 +351,6 @@ namespace Zeichenfläche {
 
         }
         
-
     }
 
 }

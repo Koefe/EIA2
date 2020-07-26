@@ -51,7 +51,7 @@ var Zeichenfläche;
                 Zeichenfläche.crc.fill(xcircle);
                 Zeichenfläche.crc.strokeStyle = "white";
                 Zeichenfläche.crc.stroke(xcircle);
-                this.move(); //// move aufrufen und dort einstellen das bei check rotate farbe übernommen wird. this.move();
+                this.move(); //// move aufrufen und dort einstellen das bei check farbe übernommen wird. this.move();
                 if (this.rainbow == true) {
                     let gr = Zeichenfläche.crc.createLinearGradient(0, 0, 600, 600);
                     gr.addColorStop(0, "hsl(" + (angleA % 360) + ",100%, 50%)");

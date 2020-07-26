@@ -72,7 +72,7 @@ namespace Zeichenfläche {
 
                 crc.strokeStyle = "white";
                 crc.stroke(xcircle);
-                this.move(); //// move aufrufen und dort einstellen das bei check rotate farbe übernommen wird. this.move();
+                this.move(); //// move aufrufen und dort einstellen das bei check farbe übernommen wird. this.move();
 
                 if (this.rainbow == true) {
 

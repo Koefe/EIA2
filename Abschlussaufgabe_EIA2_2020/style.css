@@ -6,6 +6,18 @@ fieldset {
     justify-content: flex-end;
     align-content: flex-start;
     width: 400px;
+    background-color: lightgray;
+    border: white;
+    margin-top: 10px;
+}
+
+#colorOptions {
+    background-color: white;
+}
+
+legend {
+    background-color: gray;
+    color: white;
 }
 
 #myCanvas {
@@ -14,4 +26,8 @@ fieldset {
 
 #colorOptions {
     width: 300px;
+}
+
+#purple1 {
+    background-color: blueviolet;
 }

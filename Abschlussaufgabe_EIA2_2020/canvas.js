@@ -76,8 +76,8 @@ var Zeichenfläche;
     function resizeCanvas_02() {
         let canvas = document.getElementById("myCanvas");
         Zeichenfläche.crc = canvas.getContext("2d");
-        canvas.height = 300;
-        canvas.width = 300;
+        canvas.height = 400;
+        canvas.width = 400;
     }
     function resizeCanvas_03() {
         let canvas = document.getElementById("myCanvas");
@@ -88,8 +88,8 @@ var Zeichenfläche;
     function resizeCanvas_04() {
         let canvas = document.getElementById("myCanvas");
         Zeichenfläche.crc = canvas.getContext("2d");
-        canvas.height = 1000;
-        canvas.width = 1000;
+        canvas.height = 800;
+        canvas.width = 800;
     }
     /////////// - Formen einfügen Versuch 01
     function drawCircle() {
@@ -128,12 +128,17 @@ var Zeichenfläche;
     }
     //// - funktioniert noch nicht ganz richtig
     function select(_e) {
+        if (_e == undefined) {
+            console.log("no parameters");
+        }
         //console.log(_e.clientX, _e.clientY);
-        getNewPosition(_e.clientX, _e.clientY);
+        let clientX = _e.clientX;
+        let clientY = _e.clientY;
+        getNewPosition(clientX, clientY);
         let edit = document.getElementById("edit");
         if (edit.checked == true) {
-            let clientX = _e.clientX;
-            let clientY = _e.clientY;
+            // let clientX: number = _e.clientX;
+            // let clientY: number = _e.clientY;
             if (clientX > Zeichenfläche.canvas.width || clientY > Zeichenfläche.canvas.height) {
                 console.log("außen");
                 return;
