@@ -12,14 +12,14 @@ var Zeichenfläche;
             if (Zeichenfläche.circleArray[i].dx >= 0) {
                 Zeichenfläche.circleArray[i].moving = true;
             }
-            let Circle = {
+            let circle = {
                 x: Zeichenfläche.circleArray[i].x.toString(),
                 y: Zeichenfläche.circleArray[i].y.toString(),
                 type: Zeichenfläche.circleArray[i].type,
                 rainbow: Zeichenfläche.circleArray[i].rainbow.toString(),
                 move: Zeichenfläche.circleArray[i].moving.toString()
             };
-            query += "&X=" + Circle.x + "&Y=" + Circle.y + "&type=" + Circle.type + "&rainbow=" + Circle.rainbow + "&move=" + Circle.move;
+            query += "&X=" + circle.x + "&Y=" + circle.y + "&type=" + circle.type + "&rainbow=" + circle.rainbow + "&move=" + circle.move;
         }
         console.log(query);
         sendRequest(query, handleInsertResponse);

@@ -20,20 +20,20 @@ namespace Zeichenfläche {
         query += "&canvasWidth=" + canvas.width;
 
         for (let i: number = 0; circleArray.length; i++) {
-            if (circleArray[i].dx >= 0){
+            if (circleArray[i].dx >= 0) {
                 circleArray[i].moving = true;
             }
-            let Circle: Object = {
+            let circle: Object = {
                 x: circleArray[i].x.toString(),
                 y: circleArray[i].y.toString(),
                 type: circleArray[i].type,
                 rainbow: circleArray[i].rainbow.toString(),
                 move: circleArray[i].moving.toString()
-            }
+            };
 
-            query += "&X=" + Circle.x + "&Y=" + Circle.y + "&type=" + Circle.type + "&rainbow=" + Circle.rainbow + "&move=" + Circle.move;
-        } 
-        
+            query += "&X=" + circle.x + "&Y=" + circle.y + "&type=" + circle.type + "&rainbow=" + circle.rainbow + "&move=" + circle.move;
+        }
+
         console.log(query);
         sendRequest(query, handleInsertResponse);
     }
@@ -50,7 +50,7 @@ namespace Zeichenfläche {
         if (xhr.readyState == XMLHttpRequest.DONE) {
             //console.log(xhr.response);
             alert(xhr.response);
-            
+
         }
     }
 
