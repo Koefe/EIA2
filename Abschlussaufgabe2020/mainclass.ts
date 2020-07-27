@@ -9,6 +9,8 @@ namespace Zeichenfläche {
         size: number;
         color: string;
         rainbow: boolean;
+        
+        newColor: boolean;
 
         constructor() {
             this.x = Math.random() * crc.canvas.width;

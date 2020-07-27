@@ -6,7 +6,6 @@ var Zeichenfläche;
         //let inputs: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
         let query = "command=insert";
         query += "&name=" + _name;
-        query += "&score=" + artName;
         console.log(query);
         sendRequest(query, handleInsertResponse);
     }
@@ -32,12 +31,12 @@ var Zeichenfläche;
     function handleFindResponse(_event) {
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            let playerList = JSON.parse(xhr.response);
-            for (let i = 0; i <= playerList.length; i++) {
-                let nickname = playerList[i].name;
-                let playerscore = playerList[i].score;
-                document.getElementById("highscoreList").innerHTML = "Name:" + nickname + "Score:" + playerscore;
-            }
+            // let playerList: Circle[] = JSON.parse(xhr.response);
+            // for (let i: number = 0; i <= playerList.length; i++) {
+            //     let nickname: string = playerList[i].name;
+            //     let playerscore: string = playerList[i].score;
+            //     document.getElementById("highscoreList").innerHTML = "Name:" + nickname + "Score:" + playerscore;
+            //}
         }
     }
 })(Zeichenfläche || (Zeichenfläche = {}));

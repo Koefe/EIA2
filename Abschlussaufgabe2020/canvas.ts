@@ -2,6 +2,7 @@ namespace Zeichenfläche {
 
     document.addEventListener("DOMContentLoaded", init);
     document.addEventListener("mousedown", select);
+   
     //document.addEventListener("mousedown", getNewPosition);
 
     export let crc: CanvasRenderingContext2D;
@@ -70,6 +71,8 @@ namespace Zeichenfläche {
         let edit: HTMLInputElement = <HTMLInputElement>document.getElementById("edit");
         edit.addEventListener("change", select);
 
+        let savePicture: HTMLButtonElement = <HTMLButtonElement>document.getElementById("save");
+        savePicture.addEventListener("click", save);
 
 
         update();
@@ -196,7 +199,7 @@ namespace Zeichenfläche {
         let edit: HTMLInputElement = <HTMLInputElement>document.getElementById("edit");
 
         if (edit.checked == true) {
-            
+
             // let clientX: number = _e.clientX;
             // let clientY: number = _e.clientY;
 
@@ -212,7 +215,8 @@ namespace Zeichenfläche {
 
 
                 if (clientX < currentX + 30 && clientX > currentX - 10 && clientY < currentY + 20 && clientY > currentY - 20) {
-                        
+
+
 
                     if (testboolean == false) {
 
@@ -230,7 +234,7 @@ namespace Zeichenfläche {
                     }
 
                     testboolean = false;
-                //}
+                    //}
 
                 }
             }
@@ -257,11 +261,17 @@ namespace Zeichenfläche {
         buttonDrag.addEventListener("click", dragObjects);
 
         let buttonColor: HTMLButtonElement = <HTMLButtonElement>document.createElement("button");
-        buttonColor.innerHTML = "colorchange";
+        buttonColor.innerHTML = "rainbow";
         document.getElementById("animations").appendChild(buttonColor);
         buttonColor.addEventListener("click", colorObjects);
 
         //////////////////////////////////////// COLOR CHANGE SINGLE ////////////////////////////////////////
+
+        // let buttonLightBlue: HTMLButtonElement = <HTMLButtonElement>document.createElement("button");
+        // buttonMove.setAttribute("id", "lightBlue");
+        // buttonLightBlue.innerHTML = "ligtBlue";
+        // document.getElementById("colorOptions").appendChild(buttonLightBlue);
+        // buttonLightBlue.addEventListener("click", lightBlue);
 
     }
 
@@ -359,6 +369,25 @@ namespace Zeichenfläche {
         }
         buttonsAreCreated = false;
 
+    }
+
+    // function lightBlue(): void {
+    //     colorArray.push(changedArray[0]);
+    //     changedArray.splice(0, 1);
+    //     circleArray.splice(pushedObject, 1);
+
+    //     for (let i: number = 0; i < colorArray.length; i++) {
+    //         this.newColor = true;
+    //         document.getElementById("animations").innerHTML = "";
+    //         circleArray.push(colorArray[i]);
+    //         colorArray.splice(0, 1);
+
+    //     }
+    //     buttonsAreCreated = false;
+    // }
+    function save(): void {
+        let saveName: string = prompt("name your creation");
+        insert(saveName);
     }
 
 }

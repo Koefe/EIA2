@@ -8,7 +8,7 @@ namespace Zeichenfläche {
         //let inputs: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
         let query: string = "command=insert";
         query += "&name=" + _name;
-        query += "&score=" + artName;
+        
         
         console.log(query);
         sendRequest(query, handleInsertResponse);
@@ -40,13 +40,13 @@ namespace Zeichenfläche {
     function handleFindResponse(_event: ProgressEvent): void {
         let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            let playerList: Circle[] = JSON.parse(xhr.response);
-            for (let i: number = 0; i <= playerList.length; i++) {
-                let nickname: string = playerList[i].name;
-                let playerscore: string = playerList[i].score;
-                document.getElementById("highscoreList").innerHTML = "Name:" + nickname + "Score:" + playerscore;
+            // let playerList: Circle[] = JSON.parse(xhr.response);
+            // for (let i: number = 0; i <= playerList.length; i++) {
+            //     let nickname: string = playerList[i].name;
+            //     let playerscore: string = playerList[i].score;
+            //     document.getElementById("highscoreList").innerHTML = "Name:" + nickname + "Score:" + playerscore;
 
-            }
+            //}
         }
     }
 }

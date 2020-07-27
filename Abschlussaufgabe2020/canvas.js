@@ -47,6 +47,8 @@ var Zeichenfläche;
         createRect.addEventListener("click", drawRect);
         let edit = document.getElementById("edit");
         edit.addEventListener("change", select);
+        let savePicture = document.getElementById("save");
+        savePicture.addEventListener("click", save);
         update();
         ////////// - Drag Shapes
     }
@@ -179,10 +181,15 @@ var Zeichenfläche;
         document.getElementById("animations").appendChild(buttonDrag);
         buttonDrag.addEventListener("click", dragObjects);
         let buttonColor = document.createElement("button");
-        buttonColor.innerHTML = "colorchange";
+        buttonColor.innerHTML = "rainbow";
         document.getElementById("animations").appendChild(buttonColor);
         buttonColor.addEventListener("click", colorObjects);
         //////////////////////////////////////// COLOR CHANGE SINGLE ////////////////////////////////////////
+        // let buttonLightBlue: HTMLButtonElement = <HTMLButtonElement>document.createElement("button");
+        // buttonMove.setAttribute("id", "lightBlue");
+        // buttonLightBlue.innerHTML = "ligtBlue";
+        // document.getElementById("colorOptions").appendChild(buttonLightBlue);
+        // buttonLightBlue.addEventListener("click", lightBlue);
     }
     function getNewPosition(_x, _y) {
         console.log("ahhhhhhhhhhhhhhh");
@@ -251,6 +258,22 @@ var Zeichenfläche;
             Zeichenfläche.colorArray.splice(0, 1);
         }
         buttonsAreCreated = false;
+    }
+    // function lightBlue(): void {
+    //     colorArray.push(changedArray[0]);
+    //     changedArray.splice(0, 1);
+    //     circleArray.splice(pushedObject, 1);
+    //     for (let i: number = 0; i < colorArray.length; i++) {
+    //         this.newColor = true;
+    //         document.getElementById("animations").innerHTML = "";
+    //         circleArray.push(colorArray[i]);
+    //         colorArray.splice(0, 1);
+    //     }
+    //     buttonsAreCreated = false;
+    // }
+    function save() {
+        let saveName = prompt("name your creation");
+        Zeichenfläche.insert(saveName);
     }
 })(Zeichenfläche || (Zeichenfläche = {}));
 //# sourceMappingURL=canvas.js.map
