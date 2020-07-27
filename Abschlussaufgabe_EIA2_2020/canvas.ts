@@ -25,6 +25,7 @@ namespace Zeichenfläche {
 
     let draggedObject: boolean = false;
     let testboolean: boolean = false;
+    let buttonsAreCreated: boolean = false;
 
     export let canvas: HTMLCanvasElement;
 
@@ -68,6 +69,8 @@ namespace Zeichenfläche {
 
         let edit: HTMLInputElement = <HTMLInputElement>document.getElementById("edit");
         edit.addEventListener("change", select);
+
+
 
         update();
         ////////// - Drag Shapes
@@ -183,7 +186,7 @@ namespace Zeichenfläche {
 
         if (_e == undefined) {
             console.log("no parameters");
-            
+
         }
         //console.log(_e.clientX, _e.clientY);
         let clientX: number = _e.clientX;
@@ -193,7 +196,7 @@ namespace Zeichenfläche {
         let edit: HTMLInputElement = <HTMLInputElement>document.getElementById("edit");
 
         if (edit.checked == true) {
-
+            
             // let clientX: number = _e.clientX;
             // let clientY: number = _e.clientY;
 
@@ -209,22 +212,25 @@ namespace Zeichenfläche {
 
 
                 if (clientX < currentX + 30 && clientX > currentX - 10 && clientY < currentY + 20 && clientY > currentY - 20) {
-
-                    /// -> hier noch die anderen Array reinhauen
-                    // changedArray.push(circleArray[i]);
-                    // pushedObject = i;
+                        
 
                     if (testboolean == false) {
 
                         changedArray.push(circleArray[i]);
                         pushedObject = i;
 
-                        createAnimationButtons();
+                        if (buttonsAreCreated == false) {
+                            createAnimationButtons();
+                        }
+
+                        buttonsAreCreated = true;
+
                         console.log("buutons wurden erstellt");
+
                     }
 
                     testboolean = false;
-
+                //}
 
                 }
             }
@@ -290,8 +296,8 @@ namespace Zeichenfläche {
         window.setTimeout(select, 10000);
 
         document.getElementById("animations").innerHTML = "";
+        buttonsAreCreated = false;
 
-        
     }
 
     function deleteObjects(): void {
@@ -305,7 +311,7 @@ namespace Zeichenfläche {
 
         }
         //console.log(deleteArray.length);
-
+        buttonsAreCreated = false;
         document.getElementById("animations").innerHTML = "";
     }
 
@@ -321,6 +327,7 @@ namespace Zeichenfläche {
             circleArray.push(moverArray[i]);
             moverArray.splice(0, 1);
         }
+        buttonsAreCreated = false;
         //changedArray.splice(0, 1);
 
     }
@@ -350,7 +357,8 @@ namespace Zeichenfläche {
             colorArray.splice(0, 1);
 
         }
-        
+        buttonsAreCreated = false;
+
     }
 
 }

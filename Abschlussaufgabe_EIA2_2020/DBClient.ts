@@ -1,4 +1,4 @@
-namespace aquarium {
+namespace Zeichenfläche {
 
     //let serverAddress: string = "http://localhost:8100/";
     let serverAddress: string = "https://koellefe.herokuapp.com/";
@@ -40,7 +40,7 @@ namespace aquarium {
     function handleFindResponse(_event: ProgressEvent): void {
         let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            let playerList: Player[] = JSON.parse(xhr.response);
+            let playerList: Circle[] = JSON.parse(xhr.response);
             for (let i: number = 0; i <= playerList.length; i++) {
                 let nickname: string = playerList[i].name;
                 let playerscore: string = playerList[i].score;

@@ -1,5 +1,5 @@
-var aquarium;
-(function (aquarium) {
+var Zeichenfläche;
+(function (Zeichenfläche) {
     //let serverAddress: string = "http://localhost:8100/";
     let serverAddress = "https://koellefe.herokuapp.com/";
     function insert(_name) {
@@ -10,7 +10,7 @@ var aquarium;
         console.log(query);
         sendRequest(query, handleInsertResponse);
     }
-    aquarium.insert = insert;
+    Zeichenfläche.insert = insert;
     function sendRequest(_query, _callback) {
         let xhr = new XMLHttpRequest();
         xhr.open("GET", serverAddress + "?" + _query, true);
@@ -28,7 +28,7 @@ var aquarium;
         let query = "command=find";
         sendRequest(query, handleFindResponse);
     }
-    aquarium.find = find;
+    Zeichenfläche.find = find;
     function handleFindResponse(_event) {
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
@@ -40,5 +40,5 @@ var aquarium;
             }
         }
     }
-})(aquarium || (aquarium = {}));
+})(Zeichenfläche || (Zeichenfläche = {}));
 //# sourceMappingURL=DBClient.js.map

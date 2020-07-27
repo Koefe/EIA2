@@ -19,6 +19,7 @@ var Zeichenfläche;
     let backgroundColor = "white";
     let draggedObject = false;
     let testboolean = false;
+    let buttonsAreCreated = false;
     //export let pushedButton: boolean = false;
     function init() {
         Zeichenfläche.canvas = document.getElementsByTagName("canvas")[0];
@@ -147,16 +148,17 @@ var Zeichenfläche;
                 let currentX = Zeichenfläche.circleArray[i].x;
                 let currentY = Zeichenfläche.circleArray[i].y;
                 if (clientX < currentX + 30 && clientX > currentX - 10 && clientY < currentY + 20 && clientY > currentY - 20) {
-                    /// -> hier noch die anderen Array reinhauen
-                    // changedArray.push(circleArray[i]);
-                    // pushedObject = i;
                     if (testboolean == false) {
                         Zeichenfläche.changedArray.push(Zeichenfläche.circleArray[i]);
                         pushedObject = i;
-                        createAnimationButtons();
+                        if (buttonsAreCreated == false) {
+                            createAnimationButtons();
+                        }
+                        buttonsAreCreated = true;
                         console.log("buutons wurden erstellt");
                     }
                     testboolean = false;
+                    //}
                 }
             }
         }
@@ -204,6 +206,7 @@ var Zeichenfläche;
         Zeichenfläche.changedArray.splice(0, 1);
         window.setTimeout(select, 10000);
         document.getElementById("animations").innerHTML = "";
+        buttonsAreCreated = false;
     }
     function deleteObjects() {
         Zeichenfläche.deleteArray.push(Zeichenfläche.changedArray[0]);
@@ -214,6 +217,7 @@ var Zeichenfläche;
             Zeichenfläche.deleteArray.splice(i, 1);
         }
         //console.log(deleteArray.length);
+        buttonsAreCreated = false;
         document.getElementById("animations").innerHTML = "";
     }
     function moverObjects() {
@@ -226,6 +230,7 @@ var Zeichenfläche;
             Zeichenfläche.circleArray.push(Zeichenfläche.moverArray[i]);
             Zeichenfläche.moverArray.splice(0, 1);
         }
+        buttonsAreCreated = false;
         //changedArray.splice(0, 1);
     }
     function dragObjects() {
@@ -245,6 +250,7 @@ var Zeichenfläche;
             Zeichenfläche.circleArray.push(Zeichenfläche.colorArray[i]);
             Zeichenfläche.colorArray.splice(0, 1);
         }
+        buttonsAreCreated = false;
     }
 })(Zeichenfläche || (Zeichenfläche = {}));
 //# sourceMappingURL=canvas.js.map
