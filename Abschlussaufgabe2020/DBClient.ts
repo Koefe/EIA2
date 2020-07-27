@@ -1,5 +1,13 @@
 namespace Zeichenfläche {
 
+    interface Object {
+        x: string;
+        y: string;
+        type: string;
+        rainbow: string;
+        move: string;
+    }
+
     //let serverAddress: string = "http://localhost:8100/";
     let serverAddress: string = "https://koellefe.herokuapp.com/";
 
@@ -8,13 +16,27 @@ namespace Zeichenfläche {
         //let inputs: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
         let query: string = "command=insert";
         query += "&name=" + _name;
-        
+        query += "&backgroundcolor=" + backgroundColor;
+        query += "&canvasWidth=" + canvas.width;
+
+        for (let i: number = 0; circleArray.length; i++) {
+            if (circleArray[i].dx >= 0){
+                circleArray[i].moving = true;
+            }
+            let Circle: Object = {
+                x: circleArray[i].x.toString(),
+                y: circleArray[i].y.toString(),
+                type: circleArray[i].type,
+                rainbow: circleArray[i].rainbow.toString(),
+                move: circleArray[i].moving.toString()
+            }
+
+            query += "&X=" + Circle.x + "&Y=" + Circle.y + "&type=" + Circle.type + "&rainbow=" + Circle.rainbow + "&move=" + Circle.move;
+        } 
         
         console.log(query);
         sendRequest(query, handleInsertResponse);
     }
-
-
 
     function sendRequest(_query: string, _callback: EventListener): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();

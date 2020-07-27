@@ -16,7 +16,7 @@ var Zeichenfläche;
     let pushedObject;
     let fps = 30;
     let imageData;
-    let backgroundColor = "white";
+    Zeichenfläche.backgroundColor = "white";
     let draggedObject = false;
     let testboolean = false;
     let buttonsAreCreated = false;
@@ -58,23 +58,23 @@ var Zeichenfläche;
         let background = new Path2D();
         background.moveTo(0, 0);
         background.rect(0, 0, Zeichenfläche.canvas.width, Zeichenfläche.canvas.height);
-        Zeichenfläche.crc.fillStyle = backgroundColor;
+        Zeichenfläche.crc.fillStyle = Zeichenfläche.backgroundColor;
         Zeichenfläche.crc.fill(background);
         /////////
         circleDrawUpdate();
         //scale();
     }
     function background() {
-        backgroundColor = "lightblue";
+        Zeichenfläche.backgroundColor = "lightblue";
     }
     function background01() {
-        backgroundColor = "white";
+        Zeichenfläche.backgroundColor = "white";
     }
     function background02() {
-        backgroundColor = "lightgrey";
+        Zeichenfläche.backgroundColor = "lightgrey";
     }
     function background03() {
-        backgroundColor = "MediumSeaGreen";
+        Zeichenfläche.backgroundColor = "MediumSeaGreen";
     }
     function resizeCanvas_02() {
         let canvas = document.getElementById("myCanvas");
@@ -150,6 +150,7 @@ var Zeichenfläche;
                 let currentX = Zeichenfläche.circleArray[i].x;
                 let currentY = Zeichenfläche.circleArray[i].y;
                 if (clientX < currentX + 30 && clientX > currentX - 10 && clientY < currentY + 20 && clientY > currentY - 20) {
+                    //changedArray.splice(0, 5);
                     if (testboolean == false) {
                         Zeichenfläche.changedArray.push(Zeichenfläche.circleArray[i]);
                         pushedObject = i;
@@ -192,8 +193,8 @@ var Zeichenfläche;
         // buttonLightBlue.addEventListener("click", lightBlue);
     }
     function getNewPosition(_x, _y) {
-        console.log("ahhhhhhhhhhhhhhh");
-        console.log(_x, _y);
+        // console.log("ahhhhhhhhhhhhhhh");
+        // console.log(_x, _y);
         window.setTimeout(getNewPosition, 10000);
         if (draggedObject == true) {
             console.log("R");
@@ -259,18 +260,6 @@ var Zeichenfläche;
         }
         buttonsAreCreated = false;
     }
-    // function lightBlue(): void {
-    //     colorArray.push(changedArray[0]);
-    //     changedArray.splice(0, 1);
-    //     circleArray.splice(pushedObject, 1);
-    //     for (let i: number = 0; i < colorArray.length; i++) {
-    //         this.newColor = true;
-    //         document.getElementById("animations").innerHTML = "";
-    //         circleArray.push(colorArray[i]);
-    //         colorArray.splice(0, 1);
-    //     }
-    //     buttonsAreCreated = false;
-    // }
     function save() {
         let saveName = prompt("name your creation");
         Zeichenfläche.insert(saveName);

@@ -29,7 +29,7 @@ function handleConnect(_e: Mongo.MongoError, _client: Mongo.MongoClient): void {
     }
 }
 
-export function insert(_doc: Player): void {
+export function insert(_doc: CanvasElement): void {
     // try insertion then activate callback "handleInsert"
     highscore.insertOne(_doc, handleInsert);
 }
@@ -48,7 +48,7 @@ export function findAll(_callback: Function): void {
 
     // toArray-handler receives two standard parameters, an error object and the array
     // implemented as inner function, so _callback is in scope
-    function prepareAnswer(_e: Mongo.MongoError, pointArray: Player[]): void {
+    function prepareAnswer(_e: Mongo.MongoError, pointArray: CanvasElement[]): void {
         if (_e)
             _callback("Error" + _e);
         else

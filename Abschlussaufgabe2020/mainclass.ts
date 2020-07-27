@@ -9,6 +9,8 @@ namespace Zeichenfläche {
         size: number;
         color: string;
         rainbow: boolean;
+        type: string;
+        moving: boolean;
         
         newColor: boolean;
 

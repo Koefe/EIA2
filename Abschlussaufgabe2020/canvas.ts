@@ -22,7 +22,7 @@ namespace Zeichenfläche {
     let pushedObject: number;
     let fps: number = 30;
     let imageData: ImageData;
-    let backgroundColor: string = "white";
+    export let backgroundColor: string = "white";
 
     let draggedObject: boolean = false;
     let testboolean: boolean = false;
@@ -216,7 +216,7 @@ namespace Zeichenfläche {
 
                 if (clientX < currentX + 30 && clientX > currentX - 10 && clientY < currentY + 20 && clientY > currentY - 20) {
 
-
+                    //changedArray.splice(0, 5);
 
                     if (testboolean == false) {
 
@@ -276,8 +276,8 @@ namespace Zeichenfläche {
     }
 
     function getNewPosition(_x: number, _y: number): void {
-        console.log("ahhhhhhhhhhhhhhh");
-        console.log(_x, _y);
+        // console.log("ahhhhhhhhhhhhhhh");
+        // console.log(_x, _y);
 
         window.setTimeout(getNewPosition, 10000);
         if (draggedObject == true) {
@@ -294,6 +294,7 @@ namespace Zeichenfläche {
 
         testboolean = true;
 
+        
         changedArray[0].x = _newClientX;
         changedArray[0].y = _newClientY;
 
@@ -371,20 +372,6 @@ namespace Zeichenfläche {
 
     }
 
-    // function lightBlue(): void {
-    //     colorArray.push(changedArray[0]);
-    //     changedArray.splice(0, 1);
-    //     circleArray.splice(pushedObject, 1);
-
-    //     for (let i: number = 0; i < colorArray.length; i++) {
-    //         this.newColor = true;
-    //         document.getElementById("animations").innerHTML = "";
-    //         circleArray.push(colorArray[i]);
-    //         colorArray.splice(0, 1);
-
-    //     }
-    //     buttonsAreCreated = false;
-    // }
     function save(): void {
         let saveName: string = prompt("name your creation");
         insert(saveName);

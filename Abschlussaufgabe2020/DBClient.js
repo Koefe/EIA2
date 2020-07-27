@@ -6,6 +6,21 @@ var Zeichenfläche;
         //let inputs: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
         let query = "command=insert";
         query += "&name=" + _name;
+        query += "&backgroundcolor=" + Zeichenfläche.backgroundColor;
+        query += "&canvasWidth=" + Zeichenfläche.canvas.width;
+        for (let i = 0; Zeichenfläche.circleArray.length; i++) {
+            if (Zeichenfläche.circleArray[i].dx >= 0) {
+                Zeichenfläche.circleArray[i].moving = true;
+            }
+            let Circle = {
+                x: Zeichenfläche.circleArray[i].x.toString(),
+                y: Zeichenfläche.circleArray[i].y.toString(),
+                type: Zeichenfläche.circleArray[i].type,
+                rainbow: Zeichenfläche.circleArray[i].rainbow.toString(),
+                move: Zeichenfläche.circleArray[i].moving.toString()
+            };
+            query += "&X=" + Circle.x + "&Y=" + Circle.y + "&type=" + Circle.type + "&rainbow=" + Circle.rainbow + "&move=" + Circle.move;
+        }
         console.log(query);
         sendRequest(query, handleInsertResponse);
     }

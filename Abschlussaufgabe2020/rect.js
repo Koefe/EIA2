@@ -11,6 +11,8 @@ var Zeichenfläche;
             this.size = 8;
             this.color = "SteelBlue" || "pink" || "purple";
             this.rainbow = false;
+            this.type = "rec";
+            this.moving = false;
         }
         draw() {
             let xrect = new Path2D();

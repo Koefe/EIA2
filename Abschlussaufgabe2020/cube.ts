@@ -13,6 +13,8 @@ namespace Zeichenfläche {
             this.color = "SteelBlue" || "pink" || "purple";
             this.rainbow = false;
             this.newColor = false;
+            this.type = "circle";
+            this.moving = false;
         }
 
         draw(): void {

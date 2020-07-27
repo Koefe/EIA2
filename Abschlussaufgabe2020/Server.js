@@ -22,7 +22,14 @@ function handleRequest(_request, _response) {
     switch (command) {
         case "insert":
             let highscore = {
-                name: query["name"]
+                name: query["name"],
+                backgroundcolor: query["backgroundcolor"],
+                width: query["canvasWidth"],
+                x: query["X"],
+                y: query["Y"],
+                type: query["type"],
+                rainbow: query["rainbow"],
+                move: query["move"]
             };
             Database.insert(highscore);
             respond(_response, "storing data");
