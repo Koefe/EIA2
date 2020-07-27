@@ -8,7 +8,7 @@ var Zeichenfläche;
         query += "&name=" + _name;
         query += "&backgroundcolor=" + Zeichenfläche.backgroundColor;
         query += "&canvasWidth=" + Zeichenfläche.canvas.width;
-        for (let i = 0; Zeichenfläche.circleArray.length; i++) {
+        for (let i = 0; i < Zeichenfläche.circleArray.length; i++) {
             if (Zeichenfläche.circleArray[i].dx >= 0) {
                 Zeichenfläche.circleArray[i].moving = true;
             }
@@ -46,6 +46,10 @@ var Zeichenfläche;
     function handleFindResponse(_event) {
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
+            Zeichenfläche.canvasPic = JSON.parse(xhr.response);
+            console.log(Zeichenfläche.canvasPic);
+            document.getElementById("restore1").innerText = Zeichenfläche.canvasPic[0].name;
+            document.getElementById("restore2").innerText = Zeichenfläche.canvasPic[1].name;
             // let playerList: Circle[] = JSON.parse(xhr.response);
             // for (let i: number = 0; i <= playerList.length; i++) {
             //     let nickname: string = playerList[i].name;

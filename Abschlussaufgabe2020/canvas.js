@@ -22,6 +22,7 @@ var Zeichenfläche;
     let buttonsAreCreated = false;
     //export let pushedButton: boolean = false;
     function init() {
+        Zeichenfläche.find();
         Zeichenfläche.canvas = document.getElementsByTagName("canvas")[0];
         Zeichenfläche.crc = Zeichenfläche.canvas.getContext("2d");
         imageData = Zeichenfläche.crc.getImageData(0, 0, Zeichenfläche.canvas.width, Zeichenfläche.canvas.height);
@@ -49,6 +50,10 @@ var Zeichenfläche;
         edit.addEventListener("change", select);
         let savePicture = document.getElementById("save");
         savePicture.addEventListener("click", save);
+        let restorePicture1 = document.getElementById("picture1");
+        restorePicture1.addEventListener("click", picture_1);
+        let restorePicture2 = document.getElementById("picture2");
+        restorePicture2.addEventListener("click", picture_2);
         update();
         ////////// - Drag Shapes
     }
@@ -263,6 +268,64 @@ var Zeichenfläche;
     function save() {
         let saveName = prompt("name your creation");
         Zeichenfläche.insert(saveName);
+    }
+    function picture_1() {
+        rebuild(0);
+    }
+    function picture_2() {
+        rebuild(1);
+    }
+    function rebuild(_u) {
+        let xPos = Zeichenfläche.canvasPic[_u].x;
+        let yPos = Zeichenfläche.canvasPic[_u].y;
+        let background = Zeichenfläche.canvasPic[_u].backgroundcolor;
+        let type = Zeichenfläche.canvasPic[_u].type;
+        let rainbow = Zeichenfläche.canvasPic[_u].rainbow;
+        let move = Zeichenfläche.canvasPic[_u].move;
+        let width = Zeichenfläche.canvasPic[_u].width;
+        Zeichenfläche.backgroundColor = background;
+        if (width == "400") {
+            resizeCanvas_02();
+        }
+        if (width == "600") {
+            resizeCanvas_03();
+        }
+        if (width == "800") {
+            resizeCanvas_03();
+        }
+        for (let i = 0; i < yPos.length; i++) {
+            let restoredObject = {
+                x: xPos[i],
+                y: yPos[i],
+                type: type[i],
+                rainbow: rainbow[i],
+                move: move[i]
+            };
+            if (restoredObject.type == "circle") {
+                let circle = new Zeichenfläche.Circle();
+                circle.x = parseInt(restoredObject.x);
+                circle.y = parseInt(restoredObject.y);
+                Zeichenfläche.circleArray.push(circle);
+                if (restoredObject.rainbow == "true") {
+                    Zeichenfläche.circleArray[i].rainbow = true;
+                }
+                if (restoredObject.move == "true") {
+                    Zeichenfläche.circleArray[i].dx = 1;
+                }
+            }
+            if (restoredObject.type == "rec") {
+                let circle = new Zeichenfläche.Rect();
+                circle.x = parseInt(restoredObject.x);
+                circle.y = parseInt(restoredObject.y);
+                Zeichenfläche.circleArray.push(circle);
+                if (restoredObject.rainbow == "true") {
+                    Zeichenfläche.circleArray[i].rainbow = true;
+                }
+                if (restoredObject.move == "true") {
+                    Zeichenfläche.circleArray[i].dx = 1;
+                }
+            }
+        }
     }
 })(Zeichenfläche || (Zeichenfläche = {}));
 //# sourceMappingURL=canvas.js.map

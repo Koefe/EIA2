@@ -2,7 +2,7 @@ namespace Zeichenfläche {
 
     document.addEventListener("DOMContentLoaded", init);
     document.addEventListener("mousedown", select);
-   
+
     //document.addEventListener("mousedown", getNewPosition);
 
     export let crc: CanvasRenderingContext2D;
@@ -34,6 +34,8 @@ namespace Zeichenfläche {
 
 
     function init(): void {
+
+        find();
 
         canvas = document.getElementsByTagName("canvas")[0];
         crc = canvas.getContext("2d");
@@ -74,6 +76,10 @@ namespace Zeichenfläche {
         let savePicture: HTMLButtonElement = <HTMLButtonElement>document.getElementById("save");
         savePicture.addEventListener("click", save);
 
+        let restorePicture1: HTMLButtonElement = <HTMLButtonElement>document.getElementById("picture1");
+        restorePicture1.addEventListener("click", picture_1);
+        let restorePicture2: HTMLButtonElement = <HTMLButtonElement>document.getElementById("picture2");
+        restorePicture2.addEventListener("click", picture_2);
 
         update();
         ////////// - Drag Shapes
@@ -294,7 +300,7 @@ namespace Zeichenfläche {
 
         testboolean = true;
 
-        
+
         changedArray[0].x = _newClientX;
         changedArray[0].y = _newClientY;
 
@@ -377,5 +383,82 @@ namespace Zeichenfläche {
         insert(saveName);
     }
 
-}
+    function picture_1(): void {
+        rebuild(0);
+    }
 
+    function picture_2(): void {
+        rebuild(1);
+    }
+
+    function rebuild(_u: number): void {
+        let xPos: string = canvasPic[_u].x;
+        let yPos: string = canvasPic[_u].y;
+        let background: string = canvasPic[_u].backgroundcolor;
+        let type: string = canvasPic[_u].type;
+        let rainbow: string = canvasPic[_u].rainbow;
+        let move: string = canvasPic[_u].move;
+        let width: string = canvasPic[_u].width;
+
+        backgroundColor = background;
+
+        if (width == "400") {
+            resizeCanvas_02();
+        }
+        if (width == "600") {
+            resizeCanvas_03();
+        }
+        if (width == "800") {
+            resizeCanvas_03();
+        }
+
+        for (let i: number = 0; i < yPos.length; i++) {
+            let restoredObject: Object = {
+                x: xPos[i],
+                y: yPos[i],
+                type: type[i],
+                rainbow: rainbow[i],
+                move: move[i]
+            };
+
+            if (restoredObject.type == "circle") {
+                let circle: Circle = new Circle();
+                circle.x = parseInt(restoredObject.x);
+                circle.y = parseInt(restoredObject.y);
+
+                circleArray.push(circle);
+
+                if (restoredObject.rainbow == "true") {
+                    circleArray[i].rainbow = true;
+                }
+
+                if (restoredObject.move == "true") {
+                    circleArray[i].dx = 1;
+                }
+
+
+
+            }
+
+            if (restoredObject.type == "rec") {
+                let circle: Rect = new Rect();
+                circle.x = parseInt(restoredObject.x);
+                circle.y = parseInt(restoredObject.y);
+
+                circleArray.push(circle);
+
+                if (restoredObject.rainbow == "true") {
+                    circleArray[i].rainbow = true;
+                }
+
+                if (restoredObject.move == "true") {
+                    circleArray[i].dx = 1;
+                }
+
+            }
+
+
+        }
+
+    }
+}

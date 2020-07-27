@@ -1,12 +1,13 @@
 namespace Zeichenfläche {
 
-    interface Object {
+    export interface Object {
         x: string;
         y: string;
         type: string;
         rainbow: string;
         move: string;
     }
+    export let canvasPic: CanvasElement[];
 
     //let serverAddress: string = "http://localhost:8100/";
     let serverAddress: string = "https://koellefe.herokuapp.com/";
@@ -19,7 +20,7 @@ namespace Zeichenfläche {
         query += "&backgroundcolor=" + backgroundColor;
         query += "&canvasWidth=" + canvas.width;
 
-        for (let i: number = 0; circleArray.length; i++) {
+        for (let i: number = 0; i < circleArray.length; i++) {
             if (circleArray[i].dx >= 0) {
                 circleArray[i].moving = true;
             }
@@ -62,6 +63,13 @@ namespace Zeichenfläche {
     function handleFindResponse(_event: ProgressEvent): void {
         let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
         if (xhr.readyState == XMLHttpRequest.DONE) {
+
+            
+            canvasPic = JSON.parse(xhr.response);
+            console.log(canvasPic);
+
+            document.getElementById("restore1").innerText = canvasPic[0].name;
+            document.getElementById("restore2").innerText = canvasPic[1].name;
             // let playerList: Circle[] = JSON.parse(xhr.response);
             // for (let i: number = 0; i <= playerList.length; i++) {
             //     let nickname: string = playerList[i].name;
