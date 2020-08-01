@@ -5,7 +5,7 @@ var Zeichenfläche;
     //////// - Formen einfügen Versuch 01
     Zeichenfläche.circleArray = [];
     Zeichenfläche.changedArray = [];
-    Zeichenfläche.selectedColorArray = [];
+    //export let selectedColorArray: Circle[] = [];
     Zeichenfläche.colorArray = [];
     Zeichenfläche.moverArray = [];
     Zeichenfläche.deleteArray = [];
@@ -43,17 +43,20 @@ var Zeichenfläche;
         /////// - Formen Einfügen 01
         let createCircle = document.getElementById("circle");
         createCircle.addEventListener("click", drawCircle);
-        ///////
         let createRect = document.getElementById("rect");
         createRect.addEventListener("click", drawRect);
+        ////////
         let edit = document.getElementById("edit");
         edit.addEventListener("change", select);
         let savePicture = document.getElementById("save");
         savePicture.addEventListener("click", save);
-        let restorePicture1 = document.getElementById("picture1");
+        /////// - Bilder wiederherstellen - ///////
+        let restorePicture1 = document.getElementById("restore1");
         restorePicture1.addEventListener("click", picture_1);
-        let restorePicture2 = document.getElementById("picture2");
+        let restorePicture2 = document.getElementById("restore2");
         restorePicture2.addEventListener("click", picture_2);
+        let restorePicture3 = document.getElementById("restore3");
+        restorePicture3.addEventListener("click", picture_3);
         update();
         ////////// - Drag Shapes
     }
@@ -121,10 +124,10 @@ var Zeichenfläche;
             Zeichenfläche.changedArray[i].update();
             /////////
         }
-        for (let i = 0; i < Zeichenfläche.selectedColorArray.length; i++) {
-            Zeichenfläche.selectedColorArray[i].update();
-            /////////
-        }
+        // for (let i: number = 0; i < selectedColorArray.length; i++) {
+        //     selectedColorArray[i].update();
+        //     /////////
+        // }
         for (let i = 0; i < Zeichenfläche.colorArray.length; i++) {
             Zeichenfläche.colorArray[i].update();
             /////////
@@ -163,7 +166,7 @@ var Zeichenfläche;
                             createAnimationButtons();
                         }
                         buttonsAreCreated = true;
-                        console.log("buutons wurden erstellt");
+                        console.log("buttons wurden erstellt");
                     }
                     testboolean = false;
                     //}
@@ -190,12 +193,6 @@ var Zeichenfläche;
         buttonColor.innerHTML = "rainbow";
         document.getElementById("animations").appendChild(buttonColor);
         buttonColor.addEventListener("click", colorObjects);
-        //////////////////////////////////////// COLOR CHANGE SINGLE ////////////////////////////////////////
-        // let buttonLightBlue: HTMLButtonElement = <HTMLButtonElement>document.createElement("button");
-        // buttonMove.setAttribute("id", "lightBlue");
-        // buttonLightBlue.innerHTML = "ligtBlue";
-        // document.getElementById("colorOptions").appendChild(buttonLightBlue);
-        // buttonLightBlue.addEventListener("click", lightBlue);
     }
     function getNewPosition(_x, _y) {
         // console.log("ahhhhhhhhhhhhhhh");
@@ -270,12 +267,17 @@ var Zeichenfläche;
         Zeichenfläche.insert(saveName);
     }
     function picture_1() {
+        console.log("hello");
         rebuild(0);
     }
     function picture_2() {
         rebuild(1);
     }
+    function picture_3() {
+        rebuild(2);
+    }
     function rebuild(_u) {
+        console.log("heeey");
         let xPos = Zeichenfläche.canvasPic[_u].x;
         let yPos = Zeichenfläche.canvasPic[_u].y;
         let background = Zeichenfläche.canvasPic[_u].backgroundcolor;
@@ -317,15 +319,16 @@ var Zeichenfläche;
                 let circle = new Zeichenfläche.Rect();
                 circle.x = parseInt(restoredObject.x);
                 circle.y = parseInt(restoredObject.y);
-                Zeichenfläche.circleArray.push(circle);
                 if (restoredObject.rainbow == "true") {
                     Zeichenfläche.circleArray[i].rainbow = true;
+                    Zeichenfläche.circleArray.push(circle);
                 }
-                if (restoredObject.move == "true") {
+                if (restoredObject.move == "true") { //&& this.moving == true
                     Zeichenfläche.circleArray[i].dx = 1;
                 }
             }
         }
+        //update();
     }
 })(Zeichenfläche || (Zeichenfläche = {}));
 //# sourceMappingURL=canvas.js.map

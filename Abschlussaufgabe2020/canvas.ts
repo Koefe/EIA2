@@ -10,7 +10,7 @@ namespace Zeichenfläche {
     //////// - Formen einfügen Versuch 01
     export let circleArray: Circle[] = [];
     export let changedArray: Circle[] = [];
-    export let selectedColorArray: Circle[] = [];
+    //export let selectedColorArray: Circle[] = [];
     export let colorArray: Circle[] = [];
     export let moverArray: Circle[] = [];
     export let deleteArray: Circle[] = [];
@@ -66,9 +66,11 @@ namespace Zeichenfläche {
         /////// - Formen Einfügen 01
         let createCircle: HTMLButtonElement = <HTMLButtonElement>document.getElementById("circle");
         createCircle.addEventListener("click", drawCircle);
-        ///////
+        
         let createRect: HTMLButtonElement = <HTMLButtonElement>document.getElementById("rect");
         createRect.addEventListener("click", drawRect);
+
+        ////////
 
         let edit: HTMLInputElement = <HTMLInputElement>document.getElementById("edit");
         edit.addEventListener("change", select);
@@ -76,10 +78,16 @@ namespace Zeichenfläche {
         let savePicture: HTMLButtonElement = <HTMLButtonElement>document.getElementById("save");
         savePicture.addEventListener("click", save);
 
-        let restorePicture1: HTMLButtonElement = <HTMLButtonElement>document.getElementById("picture1");
+        /////// - Bilder wiederherstellen - ///////
+
+        let restorePicture1: HTMLButtonElement = <HTMLButtonElement>document.getElementById("restore1");
         restorePicture1.addEventListener("click", picture_1);
-        let restorePicture2: HTMLButtonElement = <HTMLButtonElement>document.getElementById("picture2");
+
+        let restorePicture2: HTMLButtonElement = <HTMLButtonElement>document.getElementById("restore2");
         restorePicture2.addEventListener("click", picture_2);
+
+        let restorePicture3: HTMLButtonElement = <HTMLButtonElement>document.getElementById("restore3");
+        restorePicture3.addEventListener("click", picture_3);
 
         update();
         ////////// - Drag Shapes
@@ -173,10 +181,10 @@ namespace Zeichenfläche {
             /////////
         }
 
-        for (let i: number = 0; i < selectedColorArray.length; i++) {
-            selectedColorArray[i].update();
-            /////////
-        }
+        // for (let i: number = 0; i < selectedColorArray.length; i++) {
+        //     selectedColorArray[i].update();
+        //     /////////
+        // }
 
         for (let i: number = 0; i < colorArray.length; i++) {
             colorArray[i].update();
@@ -235,7 +243,7 @@ namespace Zeichenfläche {
 
                         buttonsAreCreated = true;
 
-                        console.log("buutons wurden erstellt");
+                        console.log("buttons wurden erstellt");
 
                     }
 
@@ -271,14 +279,6 @@ namespace Zeichenfläche {
         document.getElementById("animations").appendChild(buttonColor);
         buttonColor.addEventListener("click", colorObjects);
 
-        //////////////////////////////////////// COLOR CHANGE SINGLE ////////////////////////////////////////
-
-        // let buttonLightBlue: HTMLButtonElement = <HTMLButtonElement>document.createElement("button");
-        // buttonMove.setAttribute("id", "lightBlue");
-        // buttonLightBlue.innerHTML = "ligtBlue";
-        // document.getElementById("colorOptions").appendChild(buttonLightBlue);
-        // buttonLightBlue.addEventListener("click", lightBlue);
-
     }
 
     function getNewPosition(_x: number, _y: number): void {
@@ -299,7 +299,6 @@ namespace Zeichenfläche {
     function drawCircleAtNewLocation(_newClientX: number, _newClientY: number): void {
 
         testboolean = true;
-
 
         changedArray[0].x = _newClientX;
         changedArray[0].y = _newClientY;
@@ -375,7 +374,6 @@ namespace Zeichenfläche {
 
         }
         buttonsAreCreated = false;
-
     }
 
     function save(): void {
@@ -384,6 +382,7 @@ namespace Zeichenfläche {
     }
 
     function picture_1(): void {
+        console.log("hello");
         rebuild(0);
     }
 
@@ -391,7 +390,14 @@ namespace Zeichenfläche {
         rebuild(1);
     }
 
+    function picture_3(): void {
+        rebuild(2);
+    }
+
     function rebuild(_u: number): void {
+
+        console.log("heeey");
+
         let xPos: string = canvasPic[_u].x;
         let yPos: string = canvasPic[_u].y;
         let background: string = canvasPic[_u].backgroundcolor;
@@ -436,8 +442,6 @@ namespace Zeichenfläche {
                     circleArray[i].dx = 1;
                 }
 
-
-
             }
 
             if (restoredObject.type == "rec") {
@@ -445,20 +449,20 @@ namespace Zeichenfläche {
                 circle.x = parseInt(restoredObject.x);
                 circle.y = parseInt(restoredObject.y);
 
-                circleArray.push(circle);
+                
 
                 if (restoredObject.rainbow == "true") {
                     circleArray[i].rainbow = true;
+                    circleArray.push(circle);
                 }
 
-                if (restoredObject.move == "true") {
+                if (restoredObject.move == "true") { //&& this.moving == true
                     circleArray[i].dx = 1;
                 }
 
             }
 
-
         }
-
+        //update();
     }
 }

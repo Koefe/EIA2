@@ -28,6 +28,10 @@ legend {
     width: 300px;
 }
 
+#blue0 {
+    background-color: steelblue;
+}
+
 #purple {
     background-color: blueviolet;
 }
