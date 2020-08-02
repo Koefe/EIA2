@@ -319,6 +319,7 @@ var Zeichenfläche;
                 let circle = new Zeichenfläche.Rect();
                 circle.x = parseInt(restoredObject.x);
                 circle.y = parseInt(restoredObject.y);
+                //circleArray.push(circle);
                 if (restoredObject.rainbow == "true") {
                     Zeichenfläche.circleArray[i].rainbow = true;
                     Zeichenfläche.circleArray.push(circle);

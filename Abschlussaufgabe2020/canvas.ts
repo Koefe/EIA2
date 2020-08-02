@@ -449,7 +449,7 @@ namespace Zeichenfläche {
                 circle.x = parseInt(restoredObject.x);
                 circle.y = parseInt(restoredObject.y);
 
-                
+                //circleArray.push(circle);
 
                 if (restoredObject.rainbow == "true") {
                     circleArray[i].rainbow = true;

@@ -2,12 +2,12 @@ var Zeichenfläche;
 (function (Zeichenfläche) {
     class Mainclass {
         constructor() {
-            this.x = Math.random() * Zeichenfläche.crc.canvas.width;
-            this.y = Math.random() * Zeichenfläche.crc.canvas.height;
-            this.dx = 0;
-            this.dy = 0;
-            this.a = 1;
-            this.size = 5;
+            // this.x = Math.random() * crc.canvas.width;
+            // this.y = Math.random() * crc.canvas.height;
+            // this.dx = 0;
+            // this.dy = 0;
+            // this.a = 1;
+            // this.size = 5;
         }
         draw() {
             ////// - hier kommt noch ne Form rein wenn ich Zeit habe - //////

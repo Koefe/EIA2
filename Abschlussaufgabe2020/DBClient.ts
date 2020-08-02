@@ -64,13 +64,13 @@ namespace Zeichenfläche {
         let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
         if (xhr.readyState == XMLHttpRequest.DONE) {
 
-            
+           
             canvasPic = JSON.parse(xhr.response);
             console.log(canvasPic);
 
             document.getElementById("restore1").innerText = canvasPic[0].name;
             document.getElementById("restore2").innerText = canvasPic[1].name;
-            document.getElementById("restore3").innerText = canvasPic[2].name;
+            //document.getElementById("restore3").innerText = canvasPic[2].name;
             // let playerList: Circle[] = JSON.parse(xhr.response);
             // for (let i: number = 0; i <= playerList.length; i++) {
             //     let nickname: string = playerList[i].name;

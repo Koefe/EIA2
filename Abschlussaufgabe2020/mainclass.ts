@@ -15,12 +15,12 @@ namespace Zeichenfläche {
         newColor: boolean;
 
         constructor() {
-            this.x = Math.random() * crc.canvas.width;
-            this.y = Math.random() * crc.canvas.height;
-            this.dx = 0;
-            this.dy = 0;
-            this.a = 1;
-            this.size = 5;
+            // this.x = Math.random() * crc.canvas.width;
+            // this.y = Math.random() * crc.canvas.height;
+            // this.dx = 0;
+            // this.dy = 0;
+            // this.a = 1;
+            // this.size = 5;
 
         }
 
