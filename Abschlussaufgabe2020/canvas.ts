@@ -64,7 +64,7 @@ namespace Zeichenfläche {
         onChange02.addEventListener("change", resizeCanvas_04);
 
         /////// - Formen Einfügen 01
-        let createCircle: HTMLButtonElement = <HTMLButtonElement>document.getElementById("circle");
+        let createCircle: HTMLButtonElement = <HTMLButtonElement>document.getElementById("circleId");
         createCircle.addEventListener("click", drawCircle);
         
         let createRect: HTMLButtonElement = <HTMLButtonElement>document.getElementById("rect");
@@ -88,6 +88,17 @@ namespace Zeichenfläche {
 
         let restorePicture3: HTMLButtonElement = <HTMLButtonElement>document.getElementById("restore3");
         restorePicture3.addEventListener("click", picture_3);
+
+        ///
+
+        let restorePicture4: HTMLButtonElement = <HTMLButtonElement>document.getElementById("restore4");
+        restorePicture4.addEventListener("click", picture_4);
+
+        let restorePicture5: HTMLButtonElement = <HTMLButtonElement>document.getElementById("restore5");
+        restorePicture5.addEventListener("click", picture_5);
+
+        let restorePicture6: HTMLButtonElement = <HTMLButtonElement>document.getElementById("restore6");
+        restorePicture6.addEventListener("click", picture_6);
 
         update();
         ////////// - Drag Shapes
@@ -159,7 +170,7 @@ namespace Zeichenfläche {
     function drawCircle(): void {
         let circle: Circle = new Circle();
         circleArray.push(circle);
-        //console.log(circle);
+        //console.log("circle wird erstellt");
     }
 
     function drawRect(): void {
@@ -174,6 +185,7 @@ namespace Zeichenfläche {
         for (let i: number = 0; i < circleArray.length; i++) {
             circleArray[i].update();
             //changedArray[i].update();
+           
         }
 
         for (let i: number = 0; i < changedArray.length; i++) {
@@ -181,10 +193,6 @@ namespace Zeichenfläche {
             /////////
         }
 
-        // for (let i: number = 0; i < selectedColorArray.length; i++) {
-        //     selectedColorArray[i].update();
-        //     /////////
-        // }
 
         for (let i: number = 0; i < colorArray.length; i++) {
             colorArray[i].update();
@@ -202,7 +210,7 @@ namespace Zeichenfläche {
     function select(_e: MouseEvent): void {
 
         if (_e == undefined) {
-            console.log("no parameters");
+            //console.log("no parameters");
 
         }
         //console.log(_e.clientX, _e.clientY);
@@ -243,7 +251,7 @@ namespace Zeichenfläche {
 
                         buttonsAreCreated = true;
 
-                        console.log("buttons wurden erstellt");
+                        //console.log("buttons wurden erstellt");
 
                     }
 
@@ -287,7 +295,7 @@ namespace Zeichenfläche {
 
         window.setTimeout(getNewPosition, 10000);
         if (draggedObject == true) {
-            console.log("R");
+            //console.log("R");
             // newClientX = _x;
             // newClientY = _y;
             drawCircleAtNewLocation(_x, _y);
@@ -337,7 +345,7 @@ namespace Zeichenfläche {
         circleArray.splice(pushedObject, 1);
         for (let i: number = 0; i < moverArray.length; i++) {
             moverArray[i].dx = 1;
-
+            moverArray[i].moving = true;
             document.getElementById("animations").innerHTML = "";
 
             circleArray.push(moverArray[i]);
@@ -394,9 +402,25 @@ namespace Zeichenfläche {
         rebuild(2);
     }
 
+    function picture_4(): void {
+        rebuild(3);
+    }
+
+    function picture_5(): void {
+        rebuild(4);
+    }
+
+    function picture_6(): void {
+        rebuild(5);
+    }
+
     function rebuild(_u: number): void {
 
-        console.log("heeey");
+        console.log(canvasPic[_u]);
+
+        for (let i: number = 0; i < circleArray.length; i++) {
+            circleArray.splice(0, circleArray.length);
+        }
 
         let xPos: string = canvasPic[_u].x;
         let yPos: string = canvasPic[_u].y;
@@ -445,15 +469,14 @@ namespace Zeichenfläche {
             }
 
             if (restoredObject.type == "rec") {
-                let circle: Rect = new Rect();
+                let circle: Circle = new Rect();
                 circle.x = parseInt(restoredObject.x);
                 circle.y = parseInt(restoredObject.y);
 
-                //circleArray.push(circle);
+                circleArray.push(circle);
 
                 if (restoredObject.rainbow == "true") {
                     circleArray[i].rainbow = true;
-                    circleArray.push(circle);
                 }
 
                 if (restoredObject.move == "true") { //&& this.moving == true
@@ -463,6 +486,7 @@ namespace Zeichenfläche {
             }
 
         }
+        console.log(circleArray);
         //update();
     }
 }

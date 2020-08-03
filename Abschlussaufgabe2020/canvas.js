@@ -41,7 +41,7 @@ var Zeichenfläche;
         let onChange02 = document.getElementById("large");
         onChange02.addEventListener("change", resizeCanvas_04);
         /////// - Formen Einfügen 01
-        let createCircle = document.getElementById("circle");
+        let createCircle = document.getElementById("circleId");
         createCircle.addEventListener("click", drawCircle);
         let createRect = document.getElementById("rect");
         createRect.addEventListener("click", drawRect);
@@ -57,6 +57,13 @@ var Zeichenfläche;
         restorePicture2.addEventListener("click", picture_2);
         let restorePicture3 = document.getElementById("restore3");
         restorePicture3.addEventListener("click", picture_3);
+        ///
+        let restorePicture4 = document.getElementById("restore4");
+        restorePicture4.addEventListener("click", picture_4);
+        let restorePicture5 = document.getElementById("restore5");
+        restorePicture5.addEventListener("click", picture_5);
+        let restorePicture6 = document.getElementById("restore6");
+        restorePicture6.addEventListener("click", picture_6);
         update();
         ////////// - Drag Shapes
     }
@@ -106,7 +113,7 @@ var Zeichenfläche;
     function drawCircle() {
         let circle = new Zeichenfläche.Circle();
         Zeichenfläche.circleArray.push(circle);
-        //console.log(circle);
+        //console.log("circle wird erstellt");
     }
     function drawRect() {
         let rect = new Zeichenfläche.Rect();
@@ -124,10 +131,6 @@ var Zeichenfläche;
             Zeichenfläche.changedArray[i].update();
             /////////
         }
-        // for (let i: number = 0; i < selectedColorArray.length; i++) {
-        //     selectedColorArray[i].update();
-        //     /////////
-        // }
         for (let i = 0; i < Zeichenfläche.colorArray.length; i++) {
             Zeichenfläche.colorArray[i].update();
             /////////
@@ -140,7 +143,7 @@ var Zeichenfläche;
     //// - funktioniert noch nicht ganz richtig
     function select(_e) {
         if (_e == undefined) {
-            console.log("no parameters");
+            //console.log("no parameters");
         }
         //console.log(_e.clientX, _e.clientY);
         let clientX = _e.clientX;
@@ -166,7 +169,7 @@ var Zeichenfläche;
                             createAnimationButtons();
                         }
                         buttonsAreCreated = true;
-                        console.log("buttons wurden erstellt");
+                        //console.log("buttons wurden erstellt");
                     }
                     testboolean = false;
                     //}
@@ -199,7 +202,7 @@ var Zeichenfläche;
         // console.log(_x, _y);
         window.setTimeout(getNewPosition, 10000);
         if (draggedObject == true) {
-            console.log("R");
+            //console.log("R");
             // newClientX = _x;
             // newClientY = _y;
             drawCircleAtNewLocation(_x, _y);
@@ -236,6 +239,7 @@ var Zeichenfläche;
         Zeichenfläche.circleArray.splice(pushedObject, 1);
         for (let i = 0; i < Zeichenfläche.moverArray.length; i++) {
             Zeichenfläche.moverArray[i].dx = 1;
+            Zeichenfläche.moverArray[i].moving = true;
             document.getElementById("animations").innerHTML = "";
             Zeichenfläche.circleArray.push(Zeichenfläche.moverArray[i]);
             Zeichenfläche.moverArray.splice(0, 1);
@@ -276,8 +280,20 @@ var Zeichenfläche;
     function picture_3() {
         rebuild(2);
     }
+    function picture_4() {
+        rebuild(3);
+    }
+    function picture_5() {
+        rebuild(4);
+    }
+    function picture_6() {
+        rebuild(5);
+    }
     function rebuild(_u) {
-        console.log("heeey");
+        console.log(Zeichenfläche.canvasPic[_u]);
+        for (let i = 0; i < Zeichenfläche.circleArray.length; i++) {
+            Zeichenfläche.circleArray.splice(0, Zeichenfläche.circleArray.length);
+        }
         let xPos = Zeichenfläche.canvasPic[_u].x;
         let yPos = Zeichenfläche.canvasPic[_u].y;
         let background = Zeichenfläche.canvasPic[_u].backgroundcolor;
@@ -319,16 +335,16 @@ var Zeichenfläche;
                 let circle = new Zeichenfläche.Rect();
                 circle.x = parseInt(restoredObject.x);
                 circle.y = parseInt(restoredObject.y);
-                //circleArray.push(circle);
+                Zeichenfläche.circleArray.push(circle);
                 if (restoredObject.rainbow == "true") {
                     Zeichenfläche.circleArray[i].rainbow = true;
-                    Zeichenfläche.circleArray.push(circle);
                 }
                 if (restoredObject.move == "true") { //&& this.moving == true
                     Zeichenfläche.circleArray[i].dx = 1;
                 }
             }
         }
+        console.log(Zeichenfläche.circleArray);
         //update();
     }
 })(Zeichenfläche || (Zeichenfläche = {}));

@@ -12,6 +12,7 @@ namespace Zeichenfläche {
     //let serverAddress: string = "http://localhost:8100/";
     let serverAddress: string = "https://koellefe.herokuapp.com/";
 
+    let savedPicturesInDatabase: number;
 
     export function insert(_name: string): void {
         //let inputs: HTMLCollectionOf<HTMLInputElement> = document.getElementsByTagName("input");
@@ -21,9 +22,9 @@ namespace Zeichenfläche {
         query += "&canvasWidth=" + canvas.width;
 
         for (let i: number = 0; i < circleArray.length; i++) {
-            if (circleArray[i].dx >= 0) {
-                circleArray[i].moving = true;
-            }
+            //if (circleArray[i].dx >= 0) {
+            //    circleArray[i].moving = true;
+            //}
             let circle: Object = {
                 x: circleArray[i].x.toString(),
                 y: circleArray[i].y.toString(),
@@ -64,13 +65,24 @@ namespace Zeichenfläche {
         let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
         if (xhr.readyState == XMLHttpRequest.DONE) {
 
-           
+
             canvasPic = JSON.parse(xhr.response);
+            savedPicturesInDatabase = canvasPic.length;
             console.log(canvasPic);
 
+            if (savedPicturesInDatabase == 0) { return; }
             document.getElementById("restore1").innerText = canvasPic[0].name;
+            if (savedPicturesInDatabase == 1) { return; }
             document.getElementById("restore2").innerText = canvasPic[1].name;
-            //document.getElementById("restore3").innerText = canvasPic[2].name;
+            if (savedPicturesInDatabase == 2) { return; }
+            document.getElementById("restore3").innerText = canvasPic[2].name;
+            if (savedPicturesInDatabase == 3) { return; }
+            document.getElementById("restore4").innerText = canvasPic[3].name;
+            if (savedPicturesInDatabase == 4) { return; }
+            document.getElementById("restore5").innerText = canvasPic[4].name;
+            if (savedPicturesInDatabase == 5) { return; }
+            document.getElementById("restore6").innerText = canvasPic[5].name;
+            //document.getElementById("restore7").innerText = canvasPic[6].name;
             // let playerList: Circle[] = JSON.parse(xhr.response);
             // for (let i: number = 0; i <= playerList.length; i++) {
             //     let nickname: string = playerList[i].name;
